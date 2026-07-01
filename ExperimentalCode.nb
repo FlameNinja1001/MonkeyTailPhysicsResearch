@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[     24143,        643]
-NotebookOptionsPosition[     22141,        601]
-NotebookOutlinePosition[     22563,        618]
-CellTagsIndexPosition[     22520,        615]
+NotebookDataLength[     30709,        817]
+NotebookOptionsPosition[     28294,        769]
+NotebookOutlinePosition[     28716,        786]
+CellTagsIndexPosition[     28673,        783]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -338,6 +338,167 @@ Cell["Day 2", "Text",
   3.991905899402528*^9}},ExpressionUUID->"5041c075-9a82-4d5e-9978-\
 cef78566ad2b"],
 
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DynamicModule", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"dTail", "=", "1"}], ",", " ", 
+     RowBox[{"thetaLeanString", "=", "\"\<\[Theta]_lean = \>\""}]}], "}"}], ",",
+    "\n", "\t", 
+   RowBox[{"Column", "[", 
+    RowBox[{"{", "\n", "\t\t", 
+     RowBox[{
+      RowBox[{"Slider", "[", 
+       RowBox[{
+        RowBox[{"Dynamic", "[", "thetaLean", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "89.9"}], ",", "89.9"}], "}"}]}], "]"}], ",", "\n", 
+      "\t\t", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"StringJoin", "[", 
+        RowBox[{"thetaLeanString", " ", ",", " ", 
+         RowBox[{"ToString", "[", "thetaLean", "]"}], ",", 
+         " ", "\"\<\[Degree]\>\""}], "]"}], "]"}], ",", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{"dTail", "=", 
+        RowBox[{"Dynamic", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Values", "[", 
+            RowBox[{"NSolve", "[", "\n", "\t\t\t", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"mHead", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"dHead", "*", 
+                   RowBox[{"Cos", "[", 
+                    RowBox[{"thetaLean", " ", "Degree"}], "]"}]}], "+", 
+                  RowBox[{"hHead", "*", 
+                   RowBox[{"Sin", "[", 
+                    RowBox[{"thetaLean", " ", "Degree"}], "]"}]}]}], ")"}]}], 
+               "==", 
+               RowBox[{"mTail", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"dTail", "*", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"thetaLean", " ", "Degree"}], "]"}]}], ")"}], "/",
+                     "2"}], ")"}], "-", 
+                  RowBox[{"hTail", "*", 
+                   RowBox[{"Sin", "[", 
+                    RowBox[{"thetaLean", " ", "Degree"}], "]"}]}]}], 
+                 ")"}]}]}], ",", "\n", "\t\t\t", "dTail"}], "\n", "\t\t", 
+             "]"}], "]"}], "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ";"}], ",", "\n", "\t\t", 
+      RowBox[{"Graphics", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"Blue", ",", "\n", "\t\t\t", 
+          RowBox[{"Dynamic", "[", 
+           RowBox[{"Rotate", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Line", "[", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"0", ",", "0"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"0", ",", "hHead"}], "}"}]}], "}"}], "]"}], ",", 
+               RowBox[{"Line", "[", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"0", ",", "hTail"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"dTail", ",", "hTail"}], "}"}]}], "}"}], "]"}], ",", 
+               RowBox[{"Line", "[", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"0", ",", "hHead"}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"-", "dHead"}], ",", "hHead"}], "}"}]}], "}"}], 
+                "]"}]}], "}"}], ",", 
+             RowBox[{"thetaLean", " ", "Degree"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0"}], "}"}]}], "]"}], "]"}]}], "\n", "\t\t", 
+         "}"}], ",", " ", 
+        RowBox[{"ImageSize", "->", "Medium"}], ",", 
+        RowBox[{"PlotRange", "->", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", "10"}], "}"}]}], "}"}]}]}], "]"}]}], 
+     "\n", "\t", "}"}], "]"}]}], "\n", "]"}]], "Code",
+ CellChangeTimes->{3.9919294225138083`*^9},
+ CellLabel->
+  "In[208]:=",ExpressionUUID->"9b5717c5-9e3d-4ac5-9807-921e683b9d36"],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`dTail$$ = Dynamic[
+   Part[
+    Part[
+     Values[
+      NSolve[$CellContext`mHead ($CellContext`dHead 
+          Cos[$CellContext`thetaLean Degree] + $CellContext`hHead 
+          Sin[$CellContext`thetaLean 
+            Degree]) == $CellContext`mTail (($CellContext`dTail$$ 
+           Cos[$CellContext`thetaLean Degree])/2 - $CellContext`hTail 
+         Sin[$CellContext`thetaLean Degree]), $CellContext`dTail$$]], 1], 
+    1]], $CellContext`thetaLeanString$$ = "\[Theta]_lean = "}, 
+  TagBox[GridBox[{
+     {
+      SliderBox[Dynamic[$CellContext`thetaLean], {-89.9, 89.9}]},
+     {
+      DynamicBox[
+       ToBoxes[$CellContext`thetaLeanString$$ <> 
+        ToString[$CellContext`thetaLean] <> "\[Degree]", StandardForm],
+       ImageSizeCache->{117.00634765625, {1.8170166015625, 11.57}}]},
+     {""},
+     {
+      GraphicsBox[
+       {RGBColor[0, 0, 1], 
+        DynamicBox[Typeset`ToBoxes[
+          Rotate[{
+            Line[{{0, 0}, {0, $CellContext`hHead}}], 
+            
+            Line[{{0, $CellContext`hTail}, {$CellContext`dTail$$, \
+$CellContext`hTail}}], 
+            
+            Line[{{0, $CellContext`hHead}, {-$CellContext`dHead, \
+$CellContext`hHead}}]}, $CellContext`thetaLean Degree, {0, 0}], StandardForm, 
+          Graphics],
+         ImageSizeCache->{{111.76787011910858`, 
+          358.9434890835713}, {-274.26948360567866`, 98.55142498038947}}]},
+       ImageSize->Medium,
+       PlotRange->{{-10, 10}, {-1, 10}}]}
+    },
+    DefaultBaseStyle->"Column",
+    GridBoxAlignment->{"Columns" -> {{Left}}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+   "Column"],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{3.9919294234751663`*^9},
+ CellLabel->
+  "Out[208]=",ExpressionUUID->"03ccdeb6-22ae-4117-9995-d578e3e82c80"]
+}, Open  ]],
+
 Cell[BoxData[
  RowBox[{
   RowBox[{"torqueOnPivot", "[", 
@@ -559,13 +720,9 @@ Cell[BoxData[
       "\n", "\t\t", 
       RowBox[{"Dynamic", "[", "thetaAdj", "]"}]}], "\n", "\t", "}"}], "]"}]}],
    "\n", "]"}]], "Code",
- CellChangeTimes->{{3.9919272912409143`*^9, 3.9919273147794228`*^9}, {
-  3.991927346966569*^9, 3.991927408955442*^9}, {3.99192770068501*^9, 
-  3.991927712417933*^9}, {3.991928033502136*^9, 3.991928074279654*^9}, {
-  3.991928162209201*^9, 3.991928191973714*^9}, {3.9919283322761793`*^9, 
-  3.991928463474886*^9}},
+ CellChangeTimes->{3.9919292917508297`*^9},
  CellLabel->
-  "In[183]:=",ExpressionUUID->"23c5bb44-37f2-447a-ac40-0ea5ea449a45"],
+  "In[184]:=",ExpressionUUID->"d8b9d199-d3c9-46f4-a24c-93927347f5e4"],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`thetaAdj$$ = 0}, 
@@ -591,13 +748,24 @@ $CellContext`hHead, $CellContext`mTail, $CellContext`dTailConst},
     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
    "Column"],
   DynamicModuleValues:>{}]], "Output",
- CellChangeTimes->{{3.991927754886579*^9, 3.9919277614901123`*^9}, 
-   3.9919279686641607`*^9, 3.991928075064089*^9, {3.991928163923841*^9, 
-   3.991928194569957*^9}, 3.991928236626647*^9, 3.9919283344384747`*^9, {
-   3.991928385656439*^9, 3.991928463872162*^9}, 3.991928552741261*^9},
+ CellChangeTimes->{3.9919292924920263`*^9},
  CellLabel->
-  "Out[183]=",ExpressionUUID->"b44a596d-214b-4106-ab43-42f8b6cf525d"]
-}, Open  ]]
+  "Out[184]=",ExpressionUUID->"62445050-4960-4cff-a254-e348ecc4663c"]
+}, Open  ]],
+
+Cell["Day 3", "Text",
+ CellChangeTimes->{{3.991929285753883*^9, 
+  3.991929286581018*^9}},ExpressionUUID->"f13be9f5-ee62-4c92-871f-\
+0098b65f10b4"],
+
+Cell[BoxData[""], "Code",
+ CellChangeTimes->{{3.9919272912409143`*^9, 3.9919273147794228`*^9}, {
+  3.991927346966569*^9, 3.991927408955442*^9}, {3.99192770068501*^9, 
+  3.991927712417933*^9}, {3.991928033502136*^9, 3.991928074279654*^9}, {
+  3.991928162209201*^9, 3.991928191973714*^9}, {3.9919283322761793`*^9, 
+  3.991928463474886*^9}, {3.991929307624366*^9, 3.99192930808643*^9}},
+ CellLabel->
+  "In[185]:=",ExpressionUUID->"23c5bb44-37f2-447a-ac40-0ea5ea449a45"]
 },
 WindowSize->{1506, 936},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
@@ -632,19 +800,25 @@ Cell[5231, 160, 4877, 113, 323, "Code",ExpressionUUID->"a0743bf5-ba98-4244-8418-
 Cell[10111, 275, 2276, 57, 271, "Output",ExpressionUUID->"3d2df57e-86a8-4883-ab2f-4485ee565520"]
 }, Open  ]],
 Cell[12402, 335, 149, 3, 42, "Text",ExpressionUUID->"5041c075-9a82-4d5e-9978-cef78566ad2b"],
-Cell[12554, 340, 1684, 46, 205, "Code",ExpressionUUID->"c3f57cc0-c69b-4e70-b197-6805f1a07560"],
 Cell[CellGroupData[{
-Cell[14263, 390, 3196, 86, 535, "Code",ExpressionUUID->"06e7d436-ffeb-4b35-825e-279f1d31674c"],
-Cell[17462, 478, 475, 10, 41, "Output",ExpressionUUID->"18617a8f-b97f-47dd-9560-031c7dfa9b7c"]
+Cell[12576, 342, 4170, 108, 346, "Code",ExpressionUUID->"9b5717c5-9e3d-4ac5-9807-921e683b9d36"],
+Cell[16749, 452, 1835, 46, 350, "Output",ExpressionUUID->"03ccdeb6-22ae-4117-9995-d578e3e82c80"]
+}, Open  ]],
+Cell[18599, 501, 1684, 46, 205, "Code",ExpressionUUID->"c3f57cc0-c69b-4e70-b197-6805f1a07560"],
+Cell[CellGroupData[{
+Cell[20308, 551, 3196, 86, 535, "Code",ExpressionUUID->"06e7d436-ffeb-4b35-825e-279f1d31674c"],
+Cell[23507, 639, 475, 10, 41, "Output",ExpressionUUID->"18617a8f-b97f-47dd-9560-031c7dfa9b7c"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17974, 493, 1208, 31, 228, "Code",ExpressionUUID->"5422e0e6-c41a-4927-85fc-37960bdc3fe6"],
-Cell[19185, 526, 394, 6, 41, "Output",ExpressionUUID->"1f779864-b810-4a0f-8c1c-3bae1808c655"]
+Cell[24019, 654, 1208, 31, 228, "Code",ExpressionUUID->"5422e0e6-c41a-4927-85fc-37960bdc3fe6"],
+Cell[25230, 687, 394, 6, 41, "Output",ExpressionUUID->"1f779864-b810-4a0f-8c1c-3bae1808c655"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[19616, 537, 1253, 30, 252, "Code",ExpressionUUID->"23c5bb44-37f2-447a-ac40-0ea5ea449a45"],
-Cell[20872, 569, 1253, 29, 139, "Output",ExpressionUUID->"b44a596d-214b-4106-ab43-42f8b6cf525d"]
-}, Open  ]]
+Cell[25661, 698, 984, 26, 252, "Code",ExpressionUUID->"d8b9d199-d3c9-46f4-a24c-93927347f5e4"],
+Cell[26648, 726, 1011, 26, 139, "Output",ExpressionUUID->"62445050-4960-4cff-a254-e348ecc4663c"]
+}, Open  ]],
+Cell[27674, 755, 147, 3, 42, "Text",ExpressionUUID->"f13be9f5-ee62-4c92-871f-0098b65f10b4"],
+Cell[27824, 760, 466, 7, 63, "Code",ExpressionUUID->"23c5bb44-37f2-447a-ac40-0ea5ea449a45"]
 }
 ]
 *)

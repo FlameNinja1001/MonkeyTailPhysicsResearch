@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[     28905,        672]
-NotebookOptionsPosition[     27437,        639]
-NotebookOutlinePosition[     27859,        656]
-CellTagsIndexPosition[     27816,        653]
+NotebookDataLength[     42520,       1148]
+NotebookOptionsPosition[     40730,       1110]
+NotebookOutlinePosition[     41152,       1127]
+CellTagsIndexPosition[     41109,       1124]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -27,7 +27,9 @@ Cell["Model V1 - Self-Balancing Tail with Variable Length", "Section",
 7957e03610f3"],
 
 Cell[TextData[{
- "Before changing the angle of the tail or adding more joints, we need to \
+ StyleBox["(*diagrams TBD*)\n",
+  FontSlant->"Italic"],
+ "\nBefore changing the angle of the tail or adding more joints, we need to \
 understand how balance works. In physics, balance is achieved by having a net \
 torque of zero in our system. In this case, our system is defined as the \
 following: with a center of mass for the tail offset by a distance and a \
@@ -36,40 +38,34 @@ calculations, we will use SI units.\n\nFrom this setup, we must derive an \
 equation that can be used. In this setup, the six main variables are:\n",
  Cell[BoxData[
   FormBox[
-   SubscriptBox["m", "head"], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   SubscriptBox["m", "head"], TraditionalForm]],ExpressionUUID->
   "d3a218c4-41f3-43af-8251-ca126d82a3b6"],
  " - the mass of the head.\n",
  Cell[BoxData[
   FormBox[
-   SubscriptBox["d", "head"], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   SubscriptBox["d", "head"], TraditionalForm]],ExpressionUUID->
   "043508de-5fd4-4e73-a986-381fe8f39b7a"],
  " - the horizontal distance from the point mass of the head to the body.\n",
  Cell[BoxData[
   FormBox[
-   SubscriptBox["h", "head"], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   SubscriptBox["h", "head"], TraditionalForm]],ExpressionUUID->
   "2d5bdb53-56df-4057-9d10-36d835a93931"],
  " - the vertical distance from the point mass of the head to the body.\n\n",
  Cell[BoxData[
   FormBox[
-   SubscriptBox["m", "tail"], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   SubscriptBox["m", "tail"], TraditionalForm]],ExpressionUUID->
   "e04d9068-6d37-40ba-b60d-05dae9824814"],
  " - the mass of the tail.\n",
  Cell[BoxData[
   FormBox[
-   SubscriptBox["d", "tail"], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   SubscriptBox["d", "tail"], TraditionalForm]],ExpressionUUID->
   "bdf3ce6d-0887-4132-9f5f-f159b10b1aeb"],
  " - the horizontal distance from the point mass of the tail to the body. It\
 \[CloseCurlyQuote]s important to note that the center of mass for the tail is \
 this value divided by two as it\[CloseCurlyQuote]s not a point mass.\n",
  Cell[BoxData[
   FormBox[
-   SubscriptBox["h", "tail"], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   SubscriptBox["h", "tail"], TraditionalForm]],ExpressionUUID->
   "e23a3094-eee7-4171-8c24-bf53ce777e70"],
  " - the vertical distance from the point mass of the tail to the body.\n\n\
 However, our monkey will not always be standing. Thus, we need to factor in a \
@@ -99,8 +95,7 @@ torque equation looks like this: ",
 we can calculate our radii (r) as this:\n\n",
  Cell[BoxData[
   FormBox[
-   SubscriptBox["r", "head"], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   SubscriptBox["r", "head"], TraditionalForm]],ExpressionUUID->
   "60ae99d5-91bf-4f1f-b23e-c13bfd7fcd07"],
  " = ",
  Cell[BoxData[
@@ -110,14 +105,12 @@ we can calculate our radii (r) as this:\n\n",
      SuperscriptBox[
       SubscriptBox["d", "head"], "2"], " ", "+", " ", 
      SuperscriptBox[
-      SubscriptBox["h", "head"], "2"]}]], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+      SubscriptBox["h", "head"], "2"]}]], TraditionalForm]],ExpressionUUID->
   "e6c70c5c-cbda-49a5-821f-4a5161a3717e"],
  "\n\n",
  Cell[BoxData[
   FormBox[
-   SubscriptBox["r", "tail"], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   SubscriptBox["r", "tail"], TraditionalForm]],ExpressionUUID->
   "12cddac9-a804-4811-94b0-0aac5322853c"],
  " = ",
  Cell[BoxData[
@@ -129,8 +122,7 @@ we can calculate our radii (r) as this:\n\n",
        FractionBox[
         SubscriptBox["d", "tail"], "2"], ")"}], "2"], " ", "+", " ", 
      SuperscriptBox[
-      SubscriptBox["h", "tail"], "2"]}]], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+      SubscriptBox["h", "tail"], "2"]}]], TraditionalForm]],ExpressionUUID->
   "ddf1b52a-f8c3-4576-b6ab-26325d881ece"],
  "\n\nCalculating for \[Theta] is slightly harder. The angle for the \
 components of gravity is not the exact angle that the radius makes with the \
@@ -197,8 +189,7 @@ there. Let\[CloseCurlyQuote]s begin with the head equation.\n\n",
   FormBox[
    FractionBox[
     SubscriptBox["d", "head"], 
-    SubscriptBox["h", "head"]], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+    SubscriptBox["h", "head"]], TraditionalForm]],ExpressionUUID->
   "70757adb-b720-42d6-9200-7bd2fd5bd3a0"],
  ")+",
  Cell[BoxData[
@@ -211,64 +202,392 @@ we can expand, and then simplify it with the sum of sines identity:\nsin(A+B) \
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Tau]", "head"], TraditionalForm]],ExpressionUUID->
-  "d032c627-6707-48e5-8e93-f3f256ae1b0b"],
+  "26c5868a-931e-484b-ba58-60720c9827b9"],
  " = ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["m", "head"], TraditionalForm]],ExpressionUUID->
-  "c60add9e-93f0-4014-b517-2c2ffb4c2466"],
+  "9e7c7e13-ebbe-4823-b89a-e1cf29be7702"],
  " * ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["r", "head"], TraditionalForm]],ExpressionUUID->
-  "8650b8d5-3a1d-430a-b284-2dbfa76233ce"],
- " * sin(arctan(",
+  "27e8e07b-3326-4a87-851f-5be2716894b2"],
+ " * (sin(arctan(",
  Cell[BoxData[
   FormBox[
    FractionBox[
     SubscriptBox["d", "head"], 
-    SubscriptBox["h", "head"]], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "d7e28702-f37c-4cdd-8e0f-86d8f0e93e76"],
- ")+",
+    SubscriptBox["h", "head"]], TraditionalForm]],ExpressionUUID->
+  "9e409477-d7a9-4d59-8cf5-e8220570849f"],
+ ")cos(",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
-  "83674518-905c-4011-a476-94ff3c2e8625"],
- ")\n\|01d70f_head = m_head * r_head * \
-(sin(arctan(d_head/h_head))cos(\[Theta]_lean)+cos(arctan(d_head/h_head))sin(\
-\[Theta]_lean))\n\nIt seems complex, but the sine and cosine \
-arctan(d_head/h_head) can actually be defined using r_head! Let\
-\[CloseCurlyQuote]s examine that with the diagram below:\n\nWe end up with:\n\
-\nsin(arctan(d_head/h_head)) = d_head/r_head\ncos(arctan(d_head/h_head)) = \
-h_head/r_head\n\nGiven this, let\[CloseCurlyQuote]s plug it in to the \
-equation.\n\|01d70f_head = m_head * r_head * ( (d_head * \
-cos(\[Theta]_lean)/r_head) +(h_head * sin(\[Theta]_lean)/r_head))\n\nSince \
-every part of the identity has r_head on the denominator, and we are \
-multiplying it by r_head, we get a much simpler equation for the torque of \
-the head:\n\n\|01d70f_head = m_head * r_head * ( d_head * cos(\[Theta]_lean) \
-+ h_head * sin(\[Theta]_lean))\n\nThe torque of the tail is the same, except \
-instead of adding the two angles, we must subtract them, as the diagram \
-shows. This means we use the difference of sines identity, sin(A-B) = \
-sinAcosB-cosAsinB. We also must remember that the distance (d_head) is \
-divided by two:\n\n\|01d70f_tail = m_tail * r_tail * sin(\[Theta]_t)\n\
-\|01d70f_tail = m_tail * r_tail * sin(arctan(d_tail/2h_tail)-\[Theta]_lean)\n\
-\|01d70f_tail = m_tail * r_tail * \
-(sin(arctan(d_tail/2h_tail))cos(\[Theta]_lean)-cos(arctan(d_tail/2h_tail))sin(\
-\[Theta]_lean))\n\|01d70f_head = m_head * r_head * ( (d_tail * \
-cos(\[Theta]_lean)/2r_head) -(h_tail * sin(\[Theta]_lean)/r_head))\n\
-\|01d70f_head = m_head * r_head * ( (d_tail * cos(\[Theta]_lean)/2) -h_tail * \
-sin(\[Theta]_lean))\n\nThe finished model is the following, where we set both \
-torques equal to each other.\n\n\|01d70f_head = m_head * r_head * ( d_head * \
-cos(\[Theta]_lean) + h_head * sin(\[Theta]_lean)) = \|01d70f_head = m_head * \
-r_head * ( (d_tail * cos(\[Theta]_lean)/2) -h_tail * sin(\[Theta]_lean)).\n\n\
-\nTo model the monkey tilting itself, we must change \[Theta]_tail. If we \
-changed \[Theta]_tail, the system would just fall. To accommodate for this, \
-we must make one or more of the six variables unknown such that the model can \
-automatically adjust it to keep the torques in equilibrium. In this example, \
-we will solve for d_tail as our unknown variable.\n\nThis will be achieved \
-with the Wolfram Language. To start the simulation, we define the constants = \
-all variables besides d_tail."
+  "7af5a761-e1c2-4fdc-9b86-04cf5ed4acd1"],
+ ")+cos(arctan(",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    SubscriptBox["d", "head"], 
+    SubscriptBox["h", "head"]], TraditionalForm]],ExpressionUUID->
+  "3eb732c4-d5e0-4cd4-8f1c-24a6690a0b81"],
+ ")sin(",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
+  "d6bc23d8-56cf-409a-a679-1e8169105a45"],
+ "))\n\nIt seems complex, but the sine and cosine of arctan(",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    SubscriptBox["d", "head"], 
+    SubscriptBox["h", "head"]], TraditionalForm]],ExpressionUUID->
+  "74523365-32ac-4a99-9573-9d62774b773f"],
+ ") can actually be defined using ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["r", "head"], TraditionalForm]],ExpressionUUID->
+  "8964a6d0-dde9-4010-95de-a0fdf115ee2c"],
+ "! Let\[CloseCurlyQuote]s examine that with the diagram below:\n\nWe end up \
+with:\n\nsin(arctan(",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    SubscriptBox["d", "head"], 
+    SubscriptBox["h", "head"]], TraditionalForm]],ExpressionUUID->
+  "a849575d-6866-4d52-be95-63cfb98b5f1c"],
+ ")) = ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    SubscriptBox["d", "head"], 
+    SubscriptBox["r", "head"]], TraditionalForm]],ExpressionUUID->
+  "f480c53e-8a9d-4196-9b32-adeab867e438"],
+ "\n\ncos(arctan(",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    SubscriptBox["d", "head"], 
+    SubscriptBox["h", "head"]], TraditionalForm]],ExpressionUUID->
+  "b766ae8d-bbe8-45a8-b7d8-e90501c67d3a"],
+ ")) = ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    SubscriptBox["h", "head"], 
+    SubscriptBox["r", "head"]], TraditionalForm]],ExpressionUUID->
+  "808aa509-cc17-4411-9760-00ef5a0b2898"],
+ "\n\nGiven this, let\[CloseCurlyQuote]s plug it in to the equation.\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Tau]", "head"], TraditionalForm]],ExpressionUUID->
+  "ec4ab493-b79c-4a0f-825d-1368a87a94b3"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", "head"], TraditionalForm]],ExpressionUUID->
+  "7f4d5adb-39cd-4773-9c42-dc2cbeff311d"],
+ " * ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["r", "head"], TraditionalForm]],ExpressionUUID->
+  "561f45c4-02d4-415c-81b8-556a6272bb3d"],
+ " * (",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{
+     SubscriptBox["d", 
+      RowBox[{"head", " "}]], "*", " ", 
+     RowBox[{"cos", "(", 
+      FormBox[
+       SubscriptBox["\[Theta]", "lean"],
+       TraditionalForm], ")"}]}], 
+    SubscriptBox["r", "head"]], TraditionalForm]],ExpressionUUID->
+  "259d143d-7ceb-43de-ada0-1311ed2b5d7f"],
+ "+",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{
+     SubscriptBox["h", 
+      RowBox[{"head", " "}]], "*", " ", 
+     RowBox[{"sin", "(", 
+      FormBox[
+       SubscriptBox["\[Theta]", "lean"],
+       TraditionalForm], ")"}]}], 
+    SubscriptBox["r", "head"]], TraditionalForm]],ExpressionUUID->
+  "ac3dc3d5-9e44-408d-bdc2-5cabddc9cc2c"],
+ ")\n\nSince every part of the identity has r_head on the denominator, and we \
+are multiplying it by r_head, we get a much simpler equation for the torque \
+of the head:\n\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Tau]", "head"], TraditionalForm]],ExpressionUUID->
+  "45168eb4-cf8e-4083-ac33-b82f28f3c9c2"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", "head"], TraditionalForm]],ExpressionUUID->
+  "5f4a4e91-d4b1-4094-913e-725014bda9d1"],
+ " * (",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["d", 
+     RowBox[{"head", " "}]], "*", " ", 
+    RowBox[{"cos", "(", 
+     FormBox[
+      SubscriptBox["\[Theta]", "lean"],
+      TraditionalForm], ")"}]}], TraditionalForm]],ExpressionUUID->
+  "d22bcbeb-de61-43c0-901a-2d52210ba1e2"],
+ "+",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["h", 
+     RowBox[{"head", " "}]], "*", " ", 
+    RowBox[{"sin", "(", 
+     FormBox[
+      SubscriptBox["\[Theta]", "lean"],
+      TraditionalForm], ")"}]}], TraditionalForm]],ExpressionUUID->
+  "89d362e4-0876-48bf-831d-62a0ea4fabfb"],
+ ")\n\nThe torque of the tail is the same, except instead of adding the two \
+angles, we must subtract them, as the diagram shows. This means we use the \
+difference of sines identity, sin(A-B) = sinAcosB-cosAsinB. We also must \
+remember that the distance (d_head) is divided by two:\n\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Tau]", "tail"], TraditionalForm]],ExpressionUUID->
+  "2fe33266-ce25-43ca-929a-bf815807ff42"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", "tail"], TraditionalForm]],ExpressionUUID->
+  "73d4e8d7-4dbe-427f-932d-a25f3e41ffd6"],
+ " * ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["r", "tail"], TraditionalForm]],ExpressionUUID->
+  "51d6f5e9-ef16-462b-bce3-8b9e7cf85c45"],
+ " * sin(",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "t"], TraditionalForm]],ExpressionUUID->
+  "5908c0d2-26f1-442a-b080-e11f6affcc30"],
+ ")\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Tau]", "tail"], TraditionalForm]],ExpressionUUID->
+  "775393f4-f583-4580-bce4-72b02f1e4a35"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", "tail"], TraditionalForm]],ExpressionUUID->
+  "fe0bfc02-a640-4e65-bf4b-ae8b42f78ef1"],
+ " * ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["r", "tail"], TraditionalForm]],ExpressionUUID->
+  "b2e1aaf3-b6ab-49cc-a185-959d8b2c4cff"],
+ " * sin(",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"arctan", "(", 
+     FormBox[
+      FractionBox[
+       SubscriptBox["d", "tail"], 
+       RowBox[{"2", 
+        SubscriptBox["h", "tail"]}]],
+      TraditionalForm], ")"}], "-", 
+    FormBox[
+     SubscriptBox["\[Theta]", "lean"],
+     TraditionalForm]}], TraditionalForm]],ExpressionUUID->
+  "86bf9615-88e4-4318-8650-2a86d8b9b8b2"],
+ ")\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Tau]", "tail"], TraditionalForm]],ExpressionUUID->
+  "3475061d-6853-42ee-b769-7007b82d3447"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", "tail"], TraditionalForm]],ExpressionUUID->
+  "b24f2fc5-65ca-4025-830f-856d1cd16293"],
+ " * ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["r", "tail"], TraditionalForm]],ExpressionUUID->
+  "06cc80dd-0c0b-47af-b413-81e2445fbff2"],
+ " * (sin(arctan(",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    SubscriptBox["d", "tail"], 
+    RowBox[{"2", 
+     SubscriptBox["h", "tail"]}]], TraditionalForm]],ExpressionUUID->
+  "5f88962c-650a-4d88-8484-2222b5e524fe"],
+ ")cos(",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
+  "96032a2c-b6f0-458d-be1c-8fe24146eed0"],
+ ")-cos(arctan(",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    SubscriptBox["d", "tail"], 
+    RowBox[{"2", 
+     SubscriptBox["h", "tail"]}]], TraditionalForm]],ExpressionUUID->
+  "fef1e4f9-9f02-40e7-acd1-a59b1d83d23e"],
+ ")sin(",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
+  "1c5da6d1-a32d-4bf0-b7f4-0cbf91a797b8"],
+ "))\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Tau]", "tail"], TraditionalForm]],ExpressionUUID->
+  "0f28fc8e-d604-4542-bd37-ca1a92b68b52"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", "tail"], TraditionalForm]],ExpressionUUID->
+  "c7757307-30fe-4a8a-83bf-5ba7c93353e4"],
+ " * ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["r", "tail"], TraditionalForm]],ExpressionUUID->
+  "ac29b497-c31f-4324-90ae-ed252e43309c"],
+ " * (",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{
+     SubscriptBox["d", "tail"], 
+     RowBox[{"cos", "(", 
+      FormBox[
+       SubscriptBox["\[Theta]", "lean"],
+       TraditionalForm], ")"}]}], 
+    RowBox[{"2", 
+     SubscriptBox["r", "tail"]}]], TraditionalForm]],ExpressionUUID->
+  "f080da26-3195-419e-8ed4-2dbf567983af"],
+ "-",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{
+     SubscriptBox["h", "tail"], 
+     RowBox[{"sin", "(", 
+      FormBox[
+       SubscriptBox["\[Theta]", "lean"],
+       TraditionalForm], ")"}]}], 
+    RowBox[{"2", 
+     SubscriptBox["r", "tail"]}]], TraditionalForm]],ExpressionUUID->
+  "01728db2-375a-4e20-928f-5bbe71e2be22"],
+ ")\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Tau]", "tail"], TraditionalForm]],ExpressionUUID->
+  "4120ad6f-2be4-42e6-82d8-a12a5b74e908"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", "tail"], TraditionalForm]],ExpressionUUID->
+  "fe3bf41f-c14e-463b-b344-8802d7d0d98d"],
+ " *  (",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["d", "tail"], 
+    RowBox[{"cos", "(", 
+     FormBox[
+      SubscriptBox["\[Theta]", "lean"],
+      TraditionalForm], ")"}]}], TraditionalForm]],ExpressionUUID->
+  "89446bf6-d5f4-45f5-abde-6ee247d2dab4"],
+ "-",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["h", "tail"], 
+    RowBox[{"sin", "(", 
+     FormBox[
+      SubscriptBox["\[Theta]", "lean"],
+      TraditionalForm], ")"}]}], TraditionalForm]],ExpressionUUID->
+  "eee8df93-95bd-4658-9483-668174ae49c0"],
+ ")\n\nThe finished model is the following, where we set both torques equal \
+to each other.\n\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Tau]", "head"], TraditionalForm]],ExpressionUUID->
+  "ddeb9c4e-0670-4a65-9945-54f8b5cac18d"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", "head"], TraditionalForm]],ExpressionUUID->
+  "b7f7560b-bbce-4b7d-9ca4-8fd0d71fd124"],
+ " * (",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["d", 
+     RowBox[{"head", " "}]], "*", " ", 
+    RowBox[{"cos", "(", 
+     FormBox[
+      SubscriptBox["\[Theta]", "lean"],
+      TraditionalForm], ")"}]}], TraditionalForm]],ExpressionUUID->
+  "1579d73c-4c9a-4363-9495-7e3debc5e606"],
+ "+",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["h", 
+     RowBox[{"head", " "}]], "*", " ", 
+    RowBox[{"sin", "(", 
+     FormBox[
+      SubscriptBox["\[Theta]", "lean"],
+      TraditionalForm], ")"}]}], TraditionalForm]],ExpressionUUID->
+  "b2c86ced-b856-4328-9544-dfda1a57b034"],
+ ") = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Tau]", "tail"], TraditionalForm]],ExpressionUUID->
+  "56034b5e-86c1-4020-8e73-e9ec9e1e977e"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["m", "tail"], TraditionalForm]],ExpressionUUID->
+  "71a68633-cf36-44b2-ab07-4a5621dd0961"],
+ " *  (",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["d", "tail"], 
+    RowBox[{"cos", "(", 
+     FormBox[
+      SubscriptBox["\[Theta]", "lean"],
+      TraditionalForm], ")"}]}], TraditionalForm]],ExpressionUUID->
+  "588ce977-3d41-4142-8f0b-81432cb80eea"],
+ "-",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["h", "tail"], 
+    RowBox[{"sin", "(", 
+     FormBox[
+      SubscriptBox["\[Theta]", "lean"],
+      TraditionalForm], ")"}]}], TraditionalForm]],ExpressionUUID->
+  "e3b2a391-9194-41d5-9149-f7b293615277"],
+ ")\n\nTo model the monkey tilting itself, we must change \[Theta]_tail. If \
+we changed \[Theta]_tail, the system would just fall. To accommodate for \
+this, we must make one or more of the six variables unknown such that the \
+model can automatically adjust it to keep the torques in equilibrium. In this \
+example, we will solve for d_tail as our unknown variable.\n\nThis will be \
+achieved with the Wolfram Language. To start the simulation, we define the \
+constants = all variables besides d_tail."
 }], "Text",
  CellChangeTimes->{{3.9293546184036617`*^9, 3.9293546199188967`*^9}, {
    3.991843023893482*^9, 3.991843098671399*^9}, {3.991843141651308*^9, 
@@ -289,7 +608,10 @@ all variables besides d_tail."
    3.99190278807376*^9, 3.9919028913216267`*^9}, {3.99190293358051*^9, 
    3.991903134249188*^9}, {3.9919032240534286`*^9, 3.991903324589549*^9}, {
    3.9919034062311087`*^9, 3.991903419125595*^9}, {3.991903471088574*^9, 
-   3.991903597660206*^9}},ExpressionUUID->"9b79198e-7897-462b-8630-\
+   3.991903597660206*^9}, {3.991928666147277*^9, 3.991928691460561*^9}, {
+   3.991928733055315*^9, 3.991928851738813*^9}, {3.9919288930456953`*^9, 
+   3.991929005467946*^9}, {3.99192904826562*^9, 
+   3.991929244567896*^9}},ExpressionUUID->"9b79198e-7897-462b-8630-\
 68f1f3d31553"],
 
 Cell[BoxData[{
@@ -327,7 +649,8 @@ Cell[BoxData[{
   3.9918382336683683`*^9, 3.991838234485955*^9}, {3.991838564647468*^9, 
   3.99183857774774*^9}, {3.991839635590024*^9, 3.991839652727968*^9}, {
   3.991839684969195*^9, 3.991839685059473*^9}},
- CellLabel->"In[10]:=",ExpressionUUID->"8b316891-cc46-4475-8f26-493f8b82e012"],
+ CellLabel->
+  "In[186]:=",ExpressionUUID->"8b316891-cc46-4475-8f26-493f8b82e012"],
 
 Cell["\<\
 We then set up the model defined above using the NSolve function, which can \
@@ -371,7 +694,8 @@ Cell[BoxData[
  CellChangeTimes->{
   3.991840322657197*^9, {3.9919023631853228`*^9, 3.9919023641122837`*^9}, 
    3.991907599137916*^9, 3.991907651080515*^9},
- CellLabel->"In[8]:=",ExpressionUUID->"4eeea633-52f6-439f-94ba-b07cf20edf7f"],
+ CellLabel->
+  "In[193]:=",ExpressionUUID->"4eeea633-52f6-439f-94ba-b07cf20edf7f"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -383,8 +707,9 @@ Cell[BoxData[
    3.9918416813661757`*^9, 3.991900211625662*^9, 3.991900408715494*^9, 
    3.9919025781511993`*^9, 3.9919073042816153`*^9, {3.9919075761124783`*^9, 
    3.991907576324671*^9}, {3.9919076541679163`*^9, 3.991907674988295*^9}, 
-   3.99190775217782*^9},
- CellLabel->"Out[8]=",ExpressionUUID->"bb83496d-ae6f-4ad0-9102-610555beb781"]
+   3.99190775217782*^9, 3.991929397213524*^9},
+ CellLabel->
+  "Out[193]=",ExpressionUUID->"33fe3876-43a2-49b8-a1ce-506ffb216f32"]
 }, Open  ]],
 
 Cell["\<\
@@ -528,7 +853,8 @@ Cell[BoxData[
    3.9919003639328003`*^9}, {3.9919008223251123`*^9, 3.99190083116324*^9}, {
    3.991900880209474*^9, 3.991900893135314*^9}, {3.991900985261695*^9, 
    3.991901187986381*^9}, {3.991901226861702*^9, 3.991901235486331*^9}},
- CellLabel->"In[9]:=",ExpressionUUID->"a0743bf5-ba98-4244-8418-4f6399ec786b"],
+ CellLabel->
+  "In[194]:=",ExpressionUUID->"a0743bf5-ba98-4244-8418-4f6399ec786b"],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`dTail$$ = Dynamic[
@@ -564,8 +890,8 @@ $CellContext`hTail}}],
             Line[{{0, $CellContext`hHead}, {-$CellContext`dHead, \
 $CellContext`hHead}}]}, $CellContext`thetaLean Degree, {0, 0}], StandardForm, 
           Graphics],
-         ImageSizeCache->{{173.2656428579792, 
-          333.4082593223651}, {-11.882997430097106`, 98.55142498038944}}]},
+         ImageSizeCache->{{111.76787011910858`, 
+          358.9434890835713}, {-274.26948360567866`, 98.55142498038947}}]},
        ImageSize->Medium,
        PlotRange->{{-10, 10}, {-1, 10}}]}
     },
@@ -595,8 +921,9 @@ $CellContext`hHead}}]}, $CellContext`thetaLean Degree, {0, 0}], StandardForm,
    3.991901066861166*^9}, {3.991901102749875*^9, 3.9919011882994823`*^9}, 
    3.9919012368441*^9, 3.991902578234501*^9, 3.991907304348126*^9, {
    3.991907576217586*^9, 3.991907594196876*^9}, 3.991907704471849*^9, 
-   3.991907752563507*^9},
- CellLabel->"Out[9]=",ExpressionUUID->"fe30da10-439f-44b4-8c5c-1833a0204b0b"]
+   3.991907752563507*^9, 3.9919293973043756`*^9},
+ CellLabel->
+  "Out[194]=",ExpressionUUID->"60ac8472-64b5-4ee6-bb65-b0e454f0eeb4"]
 }, Open  ]]
 }, Open  ]],
 
@@ -609,13 +936,18 @@ Cell["Model V2 - Self-Balancing Tail with Variable Rotation", "Section",
   3.99190260972873*^9}},ExpressionUUID->"e8a0458b-9a9a-4f2c-b0e2-\
 e43b9f94ed10"],
 
-Cell["\<\
-Our model now works, however it is inaccurate to any \
-animal\[CloseCurlyQuote]s behavior in nature. An animal cannot grow or shrink \
-its tail in real-time. Instead, to counterbalance its mass, it will change \
-the angle of its tail. To achieve this, we need to adjust our model and \
-define a new constant for the angle of the tail, \[Theta]_dynamic.\
-\>", "Text",
+Cell[TextData[{
+ "Our model now works, however it is inaccurate to any animal\
+\[CloseCurlyQuote]s behavior in nature. An animal cannot grow or shrink its \
+tail in real-time. Instead, to counterbalance its mass, it will change the \
+angle of its tail. To achieve this, we need to adjust our model and define a \
+new constant for the angle of the tail, ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "dynamic"], TraditionalForm]],ExpressionUUID->
+  "4247fcf8-d8b2-49fc-bb69-20ac98409d74"],
+ "."
+}], "Text",
  CellChangeTimes->{{3.9293546184036617`*^9, 3.9293546199188967`*^9}, {
    3.991843023893482*^9, 3.991843098671399*^9}, {3.991843141651308*^9, 
    3.991843153204752*^9}, {3.9918432145448112`*^9, 3.991843314639442*^9}, {
@@ -632,9 +964,148 @@ define a new constant for the angle of the tail, \[Theta]_dynamic.\
    3.991901558521984*^9}, {3.991901612081134*^9, 3.991901873321487*^9}, {
    3.991901966594462*^9, 3.991902031905037*^9}, {3.991902066001555*^9, 
    3.991902119420312*^9}, {3.991902164200292*^9, 3.9919022705054607`*^9}, {
-   3.9919026130265217`*^9, 
-   3.991902717309389*^9}},ExpressionUUID->"6f678598-b46d-45ab-81e9-\
-f26a42d88268"]
+   3.9919026130265217`*^9, 3.991902717309389*^9}, {3.9919286260625057`*^9, 
+   3.991928628264051*^9}},ExpressionUUID->"6f678598-b46d-45ab-81e9-\
+f26a42d88268"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"torqueOnPivot", "[", 
+   RowBox[{"mass_", ",", "p1_", ",", "p2_", ",", "gravity_"}], "]"}], ":=", 
+  " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "centerOfMass", ",", "xDist", ",", "yDist", ",", "thetaTail", ",", 
+      "radius"}], "}"}], ",", "\n", "\t", 
+    RowBox[{
+     RowBox[{"centerOfMass", " ", "=", " ", 
+      RowBox[{"Midpoint", "[", 
+       RowBox[{"{", 
+        RowBox[{"p1", ",", "p2"}], "}"}], "]"}]}], ";", "\t", "\n", "\t", 
+     RowBox[{"thetaTail", " ", "=", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"ArcTan", "[", 
+         RowBox[{
+          RowBox[{"centerOfMass", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], ",", 
+          RowBox[{"centerOfMass", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], "]"}], "/", "Degree"}], "//", 
+       "FullSimplify"}]}], ";", "\n", "\t", 
+     RowBox[{"radius", " ", "=", " ", 
+      RowBox[{"Sqrt", "[", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"centerOfMass", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "^", "2"}], ")"}], "+", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"centerOfMass", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "^", "2"}], ")"}]}], "]"}]}], ";", 
+     "\n", "\t", 
+     RowBox[{"(*", 
+      RowBox[{"Return", " ", "torque", " ", "now"}], "*)"}], "\n", "\t", 
+     RowBox[{"mass", "*", "gravity", "*", "radius", "*", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"thetaTail", " ", "Degree"}], "]"}]}]}]}], "\n", 
+   "]"}]}]], "Code",
+ CellChangeTimes->{3.9919293755836906`*^9},
+ CellLabel->
+  "In[207]:=",ExpressionUUID->"88a28632-a137-4a7e-b31b-0c48ac224fa5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", " ", "=", " ", "9.81"}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"mHead", " ", "=", " ", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"dHead", " ", "=", " ", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"hHead", " ", "=", " ", "5"}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"mTail", " ", "=", " ", "2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"hTail", " ", "=", " ", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"dTailConst", " ", "=", " ", "3"}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"thetaLean", " ", "=", " ", "67"}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"p1", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "hTail"}], "*", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"thetaLean", " ", "Degree"}], "]"}]}], ",", 
+     RowBox[{"hTail", "*", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"thetaLean", " ", "Degree"}], "]"}]}]}], "}"}]}], ";"}], "\n", 
+
+ RowBox[{
+  RowBox[{
+   RowBox[{"p2", " ", "=", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"p1", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], " ", "+", " ", 
+       RowBox[{"dTailConst", "*", 
+        RowBox[{"Cos", "[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"180", "-", "thetaLean", "-", "thetaAdj"}], ")"}], " ", 
+          "Degree"}], "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"p1", "[", 
+        RowBox[{"[", "2", "]"}], "]"}], " ", "+", " ", 
+       RowBox[{"dTailConst", "*", 
+        RowBox[{"Sin", "[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"180", "-", "thetaLean", "-", "thetaAdj"}], ")"}], " ", 
+          "Degree"}], "]"}]}]}]}], "}"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{"NSolve", "[", "\n", "\t", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"torqueOnPivot", "[", 
+      RowBox[{"mTail", ",", "p1", ",", "p2", ",", "9.81"}], "]"}], "==", "\n",
+      "\t", 
+     RowBox[{
+      RowBox[{"mHead", "*", "dHead", "*", 
+       RowBox[{"Cos", "[", 
+        RowBox[{"thetaLean", " ", "Degree"}], "]"}]}], "+", 
+      RowBox[{"hHead", "*", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"thetaLean", " ", "Degree"}], "]"}]}]}]}], "&&", "\n", "\t", 
+    RowBox[{"thetaAdj", " ", "\[Element]", " ", 
+     RowBox[{"Interval", "[", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "90"}], "}"}], "]"}]}]}], ",", "\n", "\t", 
+   "thetaAdj"}], "\n", "]"}]}], "Code",
+ CellChangeTimes->{3.991929384204686*^9},
+ CellLabel->
+  "In[196]:=",ExpressionUUID->"2c33ceb3-e688-437c-8ba8-b1bd5bb1b7e9"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"thetaAdj", "\[Rule]", 
+    RowBox[{"{", "74.56698352217293`", "}"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.9919293974429207`*^9},
+ CellLabel->
+  "Out[206]=",ExpressionUUID->"8c8f33d3-f37c-4882-a046-8a30c9b4f28b"]
+}, Open  ]]
 }, Open  ]]
 },
 WindowSize->{1258, 936},
@@ -657,22 +1128,27 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[576, 22, 295, 4, 82, "Section",ExpressionUUID->"067356c3-28ca-4144-be02-7957e03610f3"],
-Cell[874, 28, 11562, 264, 2182, "Text",ExpressionUUID->"9b79198e-7897-462b-8630-68f1f3d31553"],
-Cell[12439, 294, 1321, 35, 275, "Code",ExpressionUUID->"8b316891-cc46-4475-8f26-493f8b82e012"],
-Cell[13763, 331, 411, 8, 69, "Text",ExpressionUUID->"b4eb0987-774e-46ca-a39b-6c88bb75d9de"],
+Cell[874, 28, 20048, 586, 2209, "Text",ExpressionUUID->"9b79198e-7897-462b-8630-68f1f3d31553"],
+Cell[20925, 616, 1325, 36, 275, "Code",ExpressionUUID->"8b316891-cc46-4475-8f26-493f8b82e012"],
+Cell[22253, 654, 411, 8, 69, "Text",ExpressionUUID->"b4eb0987-774e-46ca-a39b-6c88bb75d9de"],
 Cell[CellGroupData[{
-Cell[14199, 343, 1062, 30, 110, "Code",ExpressionUUID->"4eeea633-52f6-439f-94ba-b07cf20edf7f"],
-Cell[15264, 375, 591, 11, 41, "Output",ExpressionUUID->"bb83496d-ae6f-4ad0-9102-610555beb781"]
+Cell[22689, 666, 1067, 31, 110, "Code",ExpressionUUID->"4eeea633-52f6-439f-94ba-b07cf20edf7f"],
+Cell[23759, 699, 618, 12, 41, "Output",ExpressionUUID->"33fe3876-43a2-49b8-a1ce-506ffb216f32"]
 }, Open  ]],
-Cell[15870, 389, 664, 12, 124, "Text",ExpressionUUID->"6fc34f11-1b3e-4bc2-9017-3c666fb52d40"],
+Cell[24392, 714, 664, 12, 124, "Text",ExpressionUUID->"6fc34f11-1b3e-4bc2-9017-3c666fb52d40"],
 Cell[CellGroupData[{
-Cell[16559, 405, 5505, 125, 346, "Code",ExpressionUUID->"a0743bf5-ba98-4244-8418-4f6399ec786b"],
-Cell[22067, 532, 3291, 66, 350, "Output",ExpressionUUID->"fe30da10-439f-44b4-8c5c-1833a0204b0b"]
+Cell[25081, 730, 5510, 126, 346, "Code",ExpressionUUID->"a0743bf5-ba98-4244-8418-4f6399ec786b"],
+Cell[30594, 858, 3322, 67, 350, "Output",ExpressionUUID->"60ac8472-64b5-4ee6-bb65-b0e454f0eeb4"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[25407, 604, 345, 5, 82, "Section",ExpressionUUID->"e8a0458b-9a9a-4f2c-b0e2-e43b9f94ed10"],
-Cell[25755, 611, 1666, 25, 96, "Text",ExpressionUUID->"6f678598-b46d-45ab-81e9-f26a42d88268"]
+Cell[33965, 931, 345, 5, 82, "Section",ExpressionUUID->"e8a0458b-9a9a-4f2c-b0e2-e43b9f94ed10"],
+Cell[34313, 938, 1854, 30, 97, "Text",ExpressionUUID->"6f678598-b46d-45ab-81e9-f26a42d88268"],
+Cell[36170, 970, 1686, 46, 205, "Code",ExpressionUUID->"88a28632-a137-4a7e-b31b-0c48ac224fa5"],
+Cell[CellGroupData[{
+Cell[37881, 1020, 2539, 77, 535, "Code",ExpressionUUID->"2c33ceb3-e688-437c-8ba8-b1bd5bb1b7e9"],
+Cell[40423, 1099, 279, 7, 41, "Output",ExpressionUUID->"8c8f33d3-f37c-4882-a046-8a30c9b4f28b"]
+}, Open  ]]
 }, Open  ]]
 }
 ]
