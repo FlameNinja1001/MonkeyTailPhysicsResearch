@@ -1,0 +1,436 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 15.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     17483,        428]
+NotebookOptionsPosition[     16214,        397]
+NotebookOutlinePosition[     16636,        414]
+CellTagsIndexPosition[     16593,        411]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Model V1 - Self-Balancing Tail with Variable Length", "Section",
+ CellChangeTimes->{{3.929354612578005*^9, 3.929354616192994*^9}, {
+  3.929355210549653*^9, 3.9293552190879917`*^9}, {3.9918429510719347`*^9, 
+  3.991842958992612*^9}},ExpressionUUID->"067356c3-28ca-4144-be02-\
+7957e03610f3"],
+
+Cell["\<\
+Before changing the angle of the tail or adding more joints, we need to \
+understand how balance works. In physics, balance is achieved by having a net \
+torque of zero in our system. In this case, our system is defined as the \
+following: with a center of mass for the tail offset by a distance and a \
+center of mass for the head offset by a distance and height. For all \
+calculations, we will use SI units.
+
+From this setup, we must derive an equation that can be used. In this setup, \
+the six main variables are:
+m_head - the mass of the head.
+d_head - the horizontal distance from the point mass of the head to the body.
+h_head - the vertical distance from the point mass of the head to the body.
+
+m_tail - the mass of the head.
+d_tail - the horizontal distance from the point mass of the head to the body. \
+It\[CloseCurlyQuote]s important to note that the center of mass is this value \
+divided by two as it\[CloseCurlyQuote]s not a point mass.
+h_tail - the vertical distance from the point mass of the head to the body.
+
+However, our monkey will not always be standing. Thus, we need to factor in a \
+7th variable, \[Theta]_head. In our diagram, \[Theta]_head looks like this:
+
+
+With the variables setup, we can begin calculations. Because there are only \
+two masses in the system, the head and the tail, the torque equation looks \
+like this: \|01d70f_head = \|01d70f_tail
+Substituting in the equation that torque is \|01d70f = F*r*sin(\[Theta]), we \
+can calculate our radius (r) as this:
+r_tail = sqrt((d_tail/2)^2+h_tail^2)
+r_head = sqrt(d_head^2+h_head^2)
+
+Calculating 
+
+If we changed \[Theta]_tail, the system would just fall. To accommodate for \
+this, we must make one or more of the six variables unknown such that the \
+model can automatically adjust it to keep the torques in equilibrium. In this \
+example, we will solve for d_tail as our unknown variable.\
+\>", "Text",
+ CellChangeTimes->{{3.9293546184036617`*^9, 3.9293546199188967`*^9}, {
+   3.991843023893482*^9, 3.991843098671399*^9}, {3.991843141651308*^9, 
+   3.991843153204752*^9}, {3.9918432145448112`*^9, 3.991843314639442*^9}, {
+   3.991843367531785*^9, 3.991843482849601*^9}, {3.991843529523225*^9, 
+   3.991843563288316*^9}, {3.99184359410602*^9, 3.9918436278691387`*^9}, {
+   3.9918436914439497`*^9, 3.991843723147058*^9}, {3.991843789397196*^9, 
+   3.9918438381344337`*^9}, {3.99184392692651*^9, 3.991844022786091*^9}, {
+   3.991844093496125*^9, 3.9918441019339437`*^9}, {3.991844140124487*^9, 
+   3.991844288216073*^9}, {3.991844434010304*^9, 3.991844463089705*^9}, 
+   3.991844536742257*^9, {3.991844571327832*^9, 3.991844681795814*^9}, {
+   3.991844719772691*^9, 3.9918447236166487`*^9}, {3.99184475520887*^9, 
+   3.991844812664764*^9}},ExpressionUUID->"9b79198e-7897-462b-8630-\
+68f1f3d31553"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", " ", "=", " ", "9.81"}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"m", "/", "s"}], "*)"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"mHead", " ", "=", " ", "1"}], ";"}], " ", 
+  RowBox[{"(*", "kg", "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"dHead", " ", "=", " ", "1"}], ";"}], " ", 
+  RowBox[{"(*", "m", "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"hHead", " ", "=", " ", "5"}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"mTail", " ", "=", " ", "1"}], ";"}], " ", 
+  RowBox[{"(*", "kg", "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"hTail", " ", "=", " ", "1"}], ";"}], " ", 
+  RowBox[{"(*", "m", "*)"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"thetaLean", " ", "=", " ", "15"}], ";"}], " ", 
+  RowBox[{"(*", "degrees", "*)"}]}]}], "Code",
+ CellChangeTimes->{{3.991815092339835*^9, 3.991815096115572*^9}, {
+  3.9918152291416388`*^9, 3.991815314520664*^9}, {3.991838032309401*^9, 
+  3.9918380970051413`*^9}, {3.991838130860958*^9, 3.991838183760466*^9}, {
+  3.9918382336683683`*^9, 3.991838234485955*^9}, {3.991838564647468*^9, 
+  3.99183857774774*^9}, {3.991839635590024*^9, 3.991839652727968*^9}, {
+  3.991839684969195*^9, 3.991839685059473*^9}},
+ CellLabel->
+  "In[272]:=",ExpressionUUID->"8b316891-cc46-4475-8f26-493f8b82e012"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NSolve", "[", "\n", "\t", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"mHead", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"dHead", "*", 
+        RowBox[{"Cos", "[", 
+         RowBox[{"thetaLean", " ", "Degree"}], "]"}]}], "+", 
+       RowBox[{"hHead", "*", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"thetaLean", " ", "Degree"}], "]"}]}]}], ")"}]}], "==", 
+    RowBox[{"mTail", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"dTail", "*", 
+           RowBox[{"Cos", "[", 
+            RowBox[{"thetaLean", " ", "Degree"}], "]"}]}], ")"}], "/", "2"}], 
+        ")"}], "-", 
+       RowBox[{"hTail", "*", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"thetaLean", " ", "Degree"}], "]"}]}]}], ")"}]}]}], ",", 
+   "\n", "\t", "dTail"}], "]"}]], "Code",
+ CellChangeTimes->{3.991840322657197*^9},
+ CellLabel->
+  "In[279]:=",ExpressionUUID->"4eeea633-52f6-439f-94ba-b07cf20edf7f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"dTail", "\[Rule]", "5.215390309173472`"}], "}"}], "}"}]], "Output",\
+
+ CellChangeTimes->{{3.991840497576198*^9, 3.991840502418158*^9}, 
+   3.991841178107341*^9, {3.991841314979292*^9, 3.991841334582686*^9}, 
+   3.9918416813661757`*^9},
+ CellLabel->
+  "Out[279]=",ExpressionUUID->"f78a9777-9b9c-48df-a607-0ca055bdb82d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Values", "[", 
+    RowBox[{"NSolve", "[", "\n", "\t", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"mHead", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"dHead", "*", 
+           RowBox[{"Cos", "[", 
+            RowBox[{"thetaLean", " ", "Degree"}], "]"}]}], "+", 
+          RowBox[{"hHead", "*", 
+           RowBox[{"Sin", "[", 
+            RowBox[{"thetaLean", " ", "Degree"}], "]"}]}]}], ")"}]}], "==", 
+       RowBox[{"mTail", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"dTail", "*", 
+              RowBox[{"Cos", "[", 
+               RowBox[{"thetaLean", " ", "Degree"}], "]"}]}], ")"}], "/", 
+            "2"}], ")"}], "-", 
+          RowBox[{"hTail", "*", 
+           RowBox[{"Sin", "[", 
+            RowBox[{"thetaLean", " ", "Degree"}], "]"}]}]}], ")"}]}]}], ",", 
+      "\n", "\t", "dTail"}], "]"}], "]"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "[", 
+  RowBox[{"[", "1", "]"}], "]"}]], "Code",
+ CellChangeTimes->{{3.991838115619681*^9, 3.99183812960927*^9}, {
+   3.991838172402542*^9, 3.991838339959248*^9}, {3.9918383773635073`*^9, 
+   3.9918383847972727`*^9}, {3.9918402156363*^9, 3.991840231793659*^9}, 
+   3.991840579178224*^9, {3.99184120482204*^9, 3.99184121605447*^9}},
+ CellLabel->
+  "In[280]:=",ExpressionUUID->"84cefd99-a401-402c-b314-a94fed2c9f46"],
+
+Cell[BoxData["5.215390309173472`"], "Output",
+ CellChangeTimes->{{3.991838225567232*^9, 3.991838240649005*^9}, 
+   3.991838314436908*^9, 3.9918383526157722`*^9, 3.991838385149054*^9, {
+   3.991838575322651*^9, 3.991838583855022*^9}, 3.9918387308861628`*^9, {
+   3.9918396386361313`*^9, 3.99183965402542*^9}, 3.9918396863008347`*^9, 
+   3.991839915106886*^9, {3.991840036485771*^9, 3.991840042067956*^9}, {
+   3.991840213924983*^9, 3.99184022770153*^9}, 3.991840278627355*^9, {
+   3.9918404986306953`*^9, 3.991840503149498*^9}, 3.991840582270055*^9, 
+   3.991841179291966*^9, {3.99184121124758*^9, 3.991841216485224*^9}, {
+   3.991841315781485*^9, 3.991841335242496*^9}, 3.991841682079276*^9},
+ CellLabel->
+  "Out[280]=",ExpressionUUID->"b16b3f0c-cc18-4e52-b23e-982e9326757a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DynamicModule", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"dTail", "=", "1"}], "}"}], ",", "\n", "\t", 
+   RowBox[{"Column", "[", 
+    RowBox[{"{", "\n", "\t\t", 
+     RowBox[{
+      RowBox[{"Slider", "[", 
+       RowBox[{
+        RowBox[{"Dynamic", "[", "thetaLean", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "89.9"}], ",", "89.9"}], "}"}]}], "]"}], ",", "\n", 
+      "\t\t", 
+      RowBox[{"Dynamic", "[", "thetaLean", "]"}], ",", "\n", "\t\t", 
+      RowBox[{"dTail", "=", 
+       RowBox[{"Dynamic", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Values", "[", 
+           RowBox[{"NSolve", "[", "\n", "\t", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"mHead", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"dHead", "*", 
+                  RowBox[{"Cos", "[", 
+                   RowBox[{"thetaLean", " ", "Degree"}], "]"}]}], "+", 
+                 RowBox[{"hHead", "*", 
+                  RowBox[{"Sin", "[", 
+                   RowBox[{"thetaLean", " ", "Degree"}], "]"}]}]}], ")"}]}], "==", 
+              RowBox[{"mTail", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{"dTail", "*", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"thetaLean", " ", "Degree"}], "]"}]}], ")"}], "/",
+                    "2"}], ")"}], "-", 
+                 RowBox[{"hTail", "*", 
+                  RowBox[{"Sin", "[", 
+                   RowBox[{"thetaLean", " ", "Degree"}], "]"}]}]}], ")"}]}]}],
+              ",", "\n", "\t", "dTail"}], "]"}], "]"}], "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ",", "\n", "\t\t", 
+      RowBox[{"Graphics", "[", 
+       RowBox[{"{", 
+        RowBox[{"Blue", ",", "\n", "\t\t\t", 
+         RowBox[{"Dynamic", "[", 
+          RowBox[{"Rotate", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "0"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "hHead"}], "}"}]}], "}"}], "]"}], ",", 
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "hTail"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"dTail", ",", "hTail"}], "}"}]}], "}"}], "]"}], ",", 
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "hHead"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"-", "dHead"}], ",", "hHead"}], "}"}]}], "}"}], 
+               "]"}]}], "}"}], ",", 
+            RowBox[{"thetaLean", " ", "Degree"}]}], "]"}], "]"}]}], "\n", 
+        "\t\t", "}"}], "]"}]}], "\n", "\t", "}"}], "]"}]}], "\n", 
+  "]"}]], "Code",
+ CellChangeTimes->{{3.991838446013524*^9, 3.991838545682181*^9}, 
+   3.991838727377379*^9, {3.991838876376142*^9, 3.9918388972509413`*^9}, {
+   3.991838932407371*^9, 3.991838964416181*^9}, {3.991839155571185*^9, 
+   3.9918391823625317`*^9}, {3.991839225573764*^9, 3.991839229802383*^9}, {
+   3.991839269053409*^9, 3.991839269069995*^9}, {3.9918394414811907`*^9, 
+   3.991839486664261*^9}, {3.9918395484526854`*^9, 3.991839632482069*^9}, {
+   3.9918398226142178`*^9, 3.991839905779023*^9}, {3.991839980595345*^9, 
+   3.991840018340611*^9}, {3.99184020699608*^9, 3.991840289494459*^9}, {
+   3.9918404083929167`*^9, 3.991840425557623*^9}, 3.991840633644277*^9, {
+   3.991840874336154*^9, 3.991840898157205*^9}, {3.99184093247017*^9, 
+   3.9918409611334877`*^9}, {3.9918410583209753`*^9, 
+   3.9918410983222513`*^9}, {3.991841152556809*^9, 3.9918412982609797`*^9}, {
+   3.9918413644098454`*^9, 3.9918415355616426`*^9}, {3.99184167657089*^9, 
+   3.991841694734602*^9}, {3.9918417412980003`*^9, 3.991841750698338*^9}, {
+   3.9918419330020227`*^9, 3.991841972498892*^9}, {3.991842008355885*^9, 
+   3.991842011007166*^9}},
+ CellLabel->
+  "In[299]:=",ExpressionUUID->"a0743bf5-ba98-4244-8418-4f6399ec786b"],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`dTail$$ = Dynamic[
+   Part[
+    Part[
+     Values[
+      NSolve[$CellContext`mHead ($CellContext`dHead 
+          Cos[$CellContext`thetaLean Degree] + $CellContext`hHead 
+          Sin[$CellContext`thetaLean 
+            Degree]) == $CellContext`mTail (($CellContext`dTail$$ 
+           Cos[$CellContext`thetaLean Degree])/2 - $CellContext`hTail 
+         Sin[$CellContext`thetaLean Degree]), $CellContext`dTail$$]], 1], 
+    1]]}, 
+  TagBox[GridBox[{
+     {
+      SliderBox[Dynamic[$CellContext`thetaLean], {-89.9, 89.9}]},
+     {
+      DynamicBox[ToBoxes[$CellContext`thetaLean, StandardForm],
+       ImageSizeCache->{30.2265869140625, {0.195, 10.3675}}]},
+     {
+      DynamicBox[ToBoxes[
+        Part[
+         Part[
+          Values[
+           
+           NSolve[$CellContext`mHead ($CellContext`dHead 
+               Cos[$CellContext`thetaLean Degree] + $CellContext`hHead 
+               Sin[$CellContext`thetaLean 
+                 Degree]) == $CellContext`mTail (($CellContext`dTail$$ 
+                Cos[$CellContext`thetaLean Degree])/2 - $CellContext`hTail 
+              Sin[$CellContext`thetaLean Degree]), $CellContext`dTail$$]], 1],
+          1], StandardForm],
+       ImageSizeCache->{68.25, {0.195, 10.5625}}]},
+     {
+      GraphicsBox[
+       {RGBColor[0, 0, 1], 
+        DynamicBox[Typeset`ToBoxes[
+          Rotate[{
+            Line[{{0, 0}, {0, $CellContext`hHead}}], 
+            
+            Line[{{0, $CellContext`hTail}, {$CellContext`dTail$$, \
+$CellContext`hTail}}], 
+            
+            Line[{{0, $CellContext`hHead}, {-$CellContext`dHead, \
+$CellContext`hHead}}]}, $CellContext`thetaLean Degree], StandardForm, 
+          Graphics],
+         ImageSizeCache->{{2.09046656670278, 
+          146.62703559259597`}, {-136.61096593111847`, 
+          128.44604893893091`}}]}]}
+    },
+    DefaultBaseStyle->"Column",
+    GridBoxAlignment->{"Columns" -> {{Left}}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+   "Column"],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{
+  3.9918391826223288`*^9, {3.991839461763317*^9, 3.9918394755960007`*^9}, 
+   3.991839564183132*^9, {3.9918396408038063`*^9, 3.99183965497823*^9}, 
+   3.991839687136403*^9, {3.9918398493701077`*^9, 3.991839857958125*^9}, {
+   3.991839896958323*^9, 3.991839916318705*^9}, {3.991840018953122*^9, 
+   3.99184004272145*^9}, {3.991840204995728*^9, 3.991840209972556*^9}, {
+   3.991840282807171*^9, 3.99184029189583*^9}, {3.991840503815716*^9, 
+   3.991840505098288*^9}, {3.991840583040119*^9, 3.9918405837904043`*^9}, 
+   3.9918406354019957`*^9, {3.9918408777774897`*^9, 3.991840898714718*^9}, {
+   3.991840939285261*^9, 3.991840962473411*^9}, 3.991841064387373*^9, 
+   3.9918411000712557`*^9, {3.991841139921996*^9, 3.991841180015296*^9}, {
+   3.99184122018755*^9, 3.99184129868394*^9}, 3.991841403732733*^9, {
+   3.991841464400935*^9, 3.991841478491699*^9}, {3.991841514590206*^9, 
+   3.991841536012651*^9}, 3.991841607575056*^9, {3.9918416785412283`*^9, 
+   3.991841695203766*^9}, 3.99184203998573*^9},
+ CellLabel->
+  "Out[299]=",ExpressionUUID->"aa4cdac3-39c3-4e8e-810e-24a725b0dabb"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1258, 936},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"15.0 for Mac OS X x86 (64-bit) (May 19, 2026)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"94990ae8-e8a6-4117-b3e3-9e371f217dee"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 295, 4, 82, "Section",ExpressionUUID->"067356c3-28ca-4144-be02-7957e03610f3"],
+Cell[874, 28, 2795, 51, 752, "Text",ExpressionUUID->"9b79198e-7897-462b-8630-68f1f3d31553"],
+Cell[3672, 81, 1325, 36, 275, "Code",ExpressionUUID->"8b316891-cc46-4475-8f26-493f8b82e012"],
+Cell[CellGroupData[{
+Cell[5022, 121, 966, 29, 110, "Code",ExpressionUUID->"4eeea633-52f6-439f-94ba-b07cf20edf7f"],
+Cell[5991, 152, 375, 9, 41, "Output",ExpressionUUID->"f78a9777-9b9c-48df-a607-0ca055bdb82d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6403, 166, 1422, 37, 110, "Code",ExpressionUUID->"84cefd99-a401-402c-b314-a94fed2c9f46"],
+Cell[7828, 205, 775, 11, 41, "Output",ExpressionUUID->"b16b3f0c-cc18-4e52-b23e-982e9326757a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8640, 221, 4368, 100, 323, "Code",ExpressionUUID->"a0743bf5-ba98-4244-8418-4f6399ec786b"],
+Cell[13011, 323, 3175, 70, 373, "Output",ExpressionUUID->"aa4cdac3-39c3-4e8e-810e-24a725b0dabb"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
