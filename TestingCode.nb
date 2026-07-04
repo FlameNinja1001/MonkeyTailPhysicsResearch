@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[     30429,        788]
-NotebookOptionsPosition[     29189,        758]
-NotebookOutlinePosition[     29582,        774]
-CellTagsIndexPosition[     29539,        771]
+NotebookDataLength[     55980,       1388]
+NotebookOptionsPosition[     54508,       1354]
+NotebookOutlinePosition[     54901,       1370]
+CellTagsIndexPosition[     54858,       1367]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -30,7 +30,7 @@ Cell[BoxData[
       RowBox[{"[", "1", "]"}], "]"}]}]}], "\n", "]"}]}]], "Code",
  CellChangeTimes->{3.992122883262644*^9},
  CellLabel->
-  "In[121]:=",ExpressionUUID->"1c410b71-c4a2-423c-b6b0-8f6c337e00f9"],
+  "In[328]:=",ExpressionUUID->"1c410b71-c4a2-423c-b6b0-8f6c337e00f9"],
 
 Cell[CellGroupData[{
 
@@ -170,7 +170,7 @@ Cell[BoxData[{
    3.992124292836784*^9, 3.9921243098410177`*^9}, {3.992124348983179*^9, 
    3.992124389221917*^9}, {3.9921244292781878`*^9, 3.992124432291361*^9}},
  CellLabel->
-  "In[122]:=",ExpressionUUID->"5651e7da-1071-4cec-8daa-972daae3aec1"],
+  "In[329]:=",ExpressionUUID->"5651e7da-1071-4cec-8daa-972daae3aec1"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -186,9 +186,10 @@ Cell[BoxData[
    3.9921237857604237`*^9}, 3.992123840553335*^9, 3.992123960131742*^9, {
    3.992124114776545*^9, 3.992124126029355*^9}, {3.992124240421627*^9, 
    3.992124319882761*^9}, {3.992124350274756*^9, 3.992124389696046*^9}, {
-   3.992124429624321*^9, 3.99212443255241*^9}, 3.992125446712253*^9},
+   3.992124429624321*^9, 3.99212443255241*^9}, 3.992125446712253*^9, {
+   3.992161941533142*^9, 3.992161968085639*^9}},
  CellLabel->
-  "Out[137]=",ExpressionUUID->"d77e9b61-d5c3-493a-9533-2225edc67ffb"]
+  "Out[344]=",ExpressionUUID->"dca38890-9861-4dce-b521-054381ec2f88"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -198,7 +199,7 @@ Cell[BoxData[
   RowBox[{"mHead", ",", "p1"}], "]"}]], "Code",
  CellChangeTimes->{3.992122624189056*^9},
  CellLabel->
-  "In[138]:=",ExpressionUUID->"2490fd36-87da-458e-b84c-518dc51391c7"],
+  "In[345]:=",ExpressionUUID->"2490fd36-87da-458e-b84c-518dc51391c7"],
 
 Cell[BoxData[
  RowBox[{
@@ -210,9 +211,10 @@ Cell[BoxData[
     RowBox[{"10", " ", "\[Degree]"}], "]"}]}]}]], "Output",
  CellChangeTimes->{
   3.9921226245633*^9, {3.9921228962268143`*^9, 3.9921228968494463`*^9}, 
-   3.9921231876794643`*^9, 3.9921237855803022`*^9, 3.992125446775281*^9},
+   3.9921231876794643`*^9, 3.9921237855803022`*^9, 3.992125446775281*^9, {
+   3.992161941609655*^9, 3.992161968208371*^9}},
  CellLabel->
-  "Out[138]=",ExpressionUUID->"bb650afa-58d0-4b4e-b236-8da2c75ee3c1"]
+  "Out[345]=",ExpressionUUID->"594713ff-f800-4cfb-91ef-9a860e80fa16"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -223,7 +225,7 @@ Cell[BoxData[
    RowBox[{"mTail", ",", "p4"}], "]"}]}]], "Code",
  CellChangeTimes->{3.9921226289891443`*^9},
  CellLabel->
-  "In[139]:=",ExpressionUUID->"55d3b3fc-d1c5-445b-ae7f-d3513798e32a"],
+  "In[346]:=",ExpressionUUID->"55d3b3fc-d1c5-445b-ae7f-d3513798e32a"],
 
 Cell[BoxData[
  RowBox[{
@@ -239,9 +241,10 @@ Cell[BoxData[
    RowBox[{"10", " ", "\[Degree]"}], "]"}]}]], "Output",
  CellChangeTimes->{
   3.992122629304637*^9, {3.9921228963107147`*^9, 3.9921228969181957`*^9}, 
-   3.992123187755519*^9, 3.992123785633439*^9, 3.992125446851472*^9},
+   3.992123187755519*^9, 3.992123785633439*^9, 3.992125446851472*^9, {
+   3.992161941725396*^9, 3.9921619682722797`*^9}},
  CellLabel->
-  "Out[139]=",ExpressionUUID->"eafec734-5b97-405e-bcdf-d5665379c92b"]
+  "Out[346]=",ExpressionUUID->"a5332552-83ac-4a4b-8094-4b58ef59921f"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -602,7 +605,7 @@ Cell[BoxData[
    3.9921258188510847`*^9, 3.992125825167988*^9}, {3.9921258557161818`*^9, 
    3.992125890929791*^9}},
  CellLabel->
-  "In[145]:=",ExpressionUUID->"39406341-4eb8-4908-8dac-1bffb998e12c"],
+  "In[347]:=",ExpressionUUID->"39406341-4eb8-4908-8dac-1bffb998e12c"],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`p1$$ = {-Cos[10 Degree] - 5 Sin[10 Degree], 
@@ -751,9 +754,602 @@ $CellContext`p4$$], 0 <= $CellContext`thetaAdj <=
   DynamicModuleValues:>{}]], "Output",
  CellChangeTimes->{{3.992125446945611*^9, 3.992125447098612*^9}, {
    3.992125599111807*^9, 3.9921256029480467`*^9}, 3.9921258926169786`*^9, 
-   3.992125936164731*^9},
+   3.992125936164731*^9, {3.992161941834024*^9, 3.9921619683759527`*^9}},
  CellLabel->
-  "Out[145]=",ExpressionUUID->"8401b7dd-dc33-4457-a6d7-45edff4903c6"]
+  "Out[347]=",ExpressionUUID->"4d98b4a9-ec07-447b-b93c-294f45800b6e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DynamicModule", "[", 
+  RowBox[{
+   RowBox[{"{", "\n", "  \t\t", 
+    RowBox[{
+     RowBox[{"p1", " ", "=", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "0"}], "}"}]}], ",", "\n", "  \t\t", 
+     RowBox[{"p2", " ", "=", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "0"}], "}"}]}], ",", "\n", "  \t\t", 
+     RowBox[{"p3", " ", "=", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "0"}], "}"}]}], ",", "\n", "  \t\t", 
+     RowBox[{"p4", " ", "=", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "0"}], "}"}]}], ",", "\n", "  \t\t", 
+     RowBox[{"p5", " ", "=", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "0"}], "}"}]}], ",", "\n", "  \t\t", 
+     RowBox[{"p6", " ", "=", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "0"}], "}"}]}], ",", "\n", "  \t\t", 
+     RowBox[{"thetaAdjValue", " ", "=", " ", "0"}], ",", "\n", "  \t\t", 
+     RowBox[{"p5Visual", " ", "=", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "0"}], "}"}]}], ",", " ", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"Due", " ", "to", " ", "memory", " ", "allocation"}], ",", " ", 
+       RowBox[{
+       "we", " ", "need", " ", "seperate", " ", "variables", " ", "for", " ", 
+        "p5", " ", "and", " ", "p4"}], ","}], "*)"}], "\n", "  \t\t", 
+     RowBox[{"p4Visual", " ", "=", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "0"}], "}"}]}]}], "  ", 
+    RowBox[{"(*", 
+     RowBox[{
+     "as", " ", "they", " ", "rely", " ", "on", " ", "the", " ", "unsolved", " ", 
+      RowBox[{"dTail", "."}]}], "*)"}], "\n", "  \t", "}"}], ",", "\n", " \t", 
+   RowBox[{"Column", "[", 
+    RowBox[{"{", "\n", "   \t\t", 
+     RowBox[{
+      RowBox[{"Style", "[", 
+       RowBox[{"\"\<Single-Jointed Monkey Tail Model\>\"", ",", 
+        " ", "\"\<Subtitle\>\"", ",", " ", "Underlined"}], "]"}], ",", "\n", 
+      "   \t\t", 
+      RowBox[{"Row", "[", 
+       RowBox[{"{", "\n", "     \t\t\t", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          
+          RowBox[{"\"\<When the background is \>\"", ",", " ", "Black", ",", 
+           " ", "\"\<Text\>\""}], "]"}], ",", "\n", "     \t\t\t", 
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<red\>\"", ",", " ", "Red", ",", " ", "\"\<Text\>\""}], 
+          "]"}], ",", "\n", "     \t\t\t", 
+         RowBox[{"Style", "[", 
+          
+          RowBox[{"\"\<, the solution is IMPOSSIBLE.\>\"", ",", " ", "Black", 
+           ",", " ", "\"\<Text\>\""}], "]"}]}], "\n", "     \t\t", "}"}], 
+       "]"}], ",", "\n", "   \t\t", 
+      RowBox[{"Row", "[", 
+       RowBox[{"{", "\n", "     \t\t\t", 
+        RowBox[{
+         RowBox[{"Slider", "[", 
+          RowBox[{
+           RowBox[{"Dynamic", "[", "dTailConst", "]"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "10"}], ",", " ", "10"}], "}"}]}], "]"}], ",", "\n",
+          "     \t\t\t", "\"\<\\t\>\"", ",", "\n", "     \t\t\t", 
+         RowBox[{"Slider", "[", 
+          RowBox[{
+           RowBox[{"Dynamic", "[", "dHead", "]"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "10"}], ",", " ", "10"}], "}"}]}], "]"}]}], "\n", 
+        "     \t\t", "}"}], "]"}], ",", "\n", "   \t\t", 
+      RowBox[{"Dynamic", "[", "\n", "    \t\t\t", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", "\n", "      \t\t\t\t", 
+         RowBox[{
+          RowBox[{"Pane", "[", 
+           RowBox[{
+            RowBox[{"StringJoin", "[", 
+             RowBox[{"\"\<d_tail = \>\"", ",", " ", 
+              RowBox[{"ToString", "[", "dTailConst", "]"}]}], "]"}], ",", " ", 
+            RowBox[{"ImageSize", " ", "->", " ", "200"}], ",", " ", 
+            RowBox[{"Alignment", " ", "->", " ", "Left"}]}], "]"}], ",", " ", 
+          "\n", "      \t\t\t\t", 
+          RowBox[{"StringJoin", "[", 
+           RowBox[{"\"\<\\td_head = \>\"", ",", " ", 
+            RowBox[{"ToString", "[", "dHead", "]"}]}], "]"}]}], "\n", 
+         "      \t\t\t", "}"}], "]"}], "\n", "    \t\t", "]"}], ",", "\n", 
+      "   \t\t", 
+      RowBox[{"Row", "[", 
+       RowBox[{"{", "\n", "     \t\t\t", 
+        RowBox[{
+         RowBox[{"Slider", "[", 
+          RowBox[{
+           RowBox[{"Dynamic", "[", "hHead", "]"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "10"}], ",", " ", "10"}], "}"}]}], "]"}], ",", "\n",
+          "     \t\t\t", "\"\<\\t\>\"", ",", "\n", "     \t\t\t", 
+         RowBox[{"Slider", "[", 
+          RowBox[{
+           RowBox[{"Dynamic", "[", "hTail", "]"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Dynamic", "[", 
+              RowBox[{"-", "hHead"}], "]"}], ",", " ", 
+             RowBox[{"Dynamic", "[", "hHead", "]"}]}], "}"}]}], "]"}]}], "\n",
+         "     \t\t", "}"}], "]"}], ",", "\n", "   \t\t", 
+      RowBox[{"Dynamic", "[", "\n", "    \t\t\t", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", "\n", "      \t\t\t\t", 
+         RowBox[{
+          RowBox[{"Pane", "[", 
+           RowBox[{
+            RowBox[{"StringJoin", "[", 
+             RowBox[{"\"\<h_head = \>\"", ",", " ", 
+              RowBox[{"ToString", "[", "hHead", "]"}]}], "]"}], ",", " ", 
+            RowBox[{"ImageSize", " ", "->", " ", "200"}], ",", " ", 
+            RowBox[{"Alignment", " ", "->", " ", "Left"}]}], "]"}], ",", " ", 
+          "\n", "      \t\t\t\t", 
+          RowBox[{"StringJoin", "[", 
+           RowBox[{"\"\<\\th_tail = \>\"", ",", " ", 
+            RowBox[{"ToString", "[", "hTail", "]"}]}], "]"}]}], "\n", 
+         "      \t\t\t", "}"}], "]"}], "\n", "    \t\t", "]"}], ",", "\n", 
+      "   \t\t", 
+      RowBox[{"Row", "[", 
+       RowBox[{"{", "\n", "     \t\t\t", 
+        RowBox[{
+         RowBox[{"Slider", "[", 
+          RowBox[{
+           RowBox[{"Dynamic", "[", "mHead", "]"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "10"}], ",", " ", "10"}], "}"}]}], "]"}], ",", "\n",
+          "     \t\t\t", "\"\<\\t\>\"", ",", "\n", "     \t\t\t", 
+         RowBox[{"Slider", "[", 
+          RowBox[{
+           RowBox[{"Dynamic", "[", "mTail", "]"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "10"}], ",", " ", "10"}], "}"}]}], "]"}]}], "\n", 
+        "     \t\t", "}"}], "]"}], ",", "\n", "   \t\t", 
+      RowBox[{"Dynamic", "[", "\n", "    \t\t\t", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", "\n", "      \t\t\t\t", 
+         RowBox[{
+          RowBox[{"Pane", "[", 
+           RowBox[{
+            RowBox[{"StringJoin", "[", 
+             RowBox[{"\"\<m_head = \>\"", ",", " ", 
+              RowBox[{"ToString", "[", "mHead", "]"}]}], "]"}], ",", " ", 
+            RowBox[{"ImageSize", " ", "->", " ", "200"}], ",", " ", 
+            RowBox[{"Alignment", " ", "->", " ", "Left"}]}], "]"}], ",", " ", 
+          "\n", "      \t\t\t\t", 
+          RowBox[{"StringJoin", "[", 
+           RowBox[{"\"\<\\tm_tail = \>\"", ",", " ", 
+            RowBox[{"ToString", "[", "mTail", "]"}]}], "]"}]}], "\n", 
+         "      \t\t\t", "}"}], "]"}], "\n", "    \t\t", "]"}], ",", "\n", 
+      "   \t\t", 
+      RowBox[{"Row", "[", 
+       RowBox[{"{", "\n", "     \t\t\t", 
+        RowBox[{"Slider", "[", 
+         RowBox[{
+          RowBox[{"Dynamic", "[", "thetaLean", "]"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "89.9"}], ",", " ", "89.9"}], "}"}]}], "]"}], "\n", 
+        "     \t\t", "}"}], "]"}], ",", "\n", "   \t\t", 
+      RowBox[{"Dynamic", "[", "\n", "    \t\t\t", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", "\n", "      \t\t\t\t", 
+         RowBox[{
+          RowBox[{"Pane", "[", 
+           RowBox[{
+            RowBox[{"StringJoin", "[", 
+             RowBox[{"\"\<\[Theta]_lean = \>\"", ",", " ", 
+              RowBox[{"ToString", "[", "thetaLean", "]"}]}], "]"}], ",", " ", 
+            
+            RowBox[{"ImageSize", " ", "->", " ", "200"}], ",", " ", 
+            RowBox[{"Alignment", " ", "->", " ", "Left"}]}], "]"}], ",", "\n",
+           "      \t\t\t\t", "\"\<\\t\\t\\t\>\"", ",", " ", "\n", 
+          "      \t\t\t\t", 
+          RowBox[{"Button", "[", 
+           RowBox[{"\"\<Reset Values\>\"", ",", "\n", "       \t\t\t\t\t", 
+            RowBox[{"Module", "[", 
+             RowBox[{
+              RowBox[{"{", "}"}], ",", "\n", "        \t\t\t\t\t\t", 
+              RowBox[{
+               RowBox[{"g", " ", "=", " ", "9.81"}], ";", " ", 
+               RowBox[{"(*", 
+                RowBox[{"m", "/", "s"}], "*)"}], "\n", "        \t", "\n", 
+               "        \t\t\t\t\t\t", 
+               RowBox[{"mHead", " ", "=", " ", "1"}], ";", " ", 
+               RowBox[{"(*", "kg", "*)"}], "\n", "        \t\t\t\t\t\t", 
+               RowBox[{"dHead", " ", "=", " ", "1"}], ";", " ", 
+               RowBox[{"(*", "m", "*)"}], "\n", "        \t\t\t\t\t\t", 
+               RowBox[{"hHead", " ", "=", " ", "5"}], ";", "\n", 
+               "        \t\t\t\t\t\t", "\n", "        \t\t\t\t\t\t", 
+               RowBox[{"mTail", " ", "=", " ", "1"}], ";", " ", 
+               RowBox[{"(*", "kg", "*)"}], "\n", "        \t\t\t\t\t\t", 
+               RowBox[{"hTail", " ", "=", " ", "1"}], ";", " ", 
+               RowBox[{"(*", "m", "*)"}], "\n", "        \t\t\t\t\t\t", 
+               RowBox[{"dTailConst", " ", "=", " ", "5"}], ";", " ", 
+               RowBox[{"(*", "m", "*)"}], "\n", "        \t\t\t\t\t\t", "\n", 
+               "        \t\t\t\t\t\t", 
+               RowBox[{"thetaLean", " ", "=", " ", "10"}], ";"}]}], " ", 
+             RowBox[{"(*", "degrees", "*)"}], "\n", "        \t\t\t\t\t", 
+             "]"}]}], "\n", "       \t\t\t\t", "]"}]}], "\n", "      \t\t\t", 
+         "}"}], "]"}], "\n", "    \t\t", "]"}], ",", "\n", "   \t\t", "\n", 
+      "   \t\t", 
+      RowBox[{"Dynamic", "[", "\n", "    \t\t\t", 
+       RowBox[{
+        RowBox[{"p2", " ", "=", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "hHead"}], "*", 
+            RowBox[{"Sin", "[", 
+             RowBox[{"thetaLean", " ", "Degree"}], "]"}]}], ",", " ", 
+           RowBox[{"hHead", "*", 
+            RowBox[{"Cos", "[", 
+             RowBox[{"thetaLean", " ", "Degree"}], "]"}]}]}], "}"}]}], ";", 
+        "\n", "    \t\t\t", 
+        RowBox[{"p3", " ", "=", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "hTail"}], "*", 
+            RowBox[{"Sin", "[", 
+             RowBox[{"thetaLean", " ", "Degree"}], "]"}]}], ",", " ", 
+           RowBox[{"hTail", "*", 
+            RowBox[{"Cos", "[", 
+             RowBox[{"thetaLean", " ", "Degree"}], "]"}]}]}], "}"}]}], ";", 
+        "\n", "    \t\t\t", 
+        RowBox[{"p1", " ", "=", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"p2", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], " ", "-", " ", 
+            RowBox[{"dHead", "*", 
+             RowBox[{"Cos", "[", 
+              RowBox[{"thetaLean", " ", "Degree"}], "]"}]}]}], ",", " ", 
+           RowBox[{
+            RowBox[{"p2", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], " ", "-", " ", 
+            RowBox[{"dHead", "*", 
+             RowBox[{"Sin", "[", 
+              RowBox[{"thetaLean", " ", "Degree"}], "]"}]}]}]}], "}"}]}], ";",
+         "\n", "    \t\t\t", "\n", "    \t\t\t", 
+        RowBox[{"p5", " ", "=", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"p3", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], " ", "+", " ", 
+            RowBox[{"dTailConst", "*", 
+             RowBox[{"Cos", "[", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"thetaAdj", " ", "-", " ", 
+                 RowBox[{"(", 
+                  RowBox[{"90", " ", "+", " ", "thetaLean"}], ")"}]}], ")"}], 
+               " ", "Degree"}], "]"}]}]}], ",", " ", 
+           RowBox[{
+            RowBox[{"p3", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], " ", "+", " ", 
+            RowBox[{"dTailConst", "*", 
+             RowBox[{"Sin", "[", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"thetaAdj", " ", "-", " ", 
+                 RowBox[{"(", 
+                  RowBox[{"90", " ", "+", " ", "thetaLean"}], ")"}]}], ")"}], 
+               " ", "Degree"}], "]"}]}]}]}], "}"}]}], ";", "\n", "    \t\t\t",
+         "\n", "    \t\t\t", 
+        RowBox[{"p4", " ", "=", " ", 
+         RowBox[{"Midpoint", "[", 
+          RowBox[{"{", 
+           RowBox[{"p3", ",", " ", "p5"}], "}"}], "]"}]}], ";", "\n", 
+        "    \t\t\t", 
+        RowBox[{"thetaAdjValue", " ", "=", " ", 
+         RowBox[{"Last", "@", 
+          RowBox[{"Flatten", "@", 
+           RowBox[{"Values", "@", 
+            RowBox[{"NSolve", "[", "\n", "         \t\t\t\t", 
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{"torqueAtPoint", "[", 
+                 RowBox[{"mHead", ",", " ", "p1"}], "]"}], " ", "==", " ", 
+                RowBox[{"-", 
+                 RowBox[{"torqueAtPoint", "[", 
+                  RowBox[{"mTail", ",", " ", "p4"}], "]"}]}]}], " ", "&&", 
+               " ", 
+               RowBox[{
+               "0", " ", "<=", " ", "thetaAdj", " ", "<=", " ", "180"}]}], ",",
+               "\n", "         \t\t\t", "thetaAdj"}], "]"}]}]}]}]}], ";", 
+        "\n", "    \t\t\t", "\n", "    \t\t\t", 
+        RowBox[{"p5Visual", " ", "=", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"p3", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], " ", "+", " ", 
+            RowBox[{"dTailConst", "*", 
+             RowBox[{"Cos", "[", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"thetaAdjValue", " ", "-", " ", 
+                 RowBox[{"(", 
+                  RowBox[{"90", " ", "+", " ", "thetaLean"}], ")"}]}], ")"}], 
+               " ", "Degree"}], "]"}]}]}], ",", " ", 
+           RowBox[{
+            RowBox[{"p3", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], " ", "+", " ", 
+            RowBox[{"dTailConst", "*", 
+             RowBox[{"Sin", "[", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"thetaAdjValue", " ", "-", " ", 
+                 RowBox[{"(", 
+                  RowBox[{"90", " ", "+", " ", "thetaLean"}], ")"}]}], ")"}], 
+               " ", "Degree"}], "]"}]}]}]}], "}"}]}], ";", "\n", "    \t\t\t",
+         "\n", "    \t\t\t", 
+        RowBox[{"p4Visual", " ", "=", " ", 
+         RowBox[{"Midpoint", "[", 
+          RowBox[{"{", 
+           RowBox[{"p3", ",", " ", "p5Visual"}], "}"}], "]"}]}], ";", "\n", 
+        "    \t\t\t", "\"\<\>\""}], "\n", "    \t\t", "]"}], ",", "\n", 
+      "    \t\t", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"EuclideanDistance", "[", 
+        RowBox[{"p3", ",", "p5Visual"}], "]"}], "]"}], ",", "\n", "    \t\t", 
+      
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"EuclideanDistance", "[", 
+        RowBox[{"p1", ",", "p2"}], "]"}], "]"}], ",", "\n", "    \t\t", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"EuclideanDistance", "[", 
+        RowBox[{"p6", ",", "p2"}], "]"}], "]"}], ",", "\n", "   \t\t", 
+      RowBox[{"Graphics", "[", 
+       RowBox[{
+        RowBox[{"{", "\n", "     \t\t\t\t", 
+         RowBox[{"Blue", ",", " ", 
+          RowBox[{"Dynamic", "[", 
+           RowBox[{"{", "\n", "       \t\t\t\t\t", 
+            RowBox[{
+             RowBox[{"Line", "[", 
+              RowBox[{"{", 
+               RowBox[{"p1", ",", " ", "p2"}], "}"}], "]"}], ",", "\n", 
+             "       \t\t\t\t\t", 
+             RowBox[{"Line", "[", 
+              RowBox[{"{", 
+               RowBox[{"p6", ",", " ", "p3"}], "}"}], "]"}], ",", "\n", 
+             "       \t\t\t\t\t", 
+             RowBox[{"Line", "[", 
+              RowBox[{"{", 
+               RowBox[{"p2", ",", " ", "p3"}], "}"}], "]"}], ",", "\n", 
+             "       \t\t\t\t\t", 
+             RowBox[{"Line", "[", 
+              RowBox[{"{", 
+               RowBox[{"p5Visual", ",", " ", "p3"}], "}"}], "]"}]}], "\n", 
+            "       \t\t\t\t", "}"}], "]"}], ",", "\n", "     \t\t\t\t", 
+          "LightGray", ",", " ", "Dashed", ",", " ", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Line", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"-", "10"}], ",", " ", "0"}], "}"}], ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"10", ",", " ", "0"}], "}"}]}], "}"}], "]"}], ",", 
+            " ", 
+            RowBox[{"Line", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", 
+                 RowBox[{"-", "10"}]}], "}"}], ",", " ", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", " ", "10"}], "}"}]}], "}"}], "]"}]}], 
+           "}"}]}], "\n", "     \t\t\t", "}"}], ",", " ", 
+        RowBox[{"ImageSize", " ", "->", " ", "Medium"}], ",", " ", 
+        RowBox[{"PlotRange", " ", "->", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "10"}], ",", " ", "10"}], "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "10"}], ",", " ", "10"}], "}"}]}], "\n", 
+          "      \t\t", "}"}]}]}], "]"}]}], "\n", "   \t", "}"}], "]"}]}], 
+  "\n", " ", "]"}]], "Code",
+ CellChangeTimes->{3.992161939656413*^9},
+ CellLabel->
+  "In[349]:=",ExpressionUUID->"48c2fe12-48bf-4684-86e9-be6025718451"],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`p1$$ = {-Cos[10 Degree] - 5 Sin[10 Degree], 
+   5 Cos[10 Degree] - Sin[10 Degree]}, $CellContext`p2$$ = {(-5) 
+   Sin[10 Degree], 5 Cos[10 Degree]}, $CellContext`p3$$ = {-Sin[10 Degree], 
+   Cos[10 Degree]}, $CellContext`p4$$ = {
+  Rational[5, 2] Cos[Degree (-100 + $CellContext`thetaAdj)] - Sin[10 Degree], 
+   Cos[10 Degree] + 
+   Rational[5, 2] 
+    Sin[Degree (-100 + $CellContext`thetaAdj)]}, $CellContext`p5$$ = {
+  5 Cos[Degree (-100 + $CellContext`thetaAdj)] - Sin[10 Degree], 
+   Cos[10 Degree] + 
+   5 Sin[Degree (-100 + $CellContext`thetaAdj)]}, $CellContext`p6$$ = {0, 
+  0}, $CellContext`thetaAdjValue$$ = 
+  135.8377019617069, $CellContext`p5Visual$$ = {3.8797454603606503`, 
+  3.9122639892687867`}, $CellContext`p4Visual$$ = {1.8530486413468599`, 
+  2.448535871140497}}, 
+  TagBox[GridBox[{
+     {
+      StyleBox["\<\"Single-Jointed Monkey Tail Model\"\>", "Subtitle",
+       StripOnInput->False,
+       FontVariations->{"Underline"->True}]},
+     {
+      TemplateBox[{
+        StyleBox["\"When the background is \"", 
+         GrayLevel[0], "Text", StripOnInput -> False], 
+        StyleBox["\"red\"", 
+         RGBColor[1, 0, 0], "Text", StripOnInput -> False], 
+        StyleBox["\", the solution is IMPOSSIBLE.\"", 
+         GrayLevel[0], "Text", StripOnInput -> False]},
+       "RowDefault"]},
+     {
+      TemplateBox[{
+        SliderBox[
+         Dynamic[$CellContext`dTailConst], {-10, 10}], "\"\\t\"", 
+        SliderBox[
+         Dynamic[$CellContext`dHead], {-10, 10}]},
+       "RowDefault"]},
+     {
+      DynamicBox[ToBoxes[
+        Row[{
+          Pane[
+          "d_tail = " <> ToString[$CellContext`dTailConst], ImageSize -> 200, 
+           Alignment -> Left], "\td_head = " <> 
+          ToString[$CellContext`dHead]}], StandardForm],
+       ImageSizeCache->{
+        309.7025390625, {5.304549761116505, 11.036483354866505`}}]},
+     {
+      TemplateBox[{
+        SliderBox[
+         Dynamic[$CellContext`hHead], {-10, 10}], "\"\\t\"", 
+        SliderBox[
+         Dynamic[
+          
+          BoxForm`RemapVariable[$CellContext`hTail, {-$CellContext`hHead, \
+$CellContext`hHead}], 
+          BoxForm`RemapValue[#, $CellContext`hTail, {-$CellContext`hHead, \
+$CellContext`hHead}]& ], {0, 1}]},
+       "RowDefault"]},
+     {
+      DynamicBox[ToBoxes[
+        Row[{
+          Pane[
+          "h_head = " <> ToString[$CellContext`hHead], ImageSize -> 200, 
+           Alignment -> Left], "\th_tail = " <> 
+          ToString[$CellContext`hTail]}], StandardForm],
+       ImageSizeCache->{
+        309.7025390625, {5.304549761116505, 11.036483354866505`}}]},
+     {
+      TemplateBox[{
+        SliderBox[
+         Dynamic[$CellContext`mHead], {-10, 10}], "\"\\t\"", 
+        SliderBox[
+         Dynamic[$CellContext`mTail], {-10, 10}]},
+       "RowDefault"]},
+     {
+      DynamicBox[ToBoxes[
+        Row[{
+          Pane[
+          "m_head = " <> ToString[$CellContext`mHead], ImageSize -> 200, 
+           Alignment -> Left], "\tm_tail = " <> 
+          ToString[$CellContext`mTail]}], StandardForm],
+       ImageSizeCache->{
+        309.7025390625, {5.304549761116505, 11.036483354866505`}}]},
+     {
+      TemplateBox[{
+        SliderBox[
+         Dynamic[$CellContext`thetaLean], {-89.9, 89.9}]},
+       "RowDefault"]},
+     {
+      DynamicBox[ToBoxes[
+        Row[{
+          Pane[
+          "\[Theta]_lean = " <> ToString[$CellContext`thetaLean], ImageSize -> 
+           200, Alignment -> Left], "\t\t\t", 
+          Button["Reset Values", 
+           
+           Module[{}, $CellContext`g = 9.81; $CellContext`mHead = 
+             1; $CellContext`dHead = 1; $CellContext`hHead = 
+             5; $CellContext`mTail = 1; $CellContext`hTail = 
+             1; $CellContext`dTailConst = 5; $CellContext`thetaLean = 10; 
+            Null]]}], StandardForm],
+       ImageSizeCache->{
+        391.75380859375, {9.342187500000001, 17.968359375}}]},
+     {
+      DynamicBox[
+       ToBoxes[$CellContext`p2$$ = {(-$CellContext`hHead) 
+           Sin[$CellContext`thetaLean Degree], $CellContext`hHead 
+           Cos[$CellContext`thetaLean 
+             Degree]}; $CellContext`p3$$ = {(-$CellContext`hTail) 
+           Sin[$CellContext`thetaLean Degree], $CellContext`hTail 
+           Cos[$CellContext`thetaLean Degree]}; $CellContext`p1$$ = {
+          Part[$CellContext`p2$$, 1] - $CellContext`dHead 
+           Cos[$CellContext`thetaLean Degree], 
+           Part[$CellContext`p2$$, 2] - $CellContext`dHead 
+           Sin[$CellContext`thetaLean Degree]}; $CellContext`p5$$ = {
+          Part[$CellContext`p3$$, 1] + $CellContext`dTailConst 
+            Cos[($CellContext`thetaAdj - (90 + $CellContext`thetaLean)) 
+              Degree], 
+           Part[$CellContext`p3$$, 2] + $CellContext`dTailConst 
+            Sin[($CellContext`thetaAdj - (90 + $CellContext`thetaLean)) 
+              Degree]}; $CellContext`p4$$ = 
+         Midpoint[{$CellContext`p3$$, $CellContext`p5$$}]; \
+$CellContext`thetaAdjValue$$ = Last[
+           Flatten[
+            Values[
+             NSolve[
+              
+              And[$CellContext`torqueAtPoint[$CellContext`mHead, \
+$CellContext`p1$$] == -$CellContext`torqueAtPoint[$CellContext`mTail, \
+$CellContext`p4$$], 0 <= $CellContext`thetaAdj <= 
+               180], $CellContext`thetaAdj]]]]; $CellContext`p5Visual$$ = {
+          Part[$CellContext`p3$$, 1] + $CellContext`dTailConst 
+            Cos[($CellContext`thetaAdjValue$$ - (90 + $CellContext`thetaLean))
+                Degree], 
+           Part[$CellContext`p3$$, 2] + $CellContext`dTailConst 
+            Sin[($CellContext`thetaAdjValue$$ - (90 + $CellContext`thetaLean))
+                Degree]}; $CellContext`p4Visual$$ = 
+         Midpoint[{$CellContext`p3$$, $CellContext`p5Visual$$}]; "", 
+        StandardForm],
+       ImageSizeCache->{0., {0., 6.318}}]},
+     {
+      DynamicBox[ToBoxes[
+        EuclideanDistance[$CellContext`p3$$, $CellContext`p5Visual$$], 
+        StandardForm],
+       ImageSizeCache->{15.6, {0.156, 8.294}}]},
+     {
+      DynamicBox[ToBoxes[
+        EuclideanDistance[$CellContext`p1$$, $CellContext`p2$$], StandardForm],
+       ImageSizeCache->{
+        172.32507206915238`, {3.158144308884955, 13.533399999999999`}}]},
+     {
+      DynamicBox[ToBoxes[
+        EuclideanDistance[$CellContext`p6$$, $CellContext`p2$$], StandardForm],
+       ImageSizeCache->{
+        210.3734720691524, {3.158144308884955, 13.533399999999999`}}]},
+     {
+      GraphicsBox[{
+        {RGBColor[0, 0, 1], 
+         DynamicBox[Typeset`ToBoxes[{
+            Line[{$CellContext`p1$$, $CellContext`p2$$}], 
+            Line[{$CellContext`p6$$, $CellContext`p3$$}], 
+            Line[{$CellContext`p2$$, $CellContext`p3$$}], 
+            Line[{$CellContext`p5Visual$$, $CellContext`p3$$}]}, StandardForm,
+            Graphics],
+          
+          ImageSizeCache->{{145.93801767456998`, 
+           250.54252506767824`}, {-92.20577134916027, \
+-2.1588600156884468`}}]}, 
+        {GrayLevel[0.85], Dashing[{Small, Small}], 
+         LineBox[{{-10, 0}, {10, 0}}], LineBox[{{0, -10}, {0, 10}}]}},
+       ImageSize->Medium,
+       PlotRange->{{-10, 10}, {-10, 10}}]}
+    },
+    DefaultBaseStyle->"Column",
+    GridBoxAlignment->{"Columns" -> {{Left}}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+   "Column"],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{{3.992161941963046*^9, 3.992161968685421*^9}},
+ CellLabel->
+  "Out[349]=",ExpressionUUID->"f2e35e2e-100d-4d86-8f73-972fa72b2d76"]
 }, Open  ]]
 },
 WindowSize->{1103, 937},
@@ -776,19 +1372,23 @@ Notebook[{
 Cell[554, 20, 442, 12, 88, "Code",ExpressionUUID->"1c410b71-c4a2-423c-b6b0-8f6c337e00f9"],
 Cell[CellGroupData[{
 Cell[1021, 36, 4510, 136, 484, "Code",ExpressionUUID->"5651e7da-1071-4cec-8daa-972daae3aec1"],
-Cell[5534, 174, 778, 16, 33, "Output",ExpressionUUID->"d77e9b61-d5c3-493a-9533-2225edc67ffb"]
+Cell[5534, 174, 828, 17, 33, "Output",ExpressionUUID->"dca38890-9861-4dce-b521-054381ec2f88"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6349, 195, 218, 5, 51, "Code",ExpressionUUID->"2490fd36-87da-458e-b84c-518dc51391c7"],
-Cell[6570, 202, 471, 12, 33, "Output",ExpressionUUID->"bb650afa-58d0-4b4e-b236-8da2c75ee3c1"]
+Cell[6399, 196, 218, 5, 51, "Code",ExpressionUUID->"2490fd36-87da-458e-b84c-518dc51391c7"],
+Cell[6620, 203, 521, 13, 33, "Output",ExpressionUUID->"594713ff-f800-4cfb-91ef-9a860e80fa16"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7078, 219, 239, 6, 51, "Code",ExpressionUUID->"55d3b3fc-d1c5-445b-ae7f-d3513798e32a"],
-Cell[7320, 227, 575, 16, 45, "Output",ExpressionUUID->"eafec734-5b97-405e-bcdf-d5665379c92b"]
+Cell[7178, 221, 239, 6, 51, "Code",ExpressionUUID->"55d3b3fc-d1c5-445b-ae7f-d3513798e32a"],
+Cell[7420, 229, 627, 17, 45, "Output",ExpressionUUID->"a5332552-83ac-4a4b-8094-4b58ef59921f"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7932, 248, 14800, 356, 1804, "Code",ExpressionUUID->"39406341-4eb8-4908-8dac-1bffb998e12c"],
-Cell[22735, 606, 6438, 149, 595, "Output",ExpressionUUID->"8401b7dd-dc33-4457-a6d7-45edff4903c6"]
+Cell[8084, 251, 14800, 356, 1804, "Code",ExpressionUUID->"39406341-4eb8-4908-8dac-1bffb998e12c"],
+Cell[22887, 609, 6486, 149, 595, "Output",ExpressionUUID->"4d98b4a9-ec07-447b-b93c-294f45800b6e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29410, 763, 17562, 406, 2068, "Code",ExpressionUUID->"48c2fe12-48bf-4684-86e9-be6025718451"],
+Cell[46975, 1171, 7517, 180, 723, "Output",ExpressionUUID->"f2e35e2e-100d-4d86-8f73-972fa72b2d76"]
 }, Open  ]]
 }
 ]
