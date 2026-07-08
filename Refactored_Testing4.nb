@@ -1,0 +1,982 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 15.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     47055,        974]
+NotebookOptionsPosition[     45204,        941]
+NotebookOutlinePosition[     45724,        960]
+CellTagsIndexPosition[     45681,        957]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["Please, documentation of this function here", "CodeText",
+ CellChangeTimes->{
+  3.9925184804510593`*^9},ExpressionUUID->"2ca985b4-cfc0-445b-9605-\
+6b571eb1f3eb"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"torqueAtPoint", "[", 
+    RowBox[{"mass_", ",", "coord_"}], "]"}], ":=", " ", 
+   RowBox[{"mass", " ", "*", " ", 
+    RowBox[{"coord", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}], ";"}]], "Code",
+ CellChangeTimes->{
+  3.992122883262644*^9, {3.992507566529195*^9, 3.992507576572474*^9}},
+ CellLabel->"In[49]:=",ExpressionUUID->"9609ced2-947f-4ad1-bf40-aae5dc1cecb1"],
+
+Cell["Please, documentation of this function here", "CodeText",
+ CellChangeTimes->{
+  3.9925184795223417`*^9},ExpressionUUID->"47ebbe11-851e-405c-b3f8-\
+faa79bf35cc0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"thetaVarsFunc", "[", 
+    RowBox[{"numPoints_Integer", ",", " ", "thetaLean_Real"}], "]"}], " ", ":=",
+    " ", 
+   RowBox[{"Module", "[", "\n", "\t", 
+    RowBox[{
+     RowBox[{"{", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{"thetaAdjVars", " ", "=", " ", 
+        RowBox[{"Unique", "[", "\"\<thetaAdj\>\"", "]"}]}], ",", " ", 
+       "doubleprev", ",", " ", "prev"}], "\n", "\t", "}"}], ",", "\n", "\t", 
+     RowBox[{
+      RowBox[{"doubleprev", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"thetaAdjVars", "[", "1", "]"}], "-", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"Pi", "/", "2"}], " ", "+", " ", "thetaLean"}], ")"}]}]}], ";",
+       "\n", "        ", 
+      RowBox[{"prev", " ", "=", " ", 
+       RowBox[{"Pi", " ", "-", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"thetaAdjVars", "[", "2", "]"}], " ", "+", " ", 
+          "doubleprev"}], ")"}]}]}], ";", "\n", "\t", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Table", "[", "\n", "\t\t", 
+         RowBox[{
+          RowBox[{"Which", "[", "\n", "\t\t\t", 
+           RowBox[{
+            RowBox[{"n", "==", "1"}], ",", " ", "\n", "\t\t\t", "doubleprev", 
+            ",", "\n", "\t\t\t", 
+            RowBox[{"n", "==", "2"}], ",", " ", "\n", "\t\t\t", "prev", ",", 
+            "\n", "\t\t\t", 
+            RowBox[{"n", ">=", "3"}], ",", " ", "\n", "\t\t\t", 
+            RowBox[{
+             RowBox[{"prev", " ", "=", " ", 
+              RowBox[{
+               RowBox[{"2", "Pi"}], " ", "-", " ", 
+               RowBox[{"thetaAdjVars", "[", "n", "]"}], "+", " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"thetaAdjVars", "[", 
+                  RowBox[{"n", "-", "1"}], "]"}], " ", "+", " ", 
+                 "doubleprev"}], ")"}]}]}], ";", " ", "\n", "\t\t\t", 
+             RowBox[{"doubleprev", " ", "=", " ", "prev"}]}]}], "\n", "\t\t", 
+           "]"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"n", ",", " ", "1", ",", " ", "numPoints"}], "}"}]}], "\n",
+          "\t", "]"}], ",", " ", "thetaAdjVars"}], "}"}]}]}], "\n", "]"}]}], 
+  ";"}]], "Code",
+ CellChangeTimes->{{3.992510827164076*^9, 3.992510903898717*^9}, {
+   3.9925109423780403`*^9, 3.9925109583692713`*^9}, {3.992511011745503*^9, 
+   3.992511016583213*^9}, {3.992511397716001*^9, 3.9925114128041353`*^9}, {
+   3.99251156613524*^9, 3.992511592348463*^9}, 3.992512001071846*^9, {
+   3.9925122853453703`*^9, 3.992512355657666*^9}, {3.992513174660075*^9, 
+   3.9925132155063143`*^9}, {3.992513643417595*^9, 3.992513655165072*^9}, 
+   3.992514323393919*^9, {3.992516072997707*^9, 3.992516103620997*^9}, {
+   3.99251889589855*^9, 3.9925189124365053`*^9}, {3.9925250607925377`*^9, 
+   3.9925250617721567`*^9}, {3.992526115553841*^9, 3.992526140646634*^9}},
+ CellLabel->"In[77]:=",ExpressionUUID->"5525f0d2-abb0-43fe-b2ed-b39886572208"],
+
+Cell["Docu", "CodeText",
+ CellChangeTimes->{{3.9925250670127*^9, 
+  3.9925250672786293`*^9}},ExpressionUUID->"ec65b9fb-f8c9-4508-b13e-\
+fa6e4e8dc203"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"thetaVarsFuncEval", "[", 
+   RowBox[{
+   "numPoints_Integer", ",", " ", "thetaLean_Real", ",", " ", 
+    "thetaAdjEval_List"}], "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", "\n", "\t", 
+   RowBox[{
+    RowBox[{"{", "\n", "\t\t", 
+     RowBox[{
+      RowBox[{"doubleprev", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"thetaAdjEval", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], " ", "-", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"Pi", "/", "2"}], " ", "+", " ", "thetaLean"}], ")"}]}]}], ",",
+       " ", "prev"}], "\n", "\t", "}"}], ",", "\n", "\t", 
+    RowBox[{
+     RowBox[{"prev", " ", "=", " ", 
+      RowBox[{"Pi", " ", "-", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"thetaAdjEval", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], " ", "+", " ", "doubleprev"}], 
+        ")"}]}]}], ";", "\n", "\t", 
+     RowBox[{"Table", "[", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{"Which", "[", "\n", "\t\t\t", 
+        RowBox[{
+         RowBox[{"n", "==", "1"}], ",", " ", "\n", "\t\t\t", "doubleprev", ",",
+          "\n", "\t\t\t", 
+         RowBox[{"n", "==", "2"}], ",", " ", "\n", "\t\t\t", "prev", ",", 
+         "\n", "\t\t\t", 
+         RowBox[{"n", ">=", "3"}], ",", " ", "\n", "\t\t\t", 
+         RowBox[{
+          RowBox[{"prev", " ", "=", " ", 
+           RowBox[{
+            RowBox[{"2", "Pi"}], " ", "-", " ", 
+            RowBox[{"thetaAdjEval", "[", 
+             RowBox[{"[", "n", "]"}], "]"}], "+", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"thetaAdjEval", "[", 
+               RowBox[{"[", 
+                RowBox[{"n", "-", "1"}], "]"}], "]"}], " ", "+", " ", 
+              "doubleprev"}], ")"}]}]}], ";", " ", "\n", "\t\t\t", 
+          RowBox[{"doubleprev", " ", "=", " ", "prev"}]}]}], "\n", "\t\t", 
+        "]"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", " ", "1", ",", " ", "numPoints"}], "}"}]}], "\n", 
+      "\t", "]"}]}]}], "\n", "]"}]}]], "Code",
+ CellChangeTimes->{{3.992525070979369*^9, 3.992525074824875*^9}, 
+   3.9925257189926577`*^9, {3.992526095369947*^9, 3.992526102459518*^9}, {
+   3.992526171538118*^9, 3.992526172631976*^9}, {3.992526215855742*^9, 
+   3.992526226698832*^9}},
+ CellLabel->"In[78]:=",ExpressionUUID->"88e2c41b-6bcd-48f8-b44c-e64d4863bcc8"],
+
+Cell["Please, documentation of this function here", "CodeText",
+ CellChangeTimes->{{3.992518456657481*^9, 
+  3.9925184750825043`*^9}},ExpressionUUID->"835375e6-abf1-43d3-8cc4-\
+3089d600f570"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"pVarsFunc", "[", 
+    RowBox[{
+    "numPoints_Integer", ",", " ", "hTail_Real", ",", " ", "thetaLean_Real", ",",
+      " ", "distances_List", ",", " ", "theta_List"}], "]"}], " ", ":=", " ", 
+   
+   RowBox[{"Module", "[", "\n", "\t", 
+    RowBox[{
+     RowBox[{"{", "p", "}"}], ",", "\n", "\t", 
+     RowBox[{"Table", "[", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{"Which", "[", "\n", "\t\t\t", 
+        RowBox[{
+         RowBox[{"n", "==", "1"}], ",", " ", "\n", "\t\t\t", 
+         RowBox[{"p", " ", "=", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "hTail"}], "*", 
+             RowBox[{"Sin", "[", "thetaLean", "]"}]}], ",", " ", 
+            RowBox[{"hTail", "*", 
+             RowBox[{"Cos", "[", "thetaLean", "]"}]}]}], "}"}]}], ",", "\n", 
+         "\t\t\t", 
+         RowBox[{"n", ">=", "2"}], ",", " ", "\n", "\t\t\t", 
+         RowBox[{"p", " ", "+=", " ", 
+          RowBox[{"{", "\n", "\t\t\t\t", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"distances", "[", 
+              RowBox[{"[", 
+               RowBox[{"n", "-", "1"}], "]"}], "]"}], "*", 
+             RowBox[{"Cos", "[", 
+              RowBox[{"theta", "[", 
+               RowBox[{"[", 
+                RowBox[{"n", "-", "1"}], "]"}], "]"}], "]"}]}], ",", " ", 
+            "\n", "\t\t\t\t", 
+            RowBox[{
+             RowBox[{"distances", "[", 
+              RowBox[{"[", 
+               RowBox[{"n", "-", "1"}], "]"}], "]"}], "*", 
+             RowBox[{"Sin", "[", 
+              RowBox[{"theta", "[", 
+               RowBox[{"[", 
+                RowBox[{"n", "-", "1"}], "]"}], "]"}], "]"}]}]}], "\n", 
+           "\t\t\t", "}"}]}]}], "\n", "\t\t", "]"}], ",", "\n", "\t\t", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", " ", "1", ",", " ", 
+         RowBox[{"numPoints", "+", "1"}]}], "}"}]}], "]"}]}], "\n", "]"}]}], 
+  ";"}]], "Code",
+ CellChangeTimes->{{3.9925118659016647`*^9, 3.992511986614497*^9}, {
+   3.992512078209373*^9, 3.992512116192142*^9}, {3.992512162130967*^9, 
+   3.9925121654595003`*^9}, {3.9925123807143793`*^9, 3.992512471826226*^9}, {
+   3.992512609987585*^9, 3.992512675373782*^9}, {3.992512767158235*^9, 
+   3.9925128138204193`*^9}, {3.99251294473582*^9, 3.99251296262994*^9}, {
+   3.992513064108515*^9, 3.992513081179736*^9}, {3.9925152288937407`*^9, 
+   3.992515300013715*^9}, {3.99251538087965*^9, 3.9925154392472267`*^9}, 
+   3.992516159650976*^9, {3.992518915913835*^9, 3.9925189258221817`*^9}},
+ CellLabel->"In[79]:=",ExpressionUUID->"9381570b-8f93-4029-9352-1fb4833df5ca"],
+
+Cell["Please, documentation of this function here", "CodeText",
+ CellChangeTimes->{{3.992518456657481*^9, 
+  3.9925184750825043`*^9}},ExpressionUUID->"609fbe63-63c5-4138-9be0-\
+84cf94cade50"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Dynamic", "[", "error", "]"}], "\n", 
+ RowBox[{"Manipulate", "[", "\t", "\n", "\t", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"hTail", " ", "=", " ", "1.0"}], ";", " ", "\n", "\t", 
+    RowBox[{"mHead", " ", "=", " ", "1.0"}], ";", " ", 
+    RowBox[{"hHead", " ", "=", " ", "5.0"}], ";", " ", 
+    RowBox[{"dHead", " ", "=", " ", "1.0"}], ";", " ", "\n", "\t", 
+    RowBox[{"p0", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}]}], ";", " ", "\n", "    ", 
+    RowBox[{"listOfDistances", " ", "=", " ", 
+     RowBox[{"Table", "[", 
+      RowBox[{"dTailConst", ",", " ", "numPoints"}], "]"}]}], ";", "\n", 
+    "    ", 
+    RowBox[{"listOfMasses", " ", "=", " ", 
+     RowBox[{"Table", "[", 
+      RowBox[{"mTailConst", ",", " ", "numPoints"}], "]"}]}], ";", "\n", 
+    "    ", "\n", "    ", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"thetaVars", ",", " ", "thetaAdjVars"}], "}"}], " ", "=", " ", 
+     RowBox[{"thetaVarsFunc", "[", 
+      RowBox[{"numPoints", ",", " ", "thetaLean"}], "]"}]}], ";", "\n", "\t", 
+    
+    RowBox[{"pVars", " ", "=", " ", 
+     RowBox[{"pVarsFunc", "[", 
+      RowBox[{
+      "numPoints", ",", " ", "hTail", ",", " ", "thetaLean", ",", " ", 
+       "listOfDistances", ",", " ", "thetaVars"}], "]"}]}], ";", "\n", "\t", 
+    RowBox[{"mVars", " ", "=", " ", 
+     RowBox[{"Table", "[", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{"Midpoint", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"pVars", "[", 
+           RowBox[{"[", "n", "]"}], "]"}], ",", " ", 
+          RowBox[{"pVars", "[", 
+           RowBox[{"[", 
+            RowBox[{"n", "+", "1"}], "]"}], "]"}]}], "}"}], "]"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", " ", "1", ",", " ", "numPoints"}], "}"}]}], "\n", 
+      "\t", "]"}]}], ";", "\n", "\t", 
+    RowBox[{"torqueVars", " ", "=", " ", 
+     RowBox[{"Table", "[", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{"torqueAtPoint", "[", 
+        RowBox[{
+         RowBox[{"listOfMasses", "[", 
+          RowBox[{"[", "n", "]"}], "]"}], ",", " ", 
+         RowBox[{"mVars", "[", 
+          RowBox[{"[", "n", "]"}], "]"}]}], "]"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", " ", "1", ",", " ", "numPoints"}], "}"}]}], "\n", 
+      "\t", "]"}]}], ";", "\n", "\t\t", "\n", "\t", 
+    RowBox[{"pH", " ", "=", " ", 
+     RowBox[{"{", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "hHead"}], "*", 
+        RowBox[{"Sin", "[", "thetaLean", "]"}]}], ",", "\n", "\t\t", 
+       RowBox[{"hHead", "*", 
+        RowBox[{"Cos", "[", "thetaLean", "]"}]}]}], "\n", "\t", "}"}]}], ";", 
+    "\n", "\t", 
+    RowBox[{"mH", " ", "=", " ", 
+     RowBox[{"{", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"pH", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "-", 
+        RowBox[{"dHead", "*", 
+         RowBox[{"Cos", "[", "thetaLean", "]"}]}]}], ",", "\n", "\t\t", 
+       RowBox[{
+        RowBox[{"pH", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "-", 
+        RowBox[{"dHead", "*", 
+         RowBox[{"Sin", "[", "thetaLean", "]"}]}]}]}], "\n", "\t", "}"}]}], ";",
+     "\n", "\t", "\n", "\t", 
+    RowBox[{"constraints", " ", "=", " ", 
+     RowBox[{"Table", "[", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{"lowerBound", " ", "<=", " ", 
+        RowBox[{"thetaAdjVars", "[", "n", "]"}], " ", "<=", " ", 
+        "upperBound"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", " ", "1", ",", " ", "numPoints"}], "}"}]}], "\n", 
+      "\t", "]"}]}], ";", "\n", "\t\t", "\n", "\t", 
+    RowBox[{"objective", " ", "=", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"torqueAtPoint", "[", 
+         RowBox[{"mHead", ",", " ", "mH"}], "]"}], " ", "+", " ", 
+        RowBox[{"Total", "[", "torqueVars", "]"}]}], ")"}], "^", "2"}]}], ";",
+     "\n", "\t\t", "\n", "\t", 
+    RowBox[{"output", " ", "=", " ", 
+     RowBox[{"NMinimize", "[", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"objective", ",", " ", "constraints"}], "}"}], ",", "\n", 
+       "\t\t", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"thetaAdjVars", "[", "n", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"n", ",", " ", "numPoints"}], "}"}]}], "]"}]}], "\n", "\t", 
+      "]"}]}], ";", "\t\t", "\n", "\t", 
+    RowBox[{"error", " ", "=", " ", 
+     RowBox[{"output", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], ";", "\n", "\t", 
+    RowBox[{"thetaAdjs", " ", "=", " ", 
+     RowBox[{"Values", "[", 
+      RowBox[{"output", "[", 
+       RowBox[{"[", "2", "]"}], "]"}], "]"}]}], ";", "\n", "\t", 
+    RowBox[{"thetas", " ", "=", " ", 
+     RowBox[{"thetaVarsFuncEval", "[", 
+      RowBox[{"numPoints", ",", " ", "thetaLean", ",", " ", "thetaAdjs"}], 
+      "]"}]}], ";", "\t\t", "\n", "\t", 
+    RowBox[{"pEvals", " ", "=", " ", 
+     RowBox[{"pVarsFunc", "[", 
+      RowBox[{
+      "numPoints", ",", " ", "hTail", ",", " ", "thetaLean", ",", " ", 
+       "listOfDistances", ",", " ", "thetas"}], "]"}]}], ";", " \t\t", "\n", 
+    "\t", 
+    RowBox[{"Graphics", "[", "\n", "\t\t", 
+     RowBox[{
+      RowBox[{"{", "\n", "\t\t\t", 
+       RowBox[{"Blue", ",", " ", 
+        RowBox[{"Join", "[", 
+         RowBox[{
+          RowBox[{"{", "\n", "\t\t\t\t", 
+           RowBox[{
+            RowBox[{"Line", "[", 
+             RowBox[{"{", 
+              RowBox[{"p0", ",", "pH"}], "}"}], "]"}], ",", " ", 
+            RowBox[{"Line", "[", 
+             RowBox[{"{", 
+              RowBox[{"mH", ",", " ", "pH"}], "}"}], "]"}]}], "}"}], ",", " ",
+           "\n", "\t\t\t\t", 
+          RowBox[{"Table", "[", "\n", "\t\t\t\t\t", 
+           RowBox[{
+            RowBox[{"Line", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"pEvals", "[", 
+                RowBox[{"[", "n", "]"}], "]"}], ",", " ", 
+               RowBox[{"pEvals", "[", 
+                RowBox[{"[", 
+                 RowBox[{"n", "+", "1"}], "]"}], "]"}]}], "}"}], "]"}], ",", 
+            " ", 
+            RowBox[{"{", 
+             RowBox[{"n", ",", " ", "1", ",", " ", "numPoints"}], "}"}]}], 
+           "\n", "\t\t\t\t", "]"}]}], "\n", "\t\t\t", "]"}], ",", "\n", 
+        "\t\t\t", "LightGray", ",", " ", "Dashed", ",", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"10", ",", "0"}], "}"}]}], "}"}], "]"}], ",", " ", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", "10"}], "}"}]}], "}"}], "]"}]}], "}"}]}], 
+       "\n", "\t\t", "}"}], ",", " ", "\n", "\t\t", 
+      RowBox[{"ImageSize", " ", "->", " ", "Large"}], ",", " ", 
+      RowBox[{"PlotRange", "->", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "}"}]}]}], "\n", "\t", 
+     "]"}]}], ",", "\n", "\t", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"upperBound", ",", " ", 
+       RowBox[{"7", 
+        RowBox[{"Pi", "/", "6"}]}], ",", " ", "\"\<Upper Bound\>\""}], "}"}], 
+     ",", " ", "0", ",", " ", 
+     RowBox[{"2", "Pi"}], ",", " ", 
+     RowBox[{"ContinuousAction", " ", "->", " ", "False"}]}], "}"}], ",", 
+   "\n", "\t", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"lowerBound", ",", " ", 
+       RowBox[{"5", 
+        RowBox[{"Pi", "/", "6"}]}], ",", " ", "\"\<Lower Bound\>\""}], "}"}], 
+     ",", " ", "0", ",", " ", 
+     RowBox[{"2", "Pi"}], ",", " ", 
+     RowBox[{"ContinuousAction", " ", "->", " ", "False"}]}], "}"}], ",", 
+   "\n", "    ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "thetaLean", ",", " ", "0.1", ",", " ", "\"\<Leaning Angle\>\""}], 
+      "}"}], ",", " ", "0", ",", " ", 
+     RowBox[{"Pi", "/", "2"}], ",", " ", 
+     RowBox[{"ContinuousAction", " ", "->", " ", "False"}]}], "}"}], ",", 
+   "\n", "    ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"mTailConst", ",", " ", "0.5", ",", " ", "\"\<Tail Mass\>\""}], 
+      "}"}], ",", " ", "0.1", ",", " ", "10", ",", " ", 
+     RowBox[{"ContinuousAction", " ", "->", " ", "False"}]}], "}"}], ",", 
+   "\n", "    ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "numPoints", ",", " ", "3", ",", " ", "\"\<Number of Joints\>\""}], 
+      "}"}], ",", " ", "3", ",", " ", "10", ",", " ", "1", ",", " ", 
+     RowBox[{"ContinuousAction", " ", "->", " ", "False"}]}], "}"}], ",", 
+   "\n", "    ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "dTailConst", ",", " ", "dHead", ",", " ", "\"\<Tail length\>\""}], 
+      "}"}], ",", " ", 
+     RowBox[{"dHead", "/", "numPoints"}], ",", " ", 
+     RowBox[{"numPoints", "*", "dHead"}], ",", " ", 
+     RowBox[{"ContinuousAction", " ", "->", " ", "False"}]}], "}"}], "\n", ",", 
+   RowBox[{"SaveDefinitions", "->", "True"}]}], "]"}]}], "Code",
+ CellChangeTimes->{{3.992460942407361*^9, 3.992461023615657*^9}, {
+   3.9924610997127113`*^9, 3.99246113289653*^9}, {3.992461263860157*^9, 
+   3.992461264376481*^9}, {3.992461397810318*^9, 3.992461400416192*^9}, {
+   3.992461487203433*^9, 3.992461529516515*^9}, {3.992461603654331*^9, 
+   3.9924616072202682`*^9}, {3.9924616417419357`*^9, 3.992461679828248*^9}, {
+   3.992461717386891*^9, 3.992461863743598*^9}, {3.992461906144691*^9, 
+   3.9924620427930937`*^9}, {3.9924620853647127`*^9, 3.992462199565805*^9}, {
+   3.992464463822404*^9, 3.9924644869726753`*^9}, {3.992464524715702*^9, 
+   3.992464791800465*^9}, {3.992465214392111*^9, 3.992465214621231*^9}, {
+   3.992469545957745*^9, 3.992469564090341*^9}, {3.992469617035737*^9, 
+   3.992469703546155*^9}, {3.9924730592767878`*^9, 3.992473060370946*^9}, {
+   3.992473096686771*^9, 3.9924731020587606`*^9}, {3.992473429215838*^9, 
+   3.992473444036005*^9}, {3.992473558161858*^9, 3.992473620293605*^9}, {
+   3.99247372038454*^9, 3.9924737652529716`*^9}, {3.992473802893688*^9, 
+   3.992473816137507*^9}, {3.9924738736067142`*^9, 3.992473891328136*^9}, {
+   3.992473968539693*^9, 3.992474015075512*^9}, {3.992474112200037*^9, 
+   3.99247415763937*^9}, 3.992474212783938*^9, {3.992474276700183*^9, 
+   3.992474291463397*^9}, 3.9924746531033487`*^9, {3.9924749228024693`*^9, 
+   3.992474949657544*^9}, {3.992475204794602*^9, 3.9924752624688263`*^9}, {
+   3.992475676989449*^9, 3.992475708106296*^9}, {3.992475821320311*^9, 
+   3.992475834933415*^9}, {3.992475955558242*^9, 3.992475978818799*^9}, {
+   3.992476158978518*^9, 3.992476160050598*^9}, {3.992476265426216*^9, 
+   3.992476266957437*^9}, {3.992476378353106*^9, 3.992476379633391*^9}, 
+   3.992476420251833*^9, {3.99247653409389*^9, 3.992476589606627*^9}, {
+   3.9924767328844223`*^9, 3.9924767372365227`*^9}, {3.992476849060465*^9, 
+   3.99247685806176*^9}, 3.992476894807763*^9, {3.992476937914873*^9, 
+   3.992476941825384*^9}, {3.992476988161132*^9, 3.992476990699452*^9}, {
+   3.992477414225932*^9, 3.9924774339156637`*^9}, 3.992477589742379*^9, {
+   3.992477665314228*^9, 3.992477673030264*^9}, {3.9924778373796864`*^9, 
+   3.99247786357587*^9}, {3.992477896456155*^9, 3.9924778999610987`*^9}, {
+   3.992478118250348*^9, 3.992478121550877*^9}, {3.9924781545136147`*^9, 
+   3.9924781615011883`*^9}, {3.9924781940988197`*^9, 3.992478195372257*^9}, {
+   3.9924783294219513`*^9, 3.992478367754459*^9}, {3.992478552689386*^9, 
+   3.992478556501988*^9}, 3.992506649357687*^9, {3.992507109628141*^9, 
+   3.992507110947837*^9}, {3.992507153915777*^9, 3.992507155596249*^9}, {
+   3.9925072240345592`*^9, 3.992507229089978*^9}, {3.992507278494342*^9, 
+   3.992507286394799*^9}, {3.992507337156995*^9, 3.992507346437396*^9}, 
+   3.992507378772056*^9, {3.992507411527067*^9, 3.992507418800256*^9}, 
+   3.992507593569004*^9, {3.992507637984406*^9, 3.992507673197604*^9}, {
+   3.9925080473209352`*^9, 3.9925080597712517`*^9}, {3.99250821271164*^9, 
+   3.992508228887774*^9}, {3.9925083125601683`*^9, 3.99250835292346*^9}, {
+   3.992508395540963*^9, 3.992508411012434*^9}, {3.992508453741786*^9, 
+   3.9925084565073338`*^9}, {3.992508539728108*^9, 3.992508540012681*^9}, {
+   3.9925087744310207`*^9, 3.9925088201889887`*^9}, {3.992508886531724*^9, 
+   3.992508889638216*^9}, {3.992508943488494*^9, 3.992508944657316*^9}, {
+   3.99250898950299*^9, 3.9925089897783003`*^9}, {3.9925094150427933`*^9, 
+   3.992509428069859*^9}, {3.992512265383257*^9, 3.9925122691686697`*^9}, {
+   3.992513242034656*^9, 3.992513243017116*^9}, {3.992513273054916*^9, 
+   3.992513321640614*^9}, {3.992513378319213*^9, 3.992513432413746*^9}, {
+   3.992513965751771*^9, 3.992514030422068*^9}, {3.992514085220941*^9, 
+   3.992514160606957*^9}, {3.992514231181027*^9, 3.992514317414323*^9}, {
+   3.992514355555169*^9, 3.992514445184382*^9}, {3.992514521662546*^9, 
+   3.992514541914304*^9}, {3.992514612596218*^9, 3.9925146666199303`*^9}, 
+   3.992514755690624*^9, {3.992514809432969*^9, 3.992514818219274*^9}, {
+   3.9925150806431026`*^9, 3.9925150838473988`*^9}, {3.992515135676269*^9, 
+   3.992515144151075*^9}, {3.992515559186252*^9, 3.9925155664631977`*^9}, {
+   3.992515945730163*^9, 3.992515952696218*^9}, {3.9925162378676777`*^9, 
+   3.992516241511703*^9}, {3.992516274056959*^9, 3.992516279699318*^9}, {
+   3.992516311949554*^9, 3.9925163341846*^9}, {3.992516488237351*^9, 
+   3.992516494311623*^9}, {3.9925165882064447`*^9, 3.992516631041829*^9}, {
+   3.992517071620792*^9, 3.992517073327106*^9}, {3.9925172985957603`*^9, 
+   3.992517303701017*^9}, {3.9925175342194843`*^9, 3.992517540487965*^9}, {
+   3.99251758268607*^9, 3.9925176679154167`*^9}, 3.99251780794827*^9, {
+   3.9925178399371634`*^9, 3.992517841025341*^9}, 3.992517958426815*^9, {
+   3.992518008458453*^9, 3.992518009521593*^9}, {3.992518039889593*^9, 
+   3.992518069512402*^9}, {3.992518135280549*^9, 3.992518210900627*^9}, {
+   3.992518289290001*^9, 3.992518314475029*^9}, {3.9925183852395477`*^9, 
+   3.992518414561243*^9}, {3.992518520481496*^9, 3.9925185693551483`*^9}, {
+   3.992520158333634*^9, 3.992520168874213*^9}, {3.9925247180406446`*^9, 
+   3.992524722907015*^9}, {3.992524794388097*^9, 3.9925248921940804`*^9}, {
+   3.992525148629393*^9, 3.9925251610926123`*^9}, {3.992525284875553*^9, 
+   3.992525436442964*^9}, {3.992525543051181*^9, 3.992525591306629*^9}, {
+   3.992525623189275*^9, 3.992525625219911*^9}, {3.992525797985463*^9, 
+   3.992525866826693*^9}, {3.992526248260126*^9, 3.992526275946814*^9}},
+ CellLabel->"In[84]:=",ExpressionUUID->"b94dc4be-5b48-4bea-a42f-8fb0a7d041d0"],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[$CellContext`error, StandardForm],
+  ImageSizeCache->{99.79617089843751, {0.156, 11.6857}}]], "Output",
+ CellChangeTimes->{
+  3.992514460956047*^9, 3.9925145255183477`*^9, 3.9925146812185097`*^9, 
+   3.9925147601780787`*^9, 3.992514818775877*^9, 3.992515016730472*^9, 
+   3.9925150843935328`*^9, 3.992515149174101*^9, 3.992515448757704*^9, {
+   3.9925154864548283`*^9, 3.9925155060887747`*^9}, 3.992515568787745*^9, {
+   3.992515696600068*^9, 3.9925157244293118`*^9}, 3.992515794157753*^9, 
+   3.992515847211298*^9, 3.992515954042595*^9, 3.9925159844629593`*^9, {
+   3.99251614554851*^9, 3.992516172538011*^9}, 3.9925162481115503`*^9, 
+   3.992516288028921*^9, {3.992516335748043*^9, 3.992516347518704*^9}, 
+   3.992516634610342*^9, 3.992517081982553*^9, {3.992518029221016*^9, 
+   3.9925180717260313`*^9}, 3.99251821602791*^9, 3.9925183639111357`*^9, 
+   3.992518418956373*^9, {3.992518553727556*^9, 3.99251857130441*^9}, 
+   3.992518778472241*^9, 3.992518936707921*^9, {3.9925192283113947`*^9, 
+   3.9925192473370333`*^9}, 3.992519282045145*^9, {3.992519958374539*^9, 
+   3.992519982513686*^9}, 3.992520179194091*^9, 3.9925246016713343`*^9, 
+   3.992524696219307*^9, 3.9925247279374437`*^9, {3.992524798643034*^9, 
+   3.992524892875806*^9}, 3.992525079876237*^9, 3.992525149912866*^9, {
+   3.992525325771893*^9, 3.992525345553376*^9}, {3.992525422532415*^9, 
+   3.992525437109*^9}, {3.992525551415494*^9, 3.992525591772447*^9}, 
+   3.992525626391205*^9, 3.992525721490888*^9, {3.99252582823501*^9, 
+   3.992525867328352*^9}, {3.992526231050988*^9, 3.992526276815937*^9}},
+ CellLabel->"Out[84]=",ExpressionUUID->"7777a17a-d548-41d7-87d9-03cec64b65a1"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`dTailConst$$ = 
+    1.4288, $CellContext`lowerBound$$ = 
+    3.1667253948185117`, $CellContext`mTailConst$$ = 
+    0.84, $CellContext`numPoints$$ = 5, $CellContext`thetaLean$$ = 
+    1.06499990956694, $CellContext`upperBound$$ = 5.265309287416493, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`upperBound$$], Rational[7, 6] Pi, "Upper Bound"}, 0, 
+      2 Pi, ControlType -> Manipulator}, {{
+       Hold[$CellContext`lowerBound$$], Rational[5, 6] Pi, "Lower Bound"}, 0, 
+      2 Pi, ControlType -> Manipulator}, {{
+       Hold[$CellContext`thetaLean$$], 0.1, "Leaning Angle"}, 0, 
+      Rational[1, 2] Pi, ControlType -> Manipulator}, {{
+       Hold[$CellContext`mTailConst$$], 0.5, "Tail Mass"}, 0.1, 10, 
+      ControlType -> Manipulator}, {{
+       Hold[$CellContext`numPoints$$], 3, "Number of Joints"}, 3, 10, 1, 
+      ControlType -> Manipulator}, {{
+       Hold[$CellContext`dTailConst$$], 1., "Tail length"}, 
+      Dynamic[$CellContext`dHead/$CellContext`numPoints$$], 
+      Dynamic[$CellContext`numPoints$$ $CellContext`dHead], ControlType -> 
+      Manipulator}}, Typeset`size$$ = {
+    576., {285.134033203125, 290.865966796875}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = False, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`dTailConst$$ = 
+        1., $CellContext`lowerBound$$ = 
+        Rational[5, 6] Pi, $CellContext`mTailConst$$ = 
+        0.5, $CellContext`numPoints$$ = 3, $CellContext`thetaLean$$ = 
+        0.1, $CellContext`upperBound$$ = Rational[7, 6] Pi}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, 
+      "Body" :> ($CellContext`hTail = 1.; $CellContext`mHead = 
+        1.; $CellContext`hHead = 5.; $CellContext`dHead = 
+        1.; $CellContext`p0 = {0, 0}; $CellContext`listOfDistances = 
+        Table[$CellContext`dTailConst$$, $CellContext`numPoints$$]; \
+$CellContext`listOfMasses = 
+        Table[$CellContext`mTailConst$$, $CellContext`numPoints$$]; \
+{$CellContext`thetaVars, $CellContext`thetaAdjVars} = \
+$CellContext`thetaVarsFunc[$CellContext`numPoints$$, \
+$CellContext`thetaLean$$]; $CellContext`pVars = \
+$CellContext`pVarsFunc[$CellContext`numPoints$$, $CellContext`hTail, \
+$CellContext`thetaLean$$, $CellContext`listOfDistances, \
+$CellContext`thetaVars]; $CellContext`mVars = Table[
+          Midpoint[{
+            Part[$CellContext`pVars, $CellContext`n], 
+            Part[$CellContext`pVars, $CellContext`n + 1]}], {$CellContext`n, 
+           1, $CellContext`numPoints$$}]; $CellContext`torqueVars = Table[
+          $CellContext`torqueAtPoint[
+           Part[$CellContext`listOfMasses, $CellContext`n], 
+           Part[$CellContext`mVars, $CellContext`n]], {$CellContext`n, 
+           1, $CellContext`numPoints$$}]; $CellContext`pH = \
+{(-$CellContext`hHead) Sin[$CellContext`thetaLean$$], $CellContext`hHead 
+          Cos[$CellContext`thetaLean$$]}; $CellContext`mH = {
+         Part[$CellContext`pH, 1] - $CellContext`dHead 
+          Cos[$CellContext`thetaLean$$], 
+          Part[$CellContext`pH, 2] - $CellContext`dHead 
+          Sin[$CellContext`thetaLean$$]}; $CellContext`constraints = 
+        Table[$CellContext`lowerBound$$ <= \
+$CellContext`thetaAdjVars[$CellContext`n] <= $CellContext`upperBound$$, \
+{$CellContext`n, 
+           1, $CellContext`numPoints$$}]; $CellContext`objective = \
+($CellContext`torqueAtPoint[$CellContext`mHead, $CellContext`mH] + 
+          Total[$CellContext`torqueVars])^2; $CellContext`output = 
+        NMinimize[{$CellContext`objective, $CellContext`constraints}, 
+          Table[
+           $CellContext`thetaAdjVars[$CellContext`n], {$CellContext`n, \
+$CellContext`numPoints$$}]]; $CellContext`error = 
+        Part[$CellContext`output, 1]; $CellContext`thetaAdjs = Values[
+          
+          Part[$CellContext`output, 
+           2]]; $CellContext`thetas = \
+$CellContext`thetaVarsFuncEval[$CellContext`numPoints$$, \
+$CellContext`thetaLean$$, $CellContext`thetaAdjs]; $CellContext`pEvals = \
+$CellContext`pVarsFunc[$CellContext`numPoints$$, $CellContext`hTail, \
+$CellContext`thetaLean$$, $CellContext`listOfDistances, $CellContext`thetas]; 
+       Graphics[{Blue, 
+          Join[{
+            Line[{$CellContext`p0, $CellContext`pH}], 
+            Line[{$CellContext`mH, $CellContext`pH}]}, 
+           Table[
+            Line[{
+              Part[$CellContext`pEvals, $CellContext`n], 
+              
+              Part[$CellContext`pEvals, $CellContext`n + 
+               1]}], {$CellContext`n, 1, $CellContext`numPoints$$}]], 
+          LightGray, Dashed, {
+           Line[{{0, 0}, {10, 0}}], 
+           Line[{{0, 0}, {0, 10}}]}}, ImageSize -> Large, 
+         PlotRange -> {{-10, 10}, {-10, 10}}]), 
+      "Specifications" :> {{{$CellContext`upperBound$$, Rational[7, 6] Pi, 
+          "Upper Bound"}, 0, 2 Pi, ContinuousAction -> 
+         False}, {{$CellContext`lowerBound$$, Rational[5, 6] Pi, 
+          "Lower Bound"}, 0, 2 Pi, ContinuousAction -> 
+         False}, {{$CellContext`thetaLean$$, 0.1, "Leaning Angle"}, 0, 
+         Rational[1, 2] Pi, ContinuousAction -> 
+         False}, {{$CellContext`mTailConst$$, 0.5, "Tail Mass"}, 0.1, 10, 
+         ContinuousAction -> 
+         False}, {{$CellContext`numPoints$$, 3, "Number of Joints"}, 3, 10, 1,
+          ContinuousAction -> 
+         False}, {{$CellContext`dTailConst$$, 1., "Tail length"}, 
+         Dynamic[$CellContext`dHead/$CellContext`numPoints$$], 
+         Dynamic[$CellContext`numPoints$$ $CellContext`dHead], 
+         ContinuousAction -> False}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{
+      625.0999999999999, {406.8045497611165, 412.5364833548665}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`hTail = 1., $CellContext`mHead = 
+       1., $CellContext`hHead = 5., $CellContext`dHead = 
+       1., $CellContext`p0 = {0, 0}, $CellContext`listOfDistances = {1., 1., 
+        1.}, $CellContext`listOfMasses = {0.5, 0.5, 
+        0.5}, $CellContext`thetaVars = {-1.6707963267948966` + \
+$CellContext`thetaAdj13462[1], 4.812388980384689 - $CellContext`thetaAdj13462[
+         1] - $CellContext`thetaAdj13462[2], 
+         4.61238898038469 + $CellContext`thetaAdj13462[
+          1] + $CellContext`thetaAdj13462[2] - $CellContext`thetaAdj13462[
+         3]}, $CellContext`thetaAdjVars = $CellContext`thetaAdj13462, \
+$CellContext`thetaVarsFunc[
+         Pattern[$CellContext`numPoints, 
+          Blank[Integer]], 
+         Pattern[$CellContext`thetaLean, 
+          Blank[Real]]] := 
+       Module[{$CellContext`thetaAdjVars = 
+          Unique["thetaAdj"], $CellContext`doubleprev, $CellContext`prev}, \
+$CellContext`doubleprev = $CellContext`thetaAdjVars[1] - (
+           Pi/2 + $CellContext`thetaLean); $CellContext`prev = 
+          Pi - ($CellContext`thetaAdjVars[2] + $CellContext`doubleprev); {
+           Table[
+            
+            Which[$CellContext`n == 
+             1, $CellContext`doubleprev, $CellContext`n == 
+             2, $CellContext`prev, $CellContext`n >= 
+             3, $CellContext`prev = 
+              2 Pi - $CellContext`thetaAdjVars[$CellContext`n] + \
+($CellContext`thetaAdjVars[$CellContext`n - 
+                  1] + $CellContext`doubleprev); $CellContext`doubleprev = \
+$CellContext`prev], {$CellContext`n, 
+             1, $CellContext`numPoints}], $CellContext`thetaAdjVars}], \
+$CellContext`pVars = {{-0.09983341664682815, 
+         0.9950041652780258}, {-0.09983341664682815 + 
+          1. Cos[1.6707963267948966` - $CellContext`thetaAdj13462[1]], 
+          0.9950041652780258 - 1. 
+          Sin[1.6707963267948966` - $CellContext`thetaAdj13462[
+            1]]}, {-0.09983341664682815 + 
+          1. Cos[1.6707963267948966` - $CellContext`thetaAdj13462[1]] + 
+          1. Cos[4.812388980384689 - $CellContext`thetaAdj13462[
+             1] - $CellContext`thetaAdj13462[2]], 0.9950041652780258 - 1. 
+          Sin[1.6707963267948966` - $CellContext`thetaAdj13462[1]] + 
+          1. 
+           Sin[4.812388980384689 - $CellContext`thetaAdj13462[
+             1] - $CellContext`thetaAdj13462[2]]}, {-0.09983341664682815 + 
+          1. Cos[1.6707963267948966` - $CellContext`thetaAdj13462[1]] + 
+          1. Cos[4.812388980384689 - $CellContext`thetaAdj13462[
+             1] - $CellContext`thetaAdj13462[2]] + 
+          1. Cos[4.61238898038469 + $CellContext`thetaAdj13462[
+              1] + $CellContext`thetaAdj13462[2] - $CellContext`thetaAdj13462[
+             3]], 0.9950041652780258 - 1. 
+          Sin[1.6707963267948966` - $CellContext`thetaAdj13462[1]] + 
+          1. Sin[4.812388980384689 - $CellContext`thetaAdj13462[
+             1] - $CellContext`thetaAdj13462[2]] + 
+          1. Sin[4.61238898038469 + $CellContext`thetaAdj13462[
+              1] + $CellContext`thetaAdj13462[2] - $CellContext`thetaAdj13462[
+             3]]}}, $CellContext`pVarsFunc[
+         Pattern[$CellContext`numPoints, 
+          Blank[Integer]], 
+         Pattern[$CellContext`hTail, 
+          Blank[Real]], 
+         Pattern[$CellContext`thetaLean, 
+          Blank[Real]], 
+         Pattern[$CellContext`distances, 
+          Blank[List]], 
+         Pattern[$CellContext`theta, 
+          Blank[List]]] := Module[{$CellContext`p}, 
+         Table[
+          
+          Which[$CellContext`n == 
+           1, $CellContext`p = {(-$CellContext`hTail) 
+             Sin[$CellContext`thetaLean], $CellContext`hTail 
+             Cos[$CellContext`thetaLean]}, $CellContext`n >= 2, 
+           
+           AddTo[$CellContext`p, {
+            Part[$CellContext`distances, $CellContext`n - 1] Cos[
+               Part[$CellContext`theta, $CellContext`n - 1]], 
+             Part[$CellContext`distances, $CellContext`n - 1] Sin[
+               
+               Part[$CellContext`theta, $CellContext`n - 
+                1]]}]], {$CellContext`n, 1, $CellContext`numPoints + 
+           1}]], $CellContext`mVars = {{-0.09983341664682815 + 
+          0.5 Cos[1.6707963267948966` - $CellContext`thetaAdj13462[1]], 
+          0.9950041652780258 - 0.5 
+          Sin[1.6707963267948966` - $CellContext`thetaAdj13462[
+            1]]}, {-0.09983341664682815 + 
+          1. Cos[1.6707963267948966` - $CellContext`thetaAdj13462[1]] + 
+          0.5 Cos[4.812388980384689 - $CellContext`thetaAdj13462[
+             1] - $CellContext`thetaAdj13462[2]], 0.9950041652780258 - 1. 
+          Sin[1.6707963267948966` - $CellContext`thetaAdj13462[1]] + 
+          0.5 Sin[4.812388980384689 - $CellContext`thetaAdj13462[
+             1] - $CellContext`thetaAdj13462[2]]}, {-0.09983341664682815 + 
+          1. Cos[1.6707963267948966` - $CellContext`thetaAdj13462[1]] + 
+          1. Cos[4.812388980384689 - $CellContext`thetaAdj13462[
+             1] - $CellContext`thetaAdj13462[2]] + 
+          0.5 Cos[4.61238898038469 + $CellContext`thetaAdj13462[
+              1] + $CellContext`thetaAdj13462[2] - $CellContext`thetaAdj13462[
+             3]], 0.9950041652780258 - 1. 
+          Sin[1.6707963267948966` - $CellContext`thetaAdj13462[1]] + 
+          1. Sin[4.812388980384689 - $CellContext`thetaAdj13462[
+             1] - $CellContext`thetaAdj13462[2]] + 
+          0.5 Sin[4.61238898038469 + $CellContext`thetaAdj13462[
+              1] + $CellContext`thetaAdj13462[2] - $CellContext`thetaAdj13462[
+             3]]}}, $CellContext`torqueVars = {
+        0.5 (-0.09983341664682815 + 
+          0.5 Cos[1.6707963267948966` - $CellContext`thetaAdj13462[1]]), 
+         0.5 (-0.09983341664682815 + 
+          1. Cos[1.6707963267948966` - $CellContext`thetaAdj13462[1]] + 
+          0.5 Cos[4.812388980384689 - $CellContext`thetaAdj13462[
+             1] - $CellContext`thetaAdj13462[2]]), 
+         0.5 (-0.09983341664682815 + 
+          1. Cos[1.6707963267948966` - $CellContext`thetaAdj13462[1]] + 
+          1. Cos[4.812388980384689 - $CellContext`thetaAdj13462[
+             1] - $CellContext`thetaAdj13462[2]] + 
+          0.5 Cos[4.61238898038469 + $CellContext`thetaAdj13462[
+              1] + $CellContext`thetaAdj13462[2] - $CellContext`thetaAdj13462[
+             3]])}, $CellContext`torqueAtPoint[
+         Pattern[$CellContext`mass, 
+          Blank[]], 
+         Pattern[$CellContext`coord, 
+          Blank[]]] := $CellContext`mass 
+        Part[$CellContext`coord, 1], $CellContext`pH = {-0.4991670832341408, 
+        4.975020826390129}, $CellContext`mH = {-1.4941712485121665`, 
+        4.875187409743301}, $CellContext`constraints = {(5 Pi)/
+          6 <= $CellContext`thetaAdj13462[1] <= (7 Pi)/6, (5 Pi)/
+          6 <= $CellContext`thetaAdj13462[2] <= (7 Pi)/6, (5 Pi)/
+          6 <= $CellContext`thetaAdj13462[3] <= (7 Pi)/
+          6}, $CellContext`lowerBound$$ = (5 Pi)/
+        6, $CellContext`upperBound$$ = (7 Pi)/
+        6, $CellContext`objective = (-1.4941712485121665` + 
+         0.5 (-0.09983341664682815 + 
+           0.5 Cos[1.6707963267948966` - $CellContext`thetaAdj13462[1]]) + 
+         0.5 (-0.09983341664682815 + 
+           1. Cos[1.6707963267948966` - $CellContext`thetaAdj13462[1]] + 
+           0.5 Cos[4.812388980384689 - $CellContext`thetaAdj13462[
+              1] - $CellContext`thetaAdj13462[2]]) + 
+         0.5 (-0.09983341664682815 + 
+           1. Cos[1.6707963267948966` - $CellContext`thetaAdj13462[1]] + 
+           1. Cos[4.812388980384689 - $CellContext`thetaAdj13462[
+              1] - $CellContext`thetaAdj13462[2]] + 
+           0.5 Cos[4.61238898038469 + $CellContext`thetaAdj13462[
+               1] + $CellContext`thetaAdj13462[
+               2] - $CellContext`thetaAdj13462[
+              3]]))^2, $CellContext`output = {
+        7.90834536232309*^-18, {$CellContext`thetaAdj13462[1] -> 
+          2.6226442046764156`, $CellContext`thetaAdj13462[2] -> 
+          2.63541750817075, $CellContext`thetaAdj13462[3] -> 
+          3.332918462095392}}, $CellContext`error = 
+       7.90834536232309*^-18, $CellContext`thetaAdjs = {2.6226442046764156`, 
+        2.63541750817075, 3.332918462095392}, $CellContext`thetas = {
+        0.9518478778815189, -0.44567273246247563`, 
+        6.537532231136463}, $CellContext`thetaVarsFuncEval[
+         Pattern[$CellContext`numPoints, 
+          Blank[Integer]], 
+         Pattern[$CellContext`thetaLean, 
+          Blank[Real]], 
+         Pattern[$CellContext`thetaAdjEval, 
+          Blank[List]]] := 
+       Module[{$CellContext`doubleprev = 
+          Part[$CellContext`thetaAdjEval, 1] - (
+           Pi/2 + $CellContext`thetaLean), $CellContext`prev}, \
+$CellContext`prev = 
+          Pi - (Part[$CellContext`thetaAdjEval, 2] + $CellContext`doubleprev); 
+         Table[
+           
+           Which[$CellContext`n == 1, $CellContext`doubleprev, $CellContext`n == 
+            2, $CellContext`prev, $CellContext`n >= 
+            3, $CellContext`prev = 
+             2 Pi - Part[$CellContext`thetaAdjEval, $CellContext`n] + (
+               Part[$CellContext`thetaAdjEval, $CellContext`n - 
+                 1] + $CellContext`doubleprev); $CellContext`doubleprev = \
+$CellContext`prev], {$CellContext`n, 
+            1, $CellContext`numPoints}]], $CellContext`pEvals = \
+{{-0.09983341664682815, 0.9950041652780258}, {0.48034558803012034`, 
+        1.809493160005435}, {1.3826664662115082`, 1.3784281616606737`}, {
+        2.3504942909635256`, 1.63004155883137}}}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.992514460956047*^9, 3.9925145255183477`*^9, 3.9925146812185097`*^9, 
+   3.9925147601780787`*^9, 3.992514818775877*^9, 3.992515016730472*^9, 
+   3.9925150843935328`*^9, 3.992515149174101*^9, 3.992515448757704*^9, {
+   3.9925154864548283`*^9, 3.9925155060887747`*^9}, 3.992515568787745*^9, {
+   3.992515696600068*^9, 3.9925157244293118`*^9}, 3.992515794157753*^9, 
+   3.992515847211298*^9, 3.992515954042595*^9, 3.9925159844629593`*^9, {
+   3.99251614554851*^9, 3.992516172538011*^9}, 3.9925162481115503`*^9, 
+   3.992516288028921*^9, {3.992516335748043*^9, 3.992516347518704*^9}, 
+   3.992516634610342*^9, 3.992517081982553*^9, {3.992518029221016*^9, 
+   3.9925180717260313`*^9}, 3.99251821602791*^9, 3.9925183639111357`*^9, 
+   3.992518418956373*^9, {3.992518553727556*^9, 3.99251857130441*^9}, 
+   3.992518778472241*^9, 3.992518936707921*^9, {3.9925192283113947`*^9, 
+   3.9925192473370333`*^9}, 3.992519282045145*^9, {3.992519958374539*^9, 
+   3.992519982513686*^9}, 3.992520179194091*^9, 3.9925246016713343`*^9, 
+   3.992524696219307*^9, 3.9925247279374437`*^9, {3.992524798643034*^9, 
+   3.992524892875806*^9}, 3.992525079876237*^9, 3.992525149912866*^9, {
+   3.992525325771893*^9, 3.992525345553376*^9}, {3.992525422532415*^9, 
+   3.992525437109*^9}, {3.992525551415494*^9, 3.992525591772447*^9}, 
+   3.992525626391205*^9, 3.992525721490888*^9, {3.99252582823501*^9, 
+   3.992525867328352*^9}, {3.992526231050988*^9, 3.99252627696138*^9}},
+ CellLabel->"Out[85]=",ExpressionUUID->"656a23fe-3c73-4601-b530-c25d7876f356"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NMinimize", "nsol", 
+   "\"There are no points that satisfy the constraints \\!\\(\\*RowBox[{\\\"{\
+\\\", \\\"False\\\", \\\"}\\\"}]\\).\"", 2, 86, 146, 27156754401013938641, 
+   "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{3.992526291977832*^9},
+ CellLabel->"",ExpressionUUID->"72d7befe-9469-4459-88ce-6f65ccdcde91"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NMinimize", "nsol", 
+   "\"There are no points that satisfy the constraints \\!\\(\\*RowBox[{\\\"{\
+\\\", \\\"False\\\", \\\"}\\\"}]\\).\"", 2, 86, 147, 27156754401013938641, 
+   "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{3.992526293328845*^9},
+ CellLabel->"",ExpressionUUID->"d8e40c6c-2b6c-4358-97fe-b994fe04e0af"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NMinimize", "nsol", 
+   "\"There are no points that satisfy the constraints \\!\\(\\*RowBox[{\\\"{\
+\\\", \\\"False\\\", \\\"}\\\"}]\\).\"", 2, 86, 148, 27156754401013938641, 
+   "Local"},
+  "MessageTemplate",
+  BaseStyle->"MSG"]], "Message",
+ CellChangeTimes->{3.9925263301310253`*^9},
+ CellLabel->"",ExpressionUUID->"974ad391-20b9-479b-9f36-8ca6de696ea4"]
+}, Open  ]]
+},
+WindowSize->{1227, 911},
+WindowMargins->{{Automatic, 0}, {-26, Automatic}},
+PrivateNotebookOptions->{"CloudPublishPath"->"/Published/\
+RefactoredDynamicVisulaizationTailCode.nb"},
+CellContext->Notebook,
+FrontEndVersion->"15.0 for Mac OS X x86 (64-bit) (May 19, 2026)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"46d9585f-eecc-40b8-aec9-ba569b9628fe"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 167, 3, 36, "CodeText",ExpressionUUID->"2ca985b4-cfc0-445b-9605-6b571eb1f3eb"],
+Cell[724, 25, 414, 10, 51, "Code",ExpressionUUID->"9609ced2-947f-4ad1-bf40-aae5dc1cecb1"],
+Cell[1141, 37, 167, 3, 36, "CodeText",ExpressionUUID->"47ebbe11-851e-405c-b3f8-faa79bf35cc0"],
+Cell[1311, 42, 2911, 63, 371, "Code",ExpressionUUID->"5525f0d2-abb0-43fe-b2ed-b39886572208"],
+Cell[4225, 107, 150, 3, 36, "CodeText",ExpressionUUID->"ec65b9fb-f8c9-4508-b13e-fa6e4e8dc203"],
+Cell[4378, 112, 2330, 56, 352, "Code",ExpressionUUID->"88e2c41b-6bcd-48f8-b44c-e64d4863bcc8"],
+Cell[6711, 170, 191, 3, 36, "CodeText",ExpressionUUID->"835375e6-abf1-43d3-8cc4-3089d600f570"],
+Cell[6905, 175, 2607, 59, 296, "Code",ExpressionUUID->"9381570b-8f93-4029-9352-1fb4833df5ca"],
+Cell[9515, 236, 191, 3, 36, "CodeText",ExpressionUUID->"609fbe63-63c5-4138-9be0-84cf94cade50"],
+Cell[CellGroupData[{
+Cell[9731, 243, 14789, 312, 1144, "Code",ExpressionUUID->"b94dc4be-5b48-4bea-a42f-8fb0a7d041d0"],
+Cell[24523, 557, 1686, 24, 33, "Output",ExpressionUUID->"7777a17a-d548-41d7-87d9-03cec64b65a1"],
+Cell[26212, 583, 17804, 322, 836, "Output",ExpressionUUID->"656a23fe-3c73-4601-b530-c25d7876f356"],
+Cell[44019, 907, 387, 9, 26, "Message",ExpressionUUID->"72d7befe-9469-4459-88ce-6f65ccdcde91"],
+Cell[44409, 918, 387, 9, 26, "Message",ExpressionUUID->"d8e40c6c-2b6c-4358-97fe-b994fe04e0af"],
+Cell[44799, 929, 389, 9, 26, "Message",ExpressionUUID->"974ad391-20b9-479b-9f36-8ca6de696ea4"]
+}, Open  ]]
+}
+]
+*)
+

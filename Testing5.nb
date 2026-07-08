@@ -1,0 +1,1006 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 15.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     45820,        998]
+NotebookOptionsPosition[     45242,        980]
+NotebookOutlinePosition[     45633,        996]
+CellTagsIndexPosition[     45590,        993]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"torqueAtPoint", "[", 
+   RowBox[{"mass_", ",", "coord_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\n", "\t", 
+    RowBox[{"mass", " ", "*", " ", 
+     RowBox[{"coord", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}]}], "\n", "]"}]}]], "Input",
+ CellLabel->"In[2]:=",ExpressionUUID->"377c41a8-3dd8-4321-b411-ab13ffd36877"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DynamicModule", "[", 
+  RowBox[{
+   RowBox[{"{", "\n", "\t\t", 
+    RowBox[{
+     RowBox[{"thetaLean", " ", "=", " ", 
+      RowBox[{"Pi", "/", "10"}]}], ",", "\n", "\t\t", 
+     RowBox[{"mTailConst", " ", "=", " ", "1"}], ",", "\n", "\t\t", 
+     RowBox[{"dTailConst", " ", "=", " ", "1"}], ",", "\n", "\t\t", 
+     RowBox[{"numPoints", " ", "=", " ", "6"}], ",", "\n", "\t\t", 
+     RowBox[{"hHead", " ", "=", " ", "5"}], ",", "\n", "\t\t", 
+     RowBox[{"dHead", " ", "=", " ", "1"}], ",", "\n", "\t\t", 
+     RowBox[{"mHead", " ", "=", " ", "1"}], ",", "\n", "\t\t", 
+     RowBox[{"hTail", " ", "=", " ", "1"}], ",", "\n", "\t\t", "\n", "\t\t", 
+     RowBox[{"p0", " ", "=", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}]}], ",", "\n", "\t\t", "\n", "\t\t", 
+     RowBox[{"lowerBound", "=", 
+      RowBox[{"(", 
+       RowBox[{"5", 
+        RowBox[{"Pi", "/", "6"}]}], ")"}]}], ",", "\n", "\t\t", 
+     RowBox[{"upperBound", " ", "=", " ", 
+      RowBox[{"(", 
+       RowBox[{"7", 
+        RowBox[{"Pi", "/", "6"}]}], ")"}]}], ",", "\n", "  \t\t", "p", ",", 
+     "\n", "  \t\t", "pH", ",", "\n", "  \t\t", "mH", ",", "\n", "  \t\t", 
+     "thetaAdjVars", ",", "\n", "  \t\t", "thetaVars", ",", "\n", "  \t\t", 
+     "pVars", ",", "\n", "  \t\t", "mVars", ",", "\n", "  \t\t", "torqueVars",
+      ",", "\n", "  \t\t", "constraints", ",", "\n", "  \t\t", "objective", ",",
+      "\n", "  \t\t", "output", ",", "\n", "  \t\t", "listOfDistances", ",", 
+     "\n", "  \t\t", "doubleprev", ",", "\n", "  \t\t", "prev", ",", "\n", 
+     "  \t\t", "listOfMasses", ",", "\n", "  \t\t", "error"}], "\n", "  \t", 
+    "}"}], ",", "\n", " \t", 
+   RowBox[{"Column", "[", 
+    RowBox[{"{", "\n", "   \t\t", 
+     RowBox[{
+      RowBox[{"Slider", "[", 
+       RowBox[{
+        RowBox[{"Dynamic", "[", "thetaLean", "]"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"(", 
+            RowBox[{"Pi", "/", "2"}], ")"}]}], ",", " ", 
+          RowBox[{"(", 
+           RowBox[{"Pi", "/", "2"}], ")"}]}], "}"}], ",", 
+        RowBox[{"ContinuousAction", " ", "->", " ", "False"}]}], "]"}], ",", 
+      "\n", "   \t\t", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"StringJoin", "[", 
+        RowBox[{"\"\<thetaLean = \>\"", ",", " ", 
+         RowBox[{"ToString", "[", "thetaLean", "]"}]}], "]"}], "]"}], ",", 
+      "\n", "   \t\t", 
+      RowBox[{"Slider", "[", 
+       RowBox[{
+        RowBox[{"Dynamic", "[", "mTailConst", "]"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"0.1", ",", " ", "10"}], "}"}], ",", 
+        RowBox[{"ContinuousAction", " ", "->", " ", "False"}]}], "]"}], ",", 
+      "\n", "   \t\t", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"StringJoin", "[", 
+        RowBox[{"\"\<mTail = \>\"", ",", " ", 
+         RowBox[{"ToString", "[", "mTailConst", "]"}]}], "]"}], "]"}], ",", 
+      "\n", "   \t\t", 
+      RowBox[{"Slider", "[", 
+       RowBox[{
+        RowBox[{"Dynamic", "[", "numPoints", "]"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"3", ",", " ", "10", ",", " ", "1"}], "}"}], ",", 
+        RowBox[{"ContinuousAction", " ", "->", " ", "False"}]}], "]"}], ",", 
+      "\n", "   \t\t", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"StringJoin", "[", 
+        RowBox[{"\"\<numPoints = \>\"", ",", " ", 
+         RowBox[{"ToString", "[", "numPoints", "]"}]}], "]"}], "]"}], ",", 
+      "\n", "   \t\t", 
+      RowBox[{"Slider", "[", 
+       RowBox[{
+        RowBox[{"Dynamic", "[", "dTailConst", "]"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"0.1", ",", " ", "10"}], "}"}], ",", 
+        RowBox[{"ContinuousAction", " ", "->", " ", "False"}]}], "]"}], ",", 
+      "\n", "   \t\t", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"StringJoin", "[", 
+        RowBox[{"\"\<dTail = \>\"", ",", " ", 
+         RowBox[{"ToString", "[", "dTailConst", "]"}]}], "]"}], "]"}], ",", 
+      "\n", "   \t\t", 
+      RowBox[{"Slider", "[", 
+       RowBox[{
+        RowBox[{"Dynamic", "[", "upperBound", "]"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "2"}], "Pi"}], ",", " ", 
+          RowBox[{"2", "Pi"}]}], "}"}], ",", 
+        RowBox[{"ContinuousAction", " ", "->", " ", "False"}]}], "]"}], ",", 
+      "\n", "   \t\t", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"StringJoin", "[", 
+        RowBox[{"\"\<upperBound = \>\"", ",", " ", 
+         RowBox[{"ToString", "[", "upperBound", "]"}]}], "]"}], "]"}], ",", 
+      "\n", "   \t\t", 
+      RowBox[{"Slider", "[", 
+       RowBox[{
+        RowBox[{"Dynamic", "[", "lowerBound", "]"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "2"}], "Pi"}], ",", " ", 
+          RowBox[{"2", "Pi"}]}], "}"}], ",", 
+        RowBox[{"ContinuousAction", " ", "->", " ", "False"}]}], "]"}], ",", 
+      "\n", "   \t\t", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"StringJoin", "[", 
+        RowBox[{"\"\<lowerBound = \>\"", ",", " ", 
+         RowBox[{"ToString", "[", "lowerBound", "]"}]}], "]"}], "]"}], ",", 
+      "\n", "   \t\t", 
+      RowBox[{"Dynamic", "[", "\t", "\n", "   \t\t\t", 
+       RowBox[{
+        RowBox[{"listOfDistances", " ", "=", " ", 
+         RowBox[{"Table", "[", 
+          RowBox[{"dTailConst", ",", "numPoints"}], "]"}]}], ";", "\n", 
+        "   \t\t\t", 
+        RowBox[{"listOfMasses", " ", "=", " ", 
+         RowBox[{"Table", "[", 
+          RowBox[{"mTailConst", ",", "numPoints"}], "]"}]}], ";", "\n", 
+        "   \t\t\t", 
+        RowBox[{"thetaAdjVars", "=", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"thetaAdj", "[", "n", "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"n", ",", "1", ",", "numPoints"}], "}"}]}], "]"}]}], ";", 
+        "\n", "   \t\t\t", 
+        RowBox[{"doubleprev", " ", "=", " ", 
+         RowBox[{
+          RowBox[{"thetaAdjVars", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "-", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"Pi", "/", "2"}], ")"}], "+", "thetaLean"}], ")"}]}]}], ";",
+         "\n", "   \t\t\t", 
+        RowBox[{"prev", "=", 
+         RowBox[{"Pi", "-", 
+          RowBox[{"thetaAdjVars", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "-", "doubleprev"}]}], ";", "\n", 
+        "   \t\t\t", 
+        RowBox[{"thetaVars", "=", 
+         RowBox[{"Table", "[", "\n", "\t\t\t\t\t", 
+          RowBox[{
+           RowBox[{"Which", "[", "\n", "\t\t\t\t\t", 
+            RowBox[{
+             RowBox[{"n", "==", "1"}], ",", " ", 
+             RowBox[{
+              RowBox[{"thetaAdjVars", "[", 
+               RowBox[{"[", "n", "]"}], "]"}], "-", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"Pi", "/", "2"}], ")"}], "+", "thetaLean"}], ")"}]}],
+              ",", "\n", "\t\t\t\t\t", 
+             RowBox[{"n", "==", "2"}], ",", " ", 
+             RowBox[{
+              RowBox[{"prev", "=", " ", 
+               RowBox[{"Pi", "-", 
+                RowBox[{"thetaAdjVars", "[", 
+                 RowBox[{"[", "n", "]"}], "]"}], "-", "doubleprev"}]}], ";", 
+              RowBox[{"Pi", "-", 
+               RowBox[{"thetaAdjVars", "[", 
+                RowBox[{"[", "n", "]"}], "]"}], "-", "doubleprev"}]}], ",", 
+             "\n", "\t\t\t\t\t", 
+             RowBox[{"n", ">=", "3"}], ",", " ", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"2", "Pi"}], " ", "-", " ", 
+               RowBox[{"thetaAdjVars", "[", 
+                RowBox[{"[", "n", "]"}], "]"}], "-", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"thetaAdjVars", "[", 
+                  RowBox[{"[", 
+                   RowBox[{"n", "-", "1"}], "]"}], "]"}], "-", "doubleprev"}],
+                 ")"}]}], ";", " ", 
+              RowBox[{"prev", "=", 
+               RowBox[{
+                RowBox[{"2", "Pi"}], " ", "-", " ", 
+                RowBox[{"thetaAdjVars", "[", 
+                 RowBox[{"[", "n", "]"}], "]"}], "-", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"thetaAdjVars", "[", 
+                   RowBox[{"[", 
+                    RowBox[{"n", "-", "1"}], "]"}], "]"}], "-", 
+                  "doubleprev"}], ")"}]}]}], ";", " ", 
+              RowBox[{"doubleprev", "=", "prev"}]}]}], "\n", "\t\t\t\t\t", 
+            "]"}], ",", "\n", "\t\t\t\t", 
+           RowBox[{"{", 
+            RowBox[{"n", ",", "1", ",", "numPoints"}], "}"}]}], "]"}]}], ";", 
+        "\n", "\t\t\t\t", "\n", "\t\t\t\t", "p", ";", "\n", "\t\t\t\t", 
+        RowBox[{"pVars", "=", 
+         RowBox[{"Table", "[", "\n", "\t\t\t\t", 
+          RowBox[{
+           RowBox[{"Which", "[", "\n", "\t\t\t\t\t", 
+            RowBox[{
+             RowBox[{"n", "==", "1"}], ",", " ", 
+             RowBox[{"p", "=", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"-", "hTail"}], "*", 
+                 RowBox[{"Sin", "[", "thetaLean", "]"}]}], ",", 
+                RowBox[{"hTail", "*", 
+                 RowBox[{"Cos", "[", "thetaLean", "]"}]}]}], "}"}]}], ",", 
+             "\n", "\t\t\t\t\t", 
+             RowBox[{"n", ">=", "2"}], ",", " ", 
+             RowBox[{"p", "=", 
+              RowBox[{"p", "+", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"listOfDistances", "[", 
+                   RowBox[{"[", 
+                    RowBox[{"n", "-", "1"}], "]"}], "]"}], "*", 
+                  RowBox[{"Cos", "[", 
+                   RowBox[{"thetaVars", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"n", "-", "1"}], "]"}], "]"}], "]"}]}], ",", 
+                 RowBox[{
+                  RowBox[{"listOfDistances", "[", 
+                   RowBox[{"[", 
+                    RowBox[{"n", "-", "1"}], "]"}], "]"}], "*", 
+                  RowBox[{"Sin", "[", 
+                   RowBox[{"thetaVars", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"n", "-", "1"}], "]"}], "]"}], "]"}]}]}], 
+                "}"}]}]}]}], "]"}], ",", "\n", "\t\t\t\t", 
+           RowBox[{"{", 
+            RowBox[{"n", ",", "1", ",", 
+             RowBox[{"numPoints", "+", "1"}]}], "}"}]}], "]"}]}], ";", "\n", 
+        "\t\t\t\t", 
+        RowBox[{"mVars", "=", 
+         RowBox[{"Table", "[", "\n", "\t\t\t\t\t", 
+          RowBox[{
+           RowBox[{"Midpoint", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"pVars", "[", 
+               RowBox[{"[", "n", "]"}], "]"}], ",", 
+              RowBox[{"pVars", "[", 
+               RowBox[{"[", 
+                RowBox[{"n", "+", "1"}], "]"}], "]"}]}], "}"}], "]"}], ",", 
+           "\n", "\t\t\t\t", 
+           RowBox[{"{", 
+            RowBox[{"n", ",", "1", ",", "numPoints"}], "}"}]}], "]"}]}], ";", 
+        "\n", "\t\t\t\t", 
+        RowBox[{"torqueVars", "=", 
+         RowBox[{"Table", "[", "\n", "\t\t\t\t\t", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"mVars", "[", 
+              RowBox[{"[", "n", "]"}], "]"}], "[", 
+             RowBox[{"[", "1", "]"}], "]"}], " ", "*", " ", 
+            RowBox[{"listOfMasses", "[", 
+             RowBox[{"[", "n", "]"}], "]"}]}], ",", "\n", "\t\t\t\t", 
+           RowBox[{"{", 
+            RowBox[{"n", ",", "1", ",", "numPoints"}], "}"}]}], "]"}]}], ";", 
+        "\n", "\t\t\t\t", "\n", "\t\t\t\t", 
+        RowBox[{"pH", " ", "=", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "hHead"}], "*", 
+            RowBox[{"Sin", "[", "thetaLean", "]"}]}], ",", 
+           RowBox[{"hHead", "*", 
+            RowBox[{"Cos", "[", "thetaLean", "]"}]}]}], "}"}]}], ";", "\n", 
+        "\t\t\t\t", 
+        RowBox[{"mH", " ", "=", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"pH", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "-", 
+            RowBox[{"dHead", "*", 
+             RowBox[{"Cos", "[", "thetaLean", "]"}]}]}], ",", 
+           RowBox[{
+            RowBox[{"pH", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "-", 
+            RowBox[{"dHead", "*", 
+             RowBox[{"Sin", "[", "thetaLean", "]"}]}]}]}], "}"}]}], ";", "\n",
+         "\t\t\t\t", "\n", "\t\t\t\t", 
+        RowBox[{"constraints", " ", "=", " ", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"lowerBound", " ", "<=", " ", 
+            RowBox[{"thetaAdj", "[", "n", "]"}], " ", "<=", " ", 
+            "upperBound"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{"n", ",", " ", "1", ",", " ", "numPoints"}], "}"}]}], 
+          "]"}]}], ";", "\n", "\t\t\t\t", "\n", "\t\t\t\t", 
+        RowBox[{"objective", " ", "=", " ", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"torqueAtPoint", "[", 
+             RowBox[{"mHead", ",", "mH"}], "]"}], " ", "+", " ", 
+            RowBox[{"Total", "[", "torqueVars", "]"}]}], ")"}], "^", "2"}]}], 
+        ";", "\n", "\t\t\t\t", "\n", "\t\t\t\t", 
+        RowBox[{"output", " ", "=", " ", 
+         RowBox[{"NMinimize", "[", "\n", "\t\t\t\t\t", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"objective", ",", " ", "constraints"}], "}"}], ",", 
+           "thetaAdjVars"}], "\n", "\t\t\t\t", "]"}]}], ";", "\t\t", "\n", 
+        "\t\t\t\t", 
+        RowBox[{"error", " ", "=", " ", 
+         RowBox[{"output", "[", 
+          RowBox[{"[", "1", "]"}], "]"}]}], ";", "\n", "\t\t\t\t", 
+        RowBox[{"thetaAdjVars", " ", "=", " ", 
+         RowBox[{"Values", "[", 
+          RowBox[{"output", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "]"}]}], ";", "\t\t", "\n", 
+        "\t\t\t\t", 
+        RowBox[{"doubleprev", " ", "=", " ", 
+         RowBox[{
+          RowBox[{"thetaAdjVars", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "-", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"Pi", "/", "2"}], ")"}], "+", "thetaLean"}], ")"}]}]}], ";",
+         "\n", "   \t\t\t", 
+        RowBox[{"prev", "=", 
+         RowBox[{"Pi", "-", 
+          RowBox[{"thetaAdjVars", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "-", "doubleprev"}]}], ";", "\n", 
+        "   \t\t\t", 
+        RowBox[{"thetaVars", "=", 
+         RowBox[{"Table", "[", "\n", "\t\t\t\t\t", 
+          RowBox[{
+           RowBox[{"Which", "[", "\n", "\t\t\t\t\t", 
+            RowBox[{
+             RowBox[{"n", "==", "1"}], ",", " ", 
+             RowBox[{
+              RowBox[{"thetaAdjVars", "[", 
+               RowBox[{"[", "n", "]"}], "]"}], "-", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"Pi", "/", "2"}], ")"}], "+", "thetaLean"}], ")"}]}],
+              ",", "\n", "\t\t\t\t\t", 
+             RowBox[{"n", "==", "2"}], ",", " ", 
+             RowBox[{
+              RowBox[{"prev", "=", " ", 
+               RowBox[{"Pi", "-", 
+                RowBox[{"thetaAdjVars", "[", 
+                 RowBox[{"[", "n", "]"}], "]"}], "-", "doubleprev"}]}], ";", 
+              RowBox[{"Pi", "-", 
+               RowBox[{"thetaAdjVars", "[", 
+                RowBox[{"[", "n", "]"}], "]"}], "-", "doubleprev"}]}], ",", 
+             "\n", "\t\t\t\t\t", 
+             RowBox[{"n", ">=", "3"}], ",", " ", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"2", "Pi"}], " ", "-", " ", 
+               RowBox[{"thetaAdjVars", "[", 
+                RowBox[{"[", "n", "]"}], "]"}], "-", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"thetaAdjVars", "[", 
+                  RowBox[{"[", 
+                   RowBox[{"n", "-", "1"}], "]"}], "]"}], "-", "doubleprev"}],
+                 ")"}]}], ";", " ", 
+              RowBox[{"prev", "=", 
+               RowBox[{
+                RowBox[{"2", "Pi"}], " ", "-", " ", 
+                RowBox[{"thetaAdjVars", "[", 
+                 RowBox[{"[", "n", "]"}], "]"}], "-", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"thetaAdjVars", "[", 
+                   RowBox[{"[", 
+                    RowBox[{"n", "-", "1"}], "]"}], "]"}], "-", 
+                  "doubleprev"}], ")"}]}]}], ";", " ", 
+              RowBox[{"doubleprev", "=", "prev"}]}]}], "\n", "\t\t\t\t\t", 
+            "]"}], ",", "\n", "\t\t\t\t", 
+           RowBox[{"{", 
+            RowBox[{"n", ",", "1", ",", "numPoints"}], "}"}]}], "]"}]}], ";", 
+        "\n", "\t\t\t\t", "p", ";", "\n", "\t\t\t\t", 
+        RowBox[{"pVars", "=", 
+         RowBox[{"Table", "[", "\n", "\t\t\t\t", 
+          RowBox[{
+           RowBox[{"Which", "[", "\n", "\t\t\t\t\t", 
+            RowBox[{
+             RowBox[{"n", "==", "1"}], ",", " ", 
+             RowBox[{"p", "=", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"-", "hTail"}], "*", 
+                 RowBox[{"Sin", "[", "thetaLean", "]"}]}], ",", 
+                RowBox[{"hTail", "*", 
+                 RowBox[{"Cos", "[", "thetaLean", "]"}]}]}], "}"}]}], ",", 
+             "\n", "\t\t\t\t\t", 
+             RowBox[{"n", ">=", "2"}], ",", " ", 
+             RowBox[{"p", "=", 
+              RowBox[{"p", "+", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"listOfDistances", "[", 
+                   RowBox[{"[", 
+                    RowBox[{"n", "-", "1"}], "]"}], "]"}], "*", 
+                  RowBox[{"Cos", "[", 
+                   RowBox[{"thetaVars", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"n", "-", "1"}], "]"}], "]"}], "]"}]}], ",", 
+                 RowBox[{
+                  RowBox[{"listOfDistances", "[", 
+                   RowBox[{"[", 
+                    RowBox[{"n", "-", "1"}], "]"}], "]"}], "*", 
+                  RowBox[{"Sin", "[", 
+                   RowBox[{"thetaVars", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"n", "-", "1"}], "]"}], "]"}], "]"}]}]}], 
+                "}"}]}]}]}], "]"}], ",", "\n", "\t\t\t\t", 
+           RowBox[{"{", 
+            RowBox[{"n", ",", "1", ",", 
+             RowBox[{"numPoints", "+", "1"}]}], "}"}]}], "]"}]}], ";", 
+        "\t\t\t\t", "\n", "\t\t\t\t", "\"\<\>\""}], "\t\t", "\n", "    \t\t", 
+       "]"}], ",", "\n", "    \t\t", 
+      RowBox[{"Dynamic", "[", "error", "]"}], ",", "\n", "\t\t\t", 
+      RowBox[{"Graphics", "[", 
+       RowBox[{
+        RowBox[{"{", "\n", "\t\t\t\t\t", 
+         RowBox[{"Blue", ",", 
+          RowBox[{"Dynamic", "[", 
+           RowBox[{"{", "\n", "\t\t\t\t\t\t", 
+            RowBox[{"Join", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"Line", "[", 
+                 RowBox[{"{", 
+                  RowBox[{"p0", ",", "pH"}], "}"}], "]"}], ",", " ", 
+                RowBox[{"Line", "[", 
+                 RowBox[{"{", 
+                  RowBox[{"mH", ",", "pH"}], "}"}], "]"}]}], "}"}], ",", 
+              RowBox[{"Table", "[", 
+               RowBox[{
+                RowBox[{"Line", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"pVars", "[", 
+                    RowBox[{"[", "n", "]"}], "]"}], ",", 
+                   RowBox[{"pVars", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"n", "+", "1"}], "]"}], "]"}]}], "}"}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"n", ",", "1", ",", "numPoints"}], "}"}]}], "]"}]}], 
+             "]"}], "\n", "\t\t\t\t\t", "}"}], "]"}], ",", "\n", "\t\t\t\t\t",
+           "LightGray", ",", "Dashed", ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Line", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"-", "10"}], ",", "0"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"10", ",", "0"}], "}"}]}], "}"}], "]"}], ",", 
+            RowBox[{"Line", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"0", ",", 
+                 RowBox[{"-", "10"}]}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", "10"}], "}"}]}], "}"}], "]"}]}], "}"}]}], 
+         "\n", "\t\t\t\t", "}"}], ",", " ", 
+        RowBox[{"ImageSize", "->", "Large"}], ",", 
+        RowBox[{"PlotRange", "->", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "}"}]}]}], "\n", 
+       "\t\t\t", "]"}]}], "\n", "   \t", "}"}], "]"}]}], "\n", " ", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.992512522352838*^9, 3.992512553531478*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"b76494bb-5564-4fcf-a070-c5a92b55da4d"],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`thetaLean$$ = Rational[1, 10] 
+  Pi, $CellContext`mTailConst$$ = 1, $CellContext`dTailConst$$ = 
+  1, $CellContext`numPoints$$ = 6, $CellContext`hHead$$ = 
+  5, $CellContext`dHead$$ = 1, $CellContext`mHead$$ = 
+  1, $CellContext`hTail$$ = 1, $CellContext`p0$$ = {0, 
+  0}, $CellContext`lowerBound$$ = Rational[5, 6] 
+  Pi, $CellContext`upperBound$$ = Rational[7, 6] 
+  Pi, $CellContext`p$$ = {-0.8675444653464819, 
+  3.87265223753412}, $CellContext`pH$$ = {
+  Rational[-5, 4] (-1 + 5^Rational[1, 2]), 
+   5 (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+    Rational[1, 2]}, $CellContext`mH$$ = {-(Rational[5, 8] + 
+      Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2] + 
+   Rational[-5, 4] (-1 + 5^Rational[1, 2]), 
+   Rational[1, 4] (1 - 5^Rational[1, 2]) + 
+   5 (Rational[5, 8] + Rational[1, 8] 5^Rational[1, 2])^
+     Rational[1, 2]}, $CellContext`thetaAdjVars$$ = {2.903893391686229, 
+  3.0167995138295427`, 2.9566082775463, 2.8420551147361888`, 
+  2.856996868670174, 2.9147859774734495`}, $CellContext`thetaVars$$ = {
+  1.018937799532353, -0.8941446597721026, 1.3287153153360967`, 
+  1.8132372302331943`, 2.3973705540064176`, 
+  2.9087730150423803`}, $CellContext`pVars$$ = {{
+   Rational[1, 4] (1 - 5^Rational[1, 2]), (Rational[5, 8] + 
+     Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2]}, {0.21525377099692167`, 
+   1.8026081380870416`}, {0.8414397027030125, 1.022934373661577}, {
+   1.0811631784288807`, 1.993775583739677}, {0.8410903202704423, 
+   2.964530456390666}, {0.10547524579999201`, 
+   3.641930236588323}, {-0.8675444653464819, 
+   3.87265223753412}}, $CellContext`mVars$$ = {{
+   Rational[1, 4] (1 - 5^Rational[1, 2] - 2 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]]), 
+    Rational[1, 4] ((2 (5 + 5^Rational[1, 2]))^Rational[1, 2] - 2 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[1]])}, {
+   Rational[1, 4] (1 - 5^Rational[1, 2] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] + 
+     2 Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+        1] - $CellContext`thetaAdj[2]]), 
+    Rational[1, 4] ((2 (5 + 5^Rational[1, 2]))^Rational[1, 2] - 4 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] - 2 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] - $CellContext`thetaAdj[2]])}, {
+   Rational[1, 4] (1 - 5^Rational[1, 2] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] + 
+     4 Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+        1] - $CellContext`thetaAdj[2]] - 2 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + $CellContext`thetaAdj[3]]), 
+    Rational[1, 4] ((2 (5 + 5^Rational[1, 2]))^Rational[1, 2] - 4 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] - 4 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] - $CellContext`thetaAdj[2]] - 2 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + $CellContext`thetaAdj[3]])}, {
+   Rational[1, 4] (1 - 5^Rational[1, 2] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] + 
+     4 Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+        1] - $CellContext`thetaAdj[2]] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + $CellContext`thetaAdj[3]] - 2 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 
+       2 $CellContext`thetaAdj[3] + $CellContext`thetaAdj[4]]), 
+    Rational[1, 4] ((2 (5 + 5^Rational[1, 2]))^Rational[1, 2] - 4 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] - 4 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] - $CellContext`thetaAdj[2]] - 4 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + $CellContext`thetaAdj[3]] - 2 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 
+       2 $CellContext`thetaAdj[3] + $CellContext`thetaAdj[4]])}, {
+   Rational[1, 4] (1 - 5^Rational[1, 2] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] + 
+     4 Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+        1] - $CellContext`thetaAdj[2]] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + $CellContext`thetaAdj[3]] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 
+       2 $CellContext`thetaAdj[3] + $CellContext`thetaAdj[4]] - 2 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 2 $CellContext`thetaAdj[3] + 
+       2 $CellContext`thetaAdj[4] + $CellContext`thetaAdj[5]]), 
+    Rational[1, 4] ((2 (5 + 5^Rational[1, 2]))^Rational[1, 2] - 4 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] - 4 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] - $CellContext`thetaAdj[2]] - 4 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + $CellContext`thetaAdj[3]] - 4 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 
+       2 $CellContext`thetaAdj[3] + $CellContext`thetaAdj[4]] - 2 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 2 $CellContext`thetaAdj[3] + 
+       2 $CellContext`thetaAdj[4] + $CellContext`thetaAdj[5]])}, {
+   Rational[1, 4] (1 - 5^Rational[1, 2] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] + 
+     4 Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+        1] - $CellContext`thetaAdj[2]] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + $CellContext`thetaAdj[3]] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 
+       2 $CellContext`thetaAdj[3] + $CellContext`thetaAdj[4]] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 2 $CellContext`thetaAdj[3] + 
+       2 $CellContext`thetaAdj[4] + $CellContext`thetaAdj[5]] - 2 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 2 $CellContext`thetaAdj[3] + 
+       2 $CellContext`thetaAdj[4] + 
+       2 $CellContext`thetaAdj[5] + $CellContext`thetaAdj[6]]), 
+    Rational[1, 4] ((2 (5 + 5^Rational[1, 2]))^Rational[1, 2] - 4 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] - 4 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] - $CellContext`thetaAdj[2]] - 4 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + $CellContext`thetaAdj[3]] - 4 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 
+       2 $CellContext`thetaAdj[3] + $CellContext`thetaAdj[4]] - 4 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 2 $CellContext`thetaAdj[3] + 
+       2 $CellContext`thetaAdj[4] + $CellContext`thetaAdj[5]] - 2 
+     Cos[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 2 $CellContext`thetaAdj[3] + 
+       2 $CellContext`thetaAdj[4] + 
+       2 $CellContext`thetaAdj[5] + $CellContext`thetaAdj[
+        6]])}}, $CellContext`torqueVars$$ = {
+  Rational[1, 4] (1 - 5^Rational[1, 2] - 2 
+    Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]]), 
+   Rational[1, 4] (1 - 5^Rational[1, 2] - 4 
+    Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] + 
+    2 Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] - $CellContext`thetaAdj[2]]), 
+   Rational[1, 4] (1 - 5^Rational[1, 2] - 4 
+    Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] + 
+    4 Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] - $CellContext`thetaAdj[2]] - 2 
+    Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+      1] + $CellContext`thetaAdj[2] + $CellContext`thetaAdj[3]]), 
+   Rational[1, 4] (1 - 5^Rational[1, 2] - 4 
+    Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] + 
+    4 Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] - $CellContext`thetaAdj[2]] - 4 
+    Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+      1] + $CellContext`thetaAdj[2] + $CellContext`thetaAdj[3]] - 2 
+    Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+      1] + $CellContext`thetaAdj[2] + 
+      2 $CellContext`thetaAdj[3] + $CellContext`thetaAdj[4]]), 
+   Rational[1, 4] (1 - 5^Rational[1, 2] - 4 
+    Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] + 
+    4 Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] - $CellContext`thetaAdj[2]] - 4 
+    Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+      1] + $CellContext`thetaAdj[2] + $CellContext`thetaAdj[3]] - 4 
+    Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+      1] + $CellContext`thetaAdj[2] + 
+      2 $CellContext`thetaAdj[3] + $CellContext`thetaAdj[4]] - 2 
+    Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+      1] + $CellContext`thetaAdj[2] + 2 $CellContext`thetaAdj[3] + 
+      2 $CellContext`thetaAdj[4] + $CellContext`thetaAdj[5]]), 
+   Rational[1, 4] (1 - 5^Rational[1, 2] - 4 
+    Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] + 
+    4 Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] - $CellContext`thetaAdj[2]] - 4 
+    Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+      1] + $CellContext`thetaAdj[2] + $CellContext`thetaAdj[3]] - 4 
+    Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+      1] + $CellContext`thetaAdj[2] + 
+      2 $CellContext`thetaAdj[3] + $CellContext`thetaAdj[4]] - 4 
+    Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+      1] + $CellContext`thetaAdj[2] + 2 $CellContext`thetaAdj[3] + 
+      2 $CellContext`thetaAdj[4] + $CellContext`thetaAdj[5]] - 2 
+    Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+      1] + $CellContext`thetaAdj[2] + 2 $CellContext`thetaAdj[3] + 
+      2 $CellContext`thetaAdj[4] + 
+      2 $CellContext`thetaAdj[5] + $CellContext`thetaAdj[
+       6]])}, $CellContext`constraints$$ = {
+  Rational[5, 6] Pi <= $CellContext`thetaAdj[1] <= Rational[7, 6] Pi, 
+   Rational[5, 6] Pi <= $CellContext`thetaAdj[2] <= Rational[7, 6] Pi, 
+   Rational[5, 6] Pi <= $CellContext`thetaAdj[3] <= Rational[7, 6] Pi, 
+   Rational[5, 6] Pi <= $CellContext`thetaAdj[4] <= Rational[7, 6] Pi, 
+   Rational[5, 6] Pi <= $CellContext`thetaAdj[5] <= Rational[7, 6] Pi, 
+   Rational[5, 6] Pi <= $CellContext`thetaAdj[6] <= 
+   Rational[7, 6] 
+    Pi}, $CellContext`objective$$ = (-(Rational[5, 8] + 
+      Rational[1, 8] 5^Rational[1, 2])^Rational[1, 2] + 
+   Rational[-5, 4] (-1 + 5^Rational[1, 2]) + 
+   Rational[1, 4] (1 - 5^Rational[1, 2] - 2 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]]) + 
+   Rational[1, 4] (1 - 5^Rational[1, 2] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] + 
+     2 Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+        1] - $CellContext`thetaAdj[2]]) + 
+   Rational[1, 4] (1 - 5^Rational[1, 2] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] + 
+     4 Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+        1] - $CellContext`thetaAdj[2]] - 2 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + $CellContext`thetaAdj[3]]) + 
+   Rational[1, 4] (1 - 5^Rational[1, 2] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] + 
+     4 Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+        1] - $CellContext`thetaAdj[2]] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + $CellContext`thetaAdj[3]] - 2 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 
+       2 $CellContext`thetaAdj[3] + $CellContext`thetaAdj[4]]) + 
+   Rational[1, 4] (1 - 5^Rational[1, 2] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] + 
+     4 Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+        1] - $CellContext`thetaAdj[2]] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + $CellContext`thetaAdj[3]] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 
+       2 $CellContext`thetaAdj[3] + $CellContext`thetaAdj[4]] - 2 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 2 $CellContext`thetaAdj[3] + 
+       2 $CellContext`thetaAdj[4] + $CellContext`thetaAdj[5]]) + 
+   Rational[1, 4] (1 - 5^Rational[1, 2] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[1]] + 
+     4 Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+        1] - $CellContext`thetaAdj[2]] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + $CellContext`thetaAdj[3]] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 
+       2 $CellContext`thetaAdj[3] + $CellContext`thetaAdj[4]] - 4 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 2 $CellContext`thetaAdj[3] + 
+       2 $CellContext`thetaAdj[4] + $CellContext`thetaAdj[5]] - 2 
+     Sin[Rational[1, 10] Pi - $CellContext`thetaAdj[
+       1] + $CellContext`thetaAdj[2] + 2 $CellContext`thetaAdj[3] + 
+       2 $CellContext`thetaAdj[4] + 
+       2 $CellContext`thetaAdj[5] + $CellContext`thetaAdj[
+        6]]))^2, $CellContext`output$$ = {
+  2.8441768192086015`*^-20, {$CellContext`thetaAdj[1] -> 
+    2.903893391686229, $CellContext`thetaAdj[2] -> 
+    3.0167995138295427`, $CellContext`thetaAdj[3] -> 
+    2.9566082775463, $CellContext`thetaAdj[4] -> 
+    2.8420551147361888`, $CellContext`thetaAdj[5] -> 
+    2.856996868670174, $CellContext`thetaAdj[6] -> 
+    2.9147859774734495`}}, $CellContext`listOfDistances$$ = {1, 1, 1, 1, 1, 
+  1}, $CellContext`doubleprev$$ = 2.9087730150423803`, $CellContext`prev$$ = 
+  2.9087730150423803`, $CellContext`listOfMasses$$ = {1, 1, 1, 1, 1, 
+  1}, $CellContext`error$$ = 2.8441768192086015`*^-20}, 
+  TagBox[GridBox[{
+     {
+      SliderBox[Dynamic[
+        BoxForm`RemapVariable[$CellContext`thetaLean$$, {
+         Rational[-1, 2] Pi, Rational[1, 2] Pi}], 
+        BoxForm`RemapValue[#, $CellContext`thetaLean$$, {
+         Rational[-1, 2] Pi, Rational[1, 2] Pi}]& ], {0, 1},
+       ContinuousAction->False]},
+     {
+      DynamicBox[ToBoxes[
+       "thetaLean = " <> ToString[$CellContext`thetaLean$$], StandardForm],
+       ImageSizeCache->{
+        109.20126953124998`, {44.40158998221159, 12.792025923728943`}}]},
+     {
+      SliderBox[Dynamic[$CellContext`mTailConst$$], {0.1, 10},
+       ContinuousAction->False]},
+     {
+      DynamicBox[ToBoxes[
+       "mTail = " <> ToString[$CellContext`mTailConst$$], StandardForm],
+       ImageSizeCache->{70.20126953124999, {0.156, 9.308}}]},
+     {
+      SliderBox[Dynamic[$CellContext`numPoints$$], {3, 10, 1},
+       ContinuousAction->False]},
+     {
+      DynamicBox[ToBoxes[
+       "numPoints = " <> ToString[$CellContext`numPoints$$], StandardForm],
+       ImageSizeCache->{101.40126953124998`, {0.156, 9.308}}]},
+     {
+      SliderBox[Dynamic[$CellContext`dTailConst$$], {0.1, 10},
+       ContinuousAction->False]},
+     {
+      DynamicBox[ToBoxes[
+       "dTail = " <> ToString[$CellContext`dTailConst$$], StandardForm],
+       ImageSizeCache->{70.20126953124999, {0.156, 9.308}}]},
+     {
+      SliderBox[Dynamic[
+        BoxForm`RemapVariable[$CellContext`upperBound$$, {(-2) Pi, 2 Pi}], 
+        BoxForm`RemapValue[#, $CellContext`upperBound$$, {(-2) Pi, 2 
+          Pi}]& ], {0, 1},
+       ContinuousAction->False]},
+     {
+      DynamicBox[ToBoxes[
+       "upperBound = " <> ToString[$CellContext`upperBound$$], StandardForm],
+       ImageSizeCache->{
+        132.60126953124998`, {44.40158998221159, 12.792025923728943`}}]},
+     {
+      SliderBox[Dynamic[
+        BoxForm`RemapVariable[$CellContext`lowerBound$$, {(-2) Pi, 2 Pi}], 
+        BoxForm`RemapValue[#, $CellContext`lowerBound$$, {(-2) Pi, 2 
+          Pi}]& ], {0, 1},
+       ContinuousAction->False]},
+     {
+      DynamicBox[ToBoxes[
+       "lowerBound = " <> ToString[$CellContext`lowerBound$$], StandardForm],
+       ImageSizeCache->{
+        132.60126953124998`, {44.40158998221159, 12.792025923728943`}}]},
+     {
+      DynamicBox[
+       ToBoxes[$CellContext`listOfDistances$$ = 
+         Table[$CellContext`dTailConst$$, $CellContext`numPoints$$]; \
+$CellContext`listOfMasses$$ = 
+         Table[$CellContext`mTailConst$$, $CellContext`numPoints$$]; \
+$CellContext`thetaAdjVars$$ = Table[
+           $CellContext`thetaAdj[$CellContext`n], {$CellContext`n, 
+            1, $CellContext`numPoints$$}]; $CellContext`doubleprev$$ = 
+         Part[$CellContext`thetaAdjVars$$, 1] - (
+          Pi/2 + $CellContext`thetaLean$$); $CellContext`prev$$ = 
+         Pi - Part[$CellContext`thetaAdjVars$$, 
+           2] - $CellContext`doubleprev$$; $CellContext`thetaVars$$ = Table[
+           
+           Which[$CellContext`n == 1, 
+            Part[$CellContext`thetaAdjVars$$, $CellContext`n] - (
+            Pi/2 + $CellContext`thetaLean$$), $CellContext`n == 
+            2, $CellContext`prev$$ = 
+             Pi - Part[$CellContext`thetaAdjVars$$, $CellContext`n] - \
+$CellContext`doubleprev$$; 
+            Pi - Part[$CellContext`thetaAdjVars$$, $CellContext`n] - \
+$CellContext`doubleprev$$, $CellContext`n >= 3, 
+            2 Pi - Part[$CellContext`thetaAdjVars$$, $CellContext`n] - (
+             Part[$CellContext`thetaAdjVars$$, $CellContext`n - 
+               1] - $CellContext`doubleprev$$); $CellContext`prev$$ = 
+             2 Pi - Part[$CellContext`thetaAdjVars$$, $CellContext`n] - (
+              Part[$CellContext`thetaAdjVars$$, $CellContext`n - 
+                1] - $CellContext`doubleprev$$); $CellContext`doubleprev$$ = \
+$CellContext`prev$$], {$CellContext`n, 
+            1, $CellContext`numPoints$$}]; $CellContext`p$$; \
+$CellContext`pVars$$ = Table[
+           
+           Which[$CellContext`n == 
+            1, $CellContext`p$$ = {(-$CellContext`hTail$$) 
+              Sin[$CellContext`thetaLean$$], $CellContext`hTail$$ 
+              Cos[$CellContext`thetaLean$$]}, $CellContext`n >= 
+            2, $CellContext`p$$ = $CellContext`p$$ + {
+              Part[$CellContext`listOfDistances$$, $CellContext`n - 1] Cos[
+                 Part[$CellContext`thetaVars$$, $CellContext`n - 1]], 
+               Part[$CellContext`listOfDistances$$, $CellContext`n - 1] Sin[
+                 
+                 Part[$CellContext`thetaVars$$, $CellContext`n - 
+                  1]]}], {$CellContext`n, 1, $CellContext`numPoints$$ + 
+            1}]; $CellContext`mVars$$ = Table[
+           Midpoint[{
+             Part[$CellContext`pVars$$, $CellContext`n], 
+             
+             Part[$CellContext`pVars$$, $CellContext`n + 
+              1]}], {$CellContext`n, 
+            1, $CellContext`numPoints$$}]; $CellContext`torqueVars$$ = 
+         Table[Part[
+             Part[$CellContext`mVars$$, $CellContext`n], 1] 
+           Part[$CellContext`listOfMasses$$, $CellContext`n], {$CellContext`n,
+             1, $CellContext`numPoints$$}]; $CellContext`pH$$ = \
+{(-$CellContext`hHead$$) Sin[$CellContext`thetaLean$$], $CellContext`hHead$$ 
+           Cos[$CellContext`thetaLean$$]}; $CellContext`mH$$ = {
+          Part[$CellContext`pH$$, 1] - $CellContext`dHead$$ 
+           Cos[$CellContext`thetaLean$$], 
+           Part[$CellContext`pH$$, 2] - $CellContext`dHead$$ 
+           Sin[$CellContext`thetaLean$$]}; $CellContext`constraints$$ = 
+         Table[$CellContext`lowerBound$$ <= \
+$CellContext`thetaAdj[$CellContext`n] <= $CellContext`upperBound$$, \
+{$CellContext`n, 
+            1, $CellContext`numPoints$$}]; $CellContext`objective$$ = \
+($CellContext`torqueAtPoint[$CellContext`mHead$$, $CellContext`mH$$] + 
+           Total[$CellContext`torqueVars$$])^2; $CellContext`output$$ = 
+         NMinimize[{$CellContext`objective$$, $CellContext`constraints$$}, \
+$CellContext`thetaAdjVars$$]; $CellContext`error$$ = 
+         Part[$CellContext`output$$, 1]; $CellContext`thetaAdjVars$$ = 
+         Values[
+           Part[$CellContext`output$$, 2]]; $CellContext`doubleprev$$ = 
+         Part[$CellContext`thetaAdjVars$$, 1] - (
+          Pi/2 + $CellContext`thetaLean$$); $CellContext`prev$$ = 
+         Pi - Part[$CellContext`thetaAdjVars$$, 
+           2] - $CellContext`doubleprev$$; $CellContext`thetaVars$$ = Table[
+           
+           Which[$CellContext`n == 1, 
+            Part[$CellContext`thetaAdjVars$$, $CellContext`n] - (
+            Pi/2 + $CellContext`thetaLean$$), $CellContext`n == 
+            2, $CellContext`prev$$ = 
+             Pi - Part[$CellContext`thetaAdjVars$$, $CellContext`n] - \
+$CellContext`doubleprev$$; 
+            Pi - Part[$CellContext`thetaAdjVars$$, $CellContext`n] - \
+$CellContext`doubleprev$$, $CellContext`n >= 3, 
+            2 Pi - Part[$CellContext`thetaAdjVars$$, $CellContext`n] - (
+             Part[$CellContext`thetaAdjVars$$, $CellContext`n - 
+               1] - $CellContext`doubleprev$$); $CellContext`prev$$ = 
+             2 Pi - Part[$CellContext`thetaAdjVars$$, $CellContext`n] - (
+              Part[$CellContext`thetaAdjVars$$, $CellContext`n - 
+                1] - $CellContext`doubleprev$$); $CellContext`doubleprev$$ = \
+$CellContext`prev$$], {$CellContext`n, 
+            1, $CellContext`numPoints$$}]; $CellContext`p$$; \
+$CellContext`pVars$$ = Table[
+           
+           Which[$CellContext`n == 
+            1, $CellContext`p$$ = {(-$CellContext`hTail$$) 
+              Sin[$CellContext`thetaLean$$], $CellContext`hTail$$ 
+              Cos[$CellContext`thetaLean$$]}, $CellContext`n >= 
+            2, $CellContext`p$$ = $CellContext`p$$ + {
+              Part[$CellContext`listOfDistances$$, $CellContext`n - 1] Cos[
+                 Part[$CellContext`thetaVars$$, $CellContext`n - 1]], 
+               Part[$CellContext`listOfDistances$$, $CellContext`n - 1] Sin[
+                 
+                 Part[$CellContext`thetaVars$$, $CellContext`n - 
+                  1]]}], {$CellContext`n, 1, $CellContext`numPoints$$ + 1}]; 
+        "", StandardForm],
+       ImageSizeCache->{0., {0., 6.318}}]},
+     {
+      DynamicBox[ToBoxes[$CellContext`error$$, StandardForm],
+       ImageSizeCache->{99.79617089843751, {0.156, 11.053899999999999`}}]},
+     {
+      GraphicsBox[{
+        {RGBColor[0, 0, 1], 
+         DynamicBox[Typeset`ToBoxes[{
+            Join[{
+              Line[{$CellContext`p0$$, $CellContext`pH$$}], 
+              Line[{$CellContext`mH$$, $CellContext`pH$$}]}, 
+             Table[
+              Line[{
+                Part[$CellContext`pVars$$, $CellContext`n], 
+                
+                Part[$CellContext`pVars$$, $CellContext`n + 
+                 1]}], {$CellContext`n, 1, $CellContext`numPoints$$}]]}, 
+           StandardForm, Graphics],
+          
+          ImageSizeCache->{{215.4040183595206, 
+           319.8446063199383}, {-140.52521192456365`, \
+-2.1588600156884468`}}]}, 
+        {GrayLevel[0.85], Dashing[{Small, Small}], 
+         LineBox[{{-10, 0}, {10, 0}}], LineBox[{{0, -10}, {0, 10}}]}},
+       ImageSize->Large,
+       PlotRange->{{-10, 10}, {-10, 10}}]}
+    },
+    DefaultBaseStyle->"Column",
+    GridBoxAlignment->{"Columns" -> {{Left}}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+   "Column"],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{3.992512570116808*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"4eb50c63-6c64-48b0-9e3a-56f6fec42a3f"]
+}, Open  ]]
+},
+WindowSize->{1680, 937},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"15.0 for Mac OS X x86 (64-bit) (May 19, 2026)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"f02adf89-db0a-4ad9-b496-570cea20d0d4"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 396, 10, 103, "Input",ExpressionUUID->"377c41a8-3dd8-4321-b411-ab13ffd36877"],
+Cell[CellGroupData[{
+Cell[975, 34, 20968, 497, 2255, "Input",ExpressionUUID->"b76494bb-5564-4fcf-a070-c5a92b55da4d"],
+Cell[21946, 533, 23280, 444, 1055, "Output",ExpressionUUID->"4eb50c63-6c64-48b0-9e3a-56f6fec42a3f"]
+}, Open  ]]
+}
+]
+*)
+
