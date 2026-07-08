@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[     40023,        891]
-NotebookOptionsPosition[     39446,        873]
-NotebookOutlinePosition[     39839,        889]
-CellTagsIndexPosition[     39796,        886]
+NotebookDataLength[     48946,       1030]
+NotebookOptionsPosition[     48369,       1012]
+NotebookOutlinePosition[     48762,       1028]
+CellTagsIndexPosition[     48719,       1025]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -30,7 +30,7 @@ Cell[BoxData[
       RowBox[{"[", "1", "]"}], "]"}]}]}], "\n", "]"}]}]], "Code",
  CellChangeTimes->{3.992122883262644*^9},
  CellLabel->
-  "In[162]:=",ExpressionUUID->"851e177e-97a4-45fc-a0d1-2ff3c82f9d7f"],
+  "In[386]:=",ExpressionUUID->"851e177e-97a4-45fc-a0d1-2ff3c82f9d7f"],
 
 Cell[CellGroupData[{
 
@@ -550,134 +550,273 @@ Cell[BoxData[
    3.9924245748064528`*^9, 3.992424580368002*^9}, {3.992439559430264*^9, 
    3.992439575614689*^9}},
  CellLabel->
-  "In[166]:=",ExpressionUUID->"c7a66e31-d39c-452e-8c94-1ebd368e12f1"],
+  "In[388]:=",ExpressionUUID->"c7a66e31-d39c-452e-8c94-1ebd368e12f1"],
 
 Cell[BoxData[
- DynamicModuleBox[{$CellContext`thetaLean$$ = 
-  57.599999999999994`, $CellContext`mTailConst$$ = 
-  1, $CellContext`dTailConst$$ = 1.57, $CellContext`numPoints$$ = 
-  4, $CellContext`hHead$$ = 5, $CellContext`dHead$$ = 
+ DynamicModuleBox[{$CellContext`thetaLean$$ = 10, $CellContext`mTailConst$$ = 
+  1, $CellContext`dTailConst$$ = 1, $CellContext`numPoints$$ = 
+  6, $CellContext`hHead$$ = 5, $CellContext`dHead$$ = 
   1, $CellContext`mHead$$ = 1, $CellContext`hTail$$ = 1, $CellContext`p0$$ = {
   0, 0}, $CellContext`degToRad$$ = 
   0.017453292519943295`, $CellContext`lowerBound$$ = 
   160, $CellContext`upperBound$$ = 200, $CellContext`p$$ = {
-  1.4221922165063712`, 
-  5.948234346623722}, $CellContext`pH$$ = {-4.221639627510075, 
-  2.6791339748949836`}, $CellContext`mH$$ = {-4.757466422489071, 
-  1.8348060493929688`}, $CellContext`thetaAdjVars$$ = {190.05207976873453`, 
-  165.7018500841083, 165.16999699722658`, 
-  167.29242636666606`}, $CellContext`thetaVars$$ = {42.452079768734535`, 
-  56.75022968462625, 71.58023268739967, 
-  99.11780932350703}, $CellContext`pVars$$ = {{-0.844327925502015, 
-  0.5358267949789968}, {0.31408420200701703`, 1.5955349353837018`}, {
-  1.1748993089769268`, 2.90850765087035}, {1.6709822331576256`, 
-  4.39807192687066}, {1.4221922165063712`, 
-  5.948234346623722}}, $CellContext`mVars$$ = {{-0.844327925502015 + 
-    0.785 Cos[0.017453292519943295` (-147.6 + $CellContext`thetaAdj[1])], 
-    0.5358267949789968 + 
-    0.785 Sin[
-      0.017453292519943295` (-147.6 + $CellContext`thetaAdj[
-         1])]}, {-0.844327925502015 + 
-    1.57 Cos[0.017453292519943295` (-147.6 + $CellContext`thetaAdj[1])] + 
-    0.785 Cos[
-      5.717698629533424 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
-       0.017453292519943295` $CellContext`thetaAdj[2]], 0.5358267949789968 + 
-    1.57 Sin[0.017453292519943295` (-147.6 + $CellContext`thetaAdj[1])] + 
-    0.785 Sin[
-      5.717698629533424 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
-       0.017453292519943295` $CellContext`thetaAdj[2]]}, {-0.844327925502015 + 
-    1.57 Cos[0.017453292519943295` (-147.6 + $CellContext`thetaAdj[1])] + 
-    1.57 Cos[5.717698629533424 - 
-       0.017453292519943295` $CellContext`thetaAdj[1] - 
-       0.017453292519943295` $CellContext`thetaAdj[2]] + 
-    0.785 Cos[
-      0.017453292519943295` (
-        212.4 + $CellContext`thetaAdj[1] - $CellContext`thetaAdj[
-        2] - $CellContext`thetaAdj[3])], 0.5358267949789968 + 
-    1.57 Sin[0.017453292519943295` (-147.6 + $CellContext`thetaAdj[1])] + 
-    1.57 Sin[5.717698629533424 - 
-       0.017453292519943295` $CellContext`thetaAdj[1] - 
-       0.017453292519943295` $CellContext`thetaAdj[2]] + 
-    0.785 Sin[
-      0.017453292519943295` (
-        212.4 + $CellContext`thetaAdj[1] - $CellContext`thetaAdj[
-        2] - $CellContext`thetaAdj[3])]}, {-0.844327925502015 + 
-    1.57 Cos[0.017453292519943295` (-147.6 + $CellContext`thetaAdj[1])] + 
-    1.57 Cos[5.717698629533424 - 
-       0.017453292519943295` $CellContext`thetaAdj[1] - 
-       0.017453292519943295` $CellContext`thetaAdj[2]] + 
-    1.57 Cos[0.017453292519943295` (
-        212.4 + $CellContext`thetaAdj[1] - $CellContext`thetaAdj[
-        2] - $CellContext`thetaAdj[3])] + 
-    0.785 Cos[
-      0.017453292519943295` (
-        572.4 + $CellContext`thetaAdj[1] - $CellContext`thetaAdj[2] - 
-        2 $CellContext`thetaAdj[3] - $CellContext`thetaAdj[4])], 
-    0.5358267949789968 + 
-    1.57 Sin[0.017453292519943295` (-147.6 + $CellContext`thetaAdj[1])] + 
-    1.57 Sin[5.717698629533424 - 
-       0.017453292519943295` $CellContext`thetaAdj[1] - 
-       0.017453292519943295` $CellContext`thetaAdj[2]] + 
-    1.57 Sin[0.017453292519943295` (
-        212.4 + $CellContext`thetaAdj[1] - $CellContext`thetaAdj[
-        2] - $CellContext`thetaAdj[3])] + 
-    0.785 Sin[
-      0.017453292519943295` (
-        572.4 + $CellContext`thetaAdj[1] - $CellContext`thetaAdj[2] - 
-        2 $CellContext`thetaAdj[3] - $CellContext`thetaAdj[
-        4])]}}, $CellContext`torqueVars$$ = {-0.844327925502015 + 
-   0.785 Cos[
-     0.017453292519943295` (-147.6 + $CellContext`thetaAdj[
-        1])], -0.844327925502015 + 
-   1.57 Cos[0.017453292519943295` (-147.6 + $CellContext`thetaAdj[1])] + 
-   0.785 Cos[
-     5.717698629533424 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
-      0.017453292519943295` $CellContext`thetaAdj[2]], -0.844327925502015 + 
-   1.57 Cos[0.017453292519943295` (-147.6 + $CellContext`thetaAdj[1])] + 
-   1.57 Cos[5.717698629533424 - 
-      0.017453292519943295` $CellContext`thetaAdj[1] - 
+  1.3835379359427493`, 
+  6.57002929383914}, $CellContext`pH$$ = {(-5) Sin[10 Degree], 5 
+   Cos[10 Degree]}, $CellContext`mH$$ = {-Cos[10 Degree] - 5 Sin[10 Degree], 
+   5 Cos[10 Degree] - Sin[10 Degree]}, $CellContext`thetaAdjVars$$ = {
+  192.5548992685591, 179.6288371159962, 198.23713715377036`, 
+  182.21050765887142`, 173.64841218435916`, 
+  171.0018641260334}, $CellContext`thetaVars$$ = {92.5548992685591, 
+  92.9260621525629, 74.68892499879254, 54.24128018615076, 58.38236034292018, 
+  73.73208403252761}, $CellContext`pVars$$ = {{-Sin[10 Degree], 
+    Cos[10 Degree]}, {-0.21822480588732746`, 
+   1.9838137210707079`}, {-0.2692720285602621, 
+   2.9825099617051563`}, {-0.005212539172022634, 3.947016356740473}, {
+   0.5791606327063978, 4.758501412664952}, {1.1034087350916955`, 
+   5.610066986854876}, {1.3835379359427493`, 
+   6.57002929383914}}, $CellContext`mVars$$ = {{
+   Rational[1, 2] (
+     Cos[1.7453292519943295` - 
+       0.017453292519943295` $CellContext`thetaAdj[1]] - 2 Sin[10 Degree]), 
+    Cos[10 Degree] + 
+    Rational[1, 2] 
+     Sin[0.017453292519943295` (-100 + $CellContext`thetaAdj[1])]}, {
+   Cos[1.7453292519943295` - 0.017453292519943295` $CellContext`thetaAdj[1]] + 
+    Rational[1, 2] 
+     Cos[4.886921905584122 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
+       0.017453292519943295` $CellContext`thetaAdj[2]] - Sin[10 Degree], 
+    Cos[10 Degree] + 
+    Sin[0.017453292519943295` (-100 + $CellContext`thetaAdj[1])] + 
+    Rational[1, 2] 
+     Sin[4.886921905584122 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
+       0.017453292519943295` $CellContext`thetaAdj[2]]}, {
+   Cos[1.7453292519943295` - 0.017453292519943295` $CellContext`thetaAdj[1]] + 
+    Cos[4.886921905584122 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
       0.017453292519943295` $CellContext`thetaAdj[2]] + 
-   0.785 Cos[
-     0.017453292519943295` (
-       212.4 + $CellContext`thetaAdj[1] - $CellContext`thetaAdj[
-       2] - $CellContext`thetaAdj[3])], -0.844327925502015 + 
-   1.57 Cos[0.017453292519943295` (-147.6 + $CellContext`thetaAdj[1])] + 
-   1.57 Cos[5.717698629533424 - 
-      0.017453292519943295` $CellContext`thetaAdj[1] - 
+    Rational[1, 2] 
+     Cos[4.537856055185257 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+       0.017453292519943295` $CellContext`thetaAdj[2] - 
+       0.017453292519943295` $CellContext`thetaAdj[3]] - Sin[10 Degree], 
+    Cos[10 Degree] + 
+    Sin[0.017453292519943295` (-100 + $CellContext`thetaAdj[1])] + 
+    Sin[4.886921905584122 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
       0.017453292519943295` $CellContext`thetaAdj[2]] + 
-   1.57 Cos[0.017453292519943295` (
-       212.4 + $CellContext`thetaAdj[1] - $CellContext`thetaAdj[
-       2] - $CellContext`thetaAdj[3])] + 
-   0.785 Cos[
-     0.017453292519943295` (
-       572.4 + $CellContext`thetaAdj[1] - $CellContext`thetaAdj[2] - 
-       2 $CellContext`thetaAdj[3] - $CellContext`thetaAdj[
-       4])]}, $CellContext`constraints$$ = {
+    Rational[1, 2] 
+     Sin[4.537856055185257 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+       0.017453292519943295` $CellContext`thetaAdj[2] - 
+       0.017453292519943295` $CellContext`thetaAdj[3]]}, {
+   Cos[1.7453292519943295` - 0.017453292519943295` $CellContext`thetaAdj[1]] + 
+    Cos[4.886921905584122 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2]] + 
+    Cos[4.537856055185257 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.017453292519943295` $CellContext`thetaAdj[3]] + 
+    Rational[1, 2] 
+     Cos[10.821041362364843` + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+       0.017453292519943295` $CellContext`thetaAdj[2] - 
+       0.03490658503988659 $CellContext`thetaAdj[3] - 
+       0.017453292519943295` $CellContext`thetaAdj[4]] - Sin[10 Degree], 
+    Cos[10 Degree] + 
+    Sin[0.017453292519943295` (-100 + $CellContext`thetaAdj[1])] + 
+    Sin[4.886921905584122 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2]] + 
+    Sin[4.537856055185257 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.017453292519943295` $CellContext`thetaAdj[3]] + 
+    Rational[1, 2] 
+     Sin[10.821041362364843` + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+       0.017453292519943295` $CellContext`thetaAdj[2] - 
+       0.03490658503988659 $CellContext`thetaAdj[3] - 
+       0.017453292519943295` $CellContext`thetaAdj[4]]}, {
+   Cos[1.7453292519943295` - 0.017453292519943295` $CellContext`thetaAdj[1]] + 
+    Cos[4.886921905584122 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2]] + 
+    Cos[4.537856055185257 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.017453292519943295` $CellContext`thetaAdj[3]] + 
+    Cos[10.821041362364843` + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.03490658503988659 $CellContext`thetaAdj[3] - 
+      0.017453292519943295` $CellContext`thetaAdj[4]] + 
+    Rational[1, 2] 
+     Cos[17.10422666954443 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+       0.017453292519943295` $CellContext`thetaAdj[2] - 
+       0.03490658503988659 $CellContext`thetaAdj[3] - 
+       0.03490658503988659 $CellContext`thetaAdj[4] - 
+       0.017453292519943295` $CellContext`thetaAdj[5]] - Sin[10 Degree], 
+    Cos[10 Degree] + 
+    Sin[0.017453292519943295` (-100 + $CellContext`thetaAdj[1])] + 
+    Sin[4.886921905584122 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2]] + 
+    Sin[4.537856055185257 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.017453292519943295` $CellContext`thetaAdj[3]] + 
+    Sin[10.821041362364843` + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.03490658503988659 $CellContext`thetaAdj[3] - 
+      0.017453292519943295` $CellContext`thetaAdj[4]] + 
+    Rational[1, 2] 
+     Sin[17.10422666954443 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+       0.017453292519943295` $CellContext`thetaAdj[2] - 
+       0.03490658503988659 $CellContext`thetaAdj[3] - 
+       0.03490658503988659 $CellContext`thetaAdj[4] - 
+       0.017453292519943295` $CellContext`thetaAdj[5]]}, {
+   Cos[1.7453292519943295` - 0.017453292519943295` $CellContext`thetaAdj[1]] + 
+    Cos[4.886921905584122 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2]] + 
+    Cos[4.537856055185257 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.017453292519943295` $CellContext`thetaAdj[3]] + 
+    Cos[10.821041362364843` + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.03490658503988659 $CellContext`thetaAdj[3] - 
+      0.017453292519943295` $CellContext`thetaAdj[4]] + 
+    Cos[17.10422666954443 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.03490658503988659 $CellContext`thetaAdj[3] - 
+      0.03490658503988659 $CellContext`thetaAdj[4] - 
+      0.017453292519943295` $CellContext`thetaAdj[5]] + 
+    Rational[1, 2] 
+     Cos[23.387411976724017` + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+       0.017453292519943295` $CellContext`thetaAdj[2] - 
+       0.03490658503988659 $CellContext`thetaAdj[3] - 
+       0.03490658503988659 $CellContext`thetaAdj[4] - 
+       0.03490658503988659 $CellContext`thetaAdj[5] - 
+       0.017453292519943295` $CellContext`thetaAdj[6]] - Sin[10 Degree], 
+    Cos[10 Degree] + 
+    Sin[0.017453292519943295` (-100 + $CellContext`thetaAdj[1])] + 
+    Sin[4.886921905584122 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2]] + 
+    Sin[4.537856055185257 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.017453292519943295` $CellContext`thetaAdj[3]] + 
+    Sin[10.821041362364843` + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.03490658503988659 $CellContext`thetaAdj[3] - 
+      0.017453292519943295` $CellContext`thetaAdj[4]] + 
+    Sin[17.10422666954443 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.03490658503988659 $CellContext`thetaAdj[3] - 
+      0.03490658503988659 $CellContext`thetaAdj[4] - 
+      0.017453292519943295` $CellContext`thetaAdj[5]] + 
+    Rational[1, 2] 
+     Sin[23.387411976724017` + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+       0.017453292519943295` $CellContext`thetaAdj[2] - 
+       0.03490658503988659 $CellContext`thetaAdj[3] - 
+       0.03490658503988659 $CellContext`thetaAdj[4] - 
+       0.03490658503988659 $CellContext`thetaAdj[5] - 
+       0.017453292519943295` $CellContext`thetaAdj[
+        6]]}}, $CellContext`torqueVars$$ = {
+  Rational[1, 2] (
+    Cos[1.7453292519943295` - 0.017453292519943295` $CellContext`thetaAdj[1]] - 
+    2 Sin[10 Degree]), 
+   Cos[1.7453292519943295` - 0.017453292519943295` $CellContext`thetaAdj[1]] + 
+   Rational[1, 2] 
+    Cos[4.886921905584122 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2]] - Sin[10 Degree], 
+   Cos[1.7453292519943295` - 0.017453292519943295` $CellContext`thetaAdj[1]] + 
+   Cos[4.886921905584122 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
+     0.017453292519943295` $CellContext`thetaAdj[2]] + 
+   Rational[1, 2] 
+    Cos[4.537856055185257 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.017453292519943295` $CellContext`thetaAdj[3]] - Sin[10 Degree], 
+   Cos[1.7453292519943295` - 0.017453292519943295` $CellContext`thetaAdj[1]] + 
+   Cos[4.886921905584122 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
+     0.017453292519943295` $CellContext`thetaAdj[2]] + 
+   Cos[4.537856055185257 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+     0.017453292519943295` $CellContext`thetaAdj[2] - 
+     0.017453292519943295` $CellContext`thetaAdj[3]] + 
+   Rational[1, 2] 
+    Cos[10.821041362364843` + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.03490658503988659 $CellContext`thetaAdj[3] - 
+      0.017453292519943295` $CellContext`thetaAdj[4]] - Sin[10 Degree], 
+   Cos[1.7453292519943295` - 0.017453292519943295` $CellContext`thetaAdj[1]] + 
+   Cos[4.886921905584122 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
+     0.017453292519943295` $CellContext`thetaAdj[2]] + 
+   Cos[4.537856055185257 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+     0.017453292519943295` $CellContext`thetaAdj[2] - 
+     0.017453292519943295` $CellContext`thetaAdj[3]] + 
+   Cos[10.821041362364843` + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+     0.017453292519943295` $CellContext`thetaAdj[2] - 
+     0.03490658503988659 $CellContext`thetaAdj[3] - 
+     0.017453292519943295` $CellContext`thetaAdj[4]] + 
+   Rational[1, 2] 
+    Cos[17.10422666954443 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.03490658503988659 $CellContext`thetaAdj[3] - 
+      0.03490658503988659 $CellContext`thetaAdj[4] - 
+      0.017453292519943295` $CellContext`thetaAdj[5]] - Sin[10 Degree], 
+   Cos[1.7453292519943295` - 0.017453292519943295` $CellContext`thetaAdj[1]] + 
+   Cos[4.886921905584122 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
+     0.017453292519943295` $CellContext`thetaAdj[2]] + 
+   Cos[4.537856055185257 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+     0.017453292519943295` $CellContext`thetaAdj[2] - 
+     0.017453292519943295` $CellContext`thetaAdj[3]] + 
+   Cos[10.821041362364843` + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+     0.017453292519943295` $CellContext`thetaAdj[2] - 
+     0.03490658503988659 $CellContext`thetaAdj[3] - 
+     0.017453292519943295` $CellContext`thetaAdj[4]] + 
+   Cos[17.10422666954443 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+     0.017453292519943295` $CellContext`thetaAdj[2] - 
+     0.03490658503988659 $CellContext`thetaAdj[3] - 
+     0.03490658503988659 $CellContext`thetaAdj[4] - 
+     0.017453292519943295` $CellContext`thetaAdj[5]] + 
+   Rational[1, 2] 
+    Cos[23.387411976724017` + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.03490658503988659 $CellContext`thetaAdj[3] - 
+      0.03490658503988659 $CellContext`thetaAdj[4] - 
+      0.03490658503988659 $CellContext`thetaAdj[5] - 
+      0.017453292519943295` $CellContext`thetaAdj[6]] - Sin[
+   10 Degree]}, $CellContext`constraints$$ = {
   160 <= $CellContext`thetaAdj[1] <= 200, 160 <= $CellContext`thetaAdj[2] <= 
    200, 160 <= $CellContext`thetaAdj[3] <= 200, 
-   160 <= $CellContext`thetaAdj[4] <= 
-   200}, $CellContext`objective$$ = (-8.134778124497132 + 
-   5.495 Cos[0.017453292519943295` (-147.6 + $CellContext`thetaAdj[1])] + 
-   3.925 Cos[
-     5.717698629533424 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
+   160 <= $CellContext`thetaAdj[4] <= 200, 160 <= $CellContext`thetaAdj[5] <= 
+   200, 160 <= $CellContext`thetaAdj[6] <= 
+   200}, $CellContext`objective$$ = (-Cos[10 Degree] + 
+   5 Cos[1.7453292519943295` - 
+      0.017453292519943295` $CellContext`thetaAdj[1]] + 
+   Rational[9, 2] 
+    Cos[4.886921905584122 - 0.017453292519943295` $CellContext`thetaAdj[1] - 
       0.017453292519943295` $CellContext`thetaAdj[2]] + 
-   2.355 Cos[
-     0.017453292519943295` (
-       212.4 + $CellContext`thetaAdj[1] - $CellContext`thetaAdj[
-       2] - $CellContext`thetaAdj[3])] + 
-   0.785 Cos[
-     0.017453292519943295` (
-       572.4 + $CellContext`thetaAdj[1] - $CellContext`thetaAdj[2] - 
-       2 $CellContext`thetaAdj[3] - $CellContext`thetaAdj[
-       4])])^2, $CellContext`output$$ = {
-  1.1872897095218366`*^-19, {$CellContext`thetaAdj[1] -> 
-    190.05207976873453`, $CellContext`thetaAdj[2] -> 
-    165.7018500841083, $CellContext`thetaAdj[3] -> 
-    165.16999699722658`, $CellContext`thetaAdj[4] -> 
-    167.29242636666606`}}, $CellContext`listOfDistances$$ = {1.57, 1.57, 1.57,
-   1.57}, $CellContext`doubleprev$$ = 99.11780932350703, $CellContext`prev$$ =
-   99.11780932350703, $CellContext`listOfMasses$$ = {1, 1, 1, 
-  1}, $CellContext`error$$ = 1.1872897095218366`*^-19}, 
+   Rational[7, 2] 
+    Cos[4.537856055185257 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.017453292519943295` $CellContext`thetaAdj[3]] + 
+   Rational[5, 2] 
+    Cos[10.821041362364843` + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.03490658503988659 $CellContext`thetaAdj[3] - 
+      0.017453292519943295` $CellContext`thetaAdj[4]] + 
+   Rational[3, 2] 
+    Cos[17.10422666954443 + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.03490658503988659 $CellContext`thetaAdj[3] - 
+      0.03490658503988659 $CellContext`thetaAdj[4] - 
+      0.017453292519943295` $CellContext`thetaAdj[5]] + 
+   Rational[1, 2] 
+    Cos[23.387411976724017` + 0.017453292519943295` $CellContext`thetaAdj[1] - 
+      0.017453292519943295` $CellContext`thetaAdj[2] - 
+      0.03490658503988659 $CellContext`thetaAdj[3] - 
+      0.03490658503988659 $CellContext`thetaAdj[4] - 
+      0.03490658503988659 $CellContext`thetaAdj[5] - 
+      0.017453292519943295` $CellContext`thetaAdj[6]] + 
+   Rational[1, 2] (
+     Cos[1.7453292519943295` - 
+       0.017453292519943295` $CellContext`thetaAdj[1]] - 2 Sin[10 Degree]) - 
+   10 Sin[10 Degree])^2, $CellContext`output$$ = {
+  8.330393755265654*^-21, {$CellContext`thetaAdj[1] -> 
+    192.5548992685591, $CellContext`thetaAdj[2] -> 
+    179.6288371159962, $CellContext`thetaAdj[3] -> 
+    198.23713715377036`, $CellContext`thetaAdj[4] -> 
+    182.21050765887142`, $CellContext`thetaAdj[5] -> 
+    173.64841218435916`, $CellContext`thetaAdj[6] -> 
+    171.0018641260334}}, $CellContext`listOfDistances$$ = {1, 1, 1, 1, 1, 
+  1}, $CellContext`doubleprev$$ = 73.73208403252761, $CellContext`prev$$ = 
+  73.73208403252761, $CellContext`listOfMasses$$ = {1, 1, 1, 1, 1, 
+  1}, $CellContext`error$$ = 8.330393755265654*^-21}, 
   TagBox[GridBox[{
      {
       SliderBox[Dynamic[$CellContext`thetaLean$$], {-90, 90},
@@ -685,7 +824,7 @@ Cell[BoxData[
      {
       DynamicBox[ToBoxes[
        "thetaLean = " <> ToString[$CellContext`thetaLean$$], StandardForm],
-       ImageSizeCache->{124.80126953124999`, {0.156, 9.256}}]},
+       ImageSizeCache->{109.20126953124998`, {0.156, 9.256}}]},
      {
       SliderBox[Dynamic[$CellContext`mTailConst$$], {0.1, 10},
        ContinuousAction->False]},
@@ -706,7 +845,7 @@ Cell[BoxData[
      {
       DynamicBox[ToBoxes[
        "dTail = " <> ToString[$CellContext`dTailConst$$], StandardForm],
-       ImageSizeCache->{93.60126953125, {0.156, 9.308}}]},
+       ImageSizeCache->{70.20126953124999, {0.156, 9.308}}]},
      {
       SliderBox[Dynamic[$CellContext`upperBound$$], {-360, 360},
        ContinuousAction->False]},
@@ -813,7 +952,6 @@ $CellContext`doubleprev$$), $CellContext`n >= 3,
                1] - $CellContext`doubleprev$$); $CellContext`prev$$ = 
              360 - Part[$CellContext`thetaAdjVars$$, $CellContext`n] - (
               Part[$CellContext`thetaAdjVars$$, $CellContext`n - 
-                
                 1] - $CellContext`doubleprev$$); $CellContext`doubleprev$$ = \
 $CellContext`prev$$], {$CellContext`n, 
             1, $CellContext`numPoints$$}]; $CellContext`p$$; \
@@ -850,8 +988,8 @@ $CellContext`pVars$$ = Table[
                  1]}], {$CellContext`n, 1, $CellContext`numPoints$$}]]}, 
            StandardForm, Graphics],
           
-          ImageSizeCache->{{150.2778602511282, 
-           336.8313950961262}, {-174.88222276082473`, \
+          ImageSizeCache->{{233.9250923480239, 
+           328.55299933633773`}, {-192.78991724062877`, \
 -2.1588600156884468`}}]}, 
         {GrayLevel[0.85], Dashing[{Small, Small}], 
          LineBox[{{-10, 0}, {10, 0}}], LineBox[{{0, -10}, {0, 10}}]}},
@@ -866,9 +1004,10 @@ $CellContext`pVars$$ = Table[
  CellChangeTimes->{{3.992362198212075*^9, 3.9923622230983477`*^9}, {
    3.992362825263288*^9, 3.992362828191971*^9}, {3.992418118520439*^9, 
    3.9924181205946407`*^9}, {3.992424583751623*^9, 3.992424585490664*^9}, {
-   3.9924394923779287`*^9, 3.9924394945507803`*^9}, 3.992439598558557*^9},
+   3.9924394923779287`*^9, 3.9924394945507803`*^9}, 3.992439598558557*^9, {
+   3.992462555481553*^9, 3.992462557104231*^9}},
  CellLabel->
-  "Out[166]=",ExpressionUUID->"75b79819-f460-4823-b708-8a8b7e1aed6a"]
+  "Out[388]=",ExpressionUUID->"1cc3f1a1-093a-49fc-8710-25b94744d77f"]
 }, Open  ]]
 },
 WindowSize->{1384, 937},
@@ -891,7 +1030,7 @@ Notebook[{
 Cell[554, 20, 442, 12, 88, "Code",ExpressionUUID->"851e177e-97a4-45fc-a0d1-2ff3c82f9d7f"],
 Cell[CellGroupData[{
 Cell[1021, 36, 22536, 516, 2143, "Code",ExpressionUUID->"c7a66e31-d39c-452e-8c94-1ebd368e12f1"],
-Cell[23560, 554, 15870, 316, 919, "Output",ExpressionUUID->"75b79819-f460-4823-b708-8a8b7e1aed6a"]
+Cell[23560, 554, 24793, 455, 919, "Output",ExpressionUUID->"1cc3f1a1-093a-49fc-8710-25b94744d77f"]
 }, Open  ]]
 }
 ]
