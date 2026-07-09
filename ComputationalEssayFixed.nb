@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[   1124662,      20008]
-NotebookOptionsPosition[   1109959,      19806]
-NotebookOutlinePosition[   1110438,      19824]
-CellTagsIndexPosition[   1110395,      19821]
+NotebookDataLength[   1126917,      20051]
+NotebookOptionsPosition[   1112084,      19846]
+NotebookOutlinePosition[   1112563,      19864]
+CellTagsIndexPosition[   1112520,      19861]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -29,6 +29,13 @@ Leaning Mass\
   3.992439971739094*^9}},ExpressionUUID->"3b4ad047-fa97-464f-8aeb-\
 cd553dce18cc"],
 
+Cell[CellGroupData[{
+
+Cell["Samvarth Raj", "Subsection",
+ CellChangeTimes->{{3.992596829199436*^9, 
+  3.992596830370092*^9}},ExpressionUUID->"e0c1e9f8-6ebf-40ac-a389-\
+131d0b67c325"],
+
 Cell["\<\
 Prehensile tails are tails which are extremely mobile, grasp objects, and \
 provide support and stability to organisms such as primates, chameleons, and \
@@ -42,9 +49,11 @@ number of joints, masses, sizes to balance out a counterweight of any given \
 height and mass.\
 \>", "Text",
  CellChangeTimes->{{3.99253491701397*^9, 3.992534923571272*^9}, {
-   3.992534961932871*^9, 3.9925349620918818`*^9}, 
-   3.992553954018889*^9},ExpressionUUID->"422e58d5-5de6-4839-8b6f-\
-e8c10a8c4ce2"],
+   3.992534961932871*^9, 3.9925349620918818`*^9}, 3.992553954018889*^9, {
+   3.992596816027873*^9, 
+   3.9925968193269*^9}},ExpressionUUID->"422e58d5-5de6-4839-8b6f-\
+e8c10a8c4ce2"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -110,8 +119,8 @@ Finally, in a non-monkey species, the Kinkajou ",
  StyleBox["Sapajus apella",
   FontSlant->"Italic"],
  ", uses its tail for both posture and stability (Naas et al., 2025).\n\n\
-Henceforth, from these species examined, we know conclusively that in the \
-natural world, prehensile tails are any tail used for grasping objects, \
+Henceforth, from these species examined, it\[CloseCurlyQuote]s known that in \
+the natural world, prehensile tails are any tail used for grasping objects, \
 stability, and locomotion."
 }], "Text",
  CellChangeTimes->{{3.992548803199799*^9, 3.9925488050973663`*^9}, 
@@ -130,8 +139,8 @@ stability, and locomotion."
    3.9925518701474648`*^9}, {3.992551909683261*^9, 3.992551953298626*^9}, {
    3.992551992308588*^9, 3.992552024267477*^9}, {3.992552135243115*^9, 
    3.992552182694838*^9}, {3.992552247474331*^9, 3.992552252953891*^9}, {
-   3.992556267271801*^9, 
-   3.992556372058043*^9}},ExpressionUUID->"c856ef3d-3593-4984-9e0c-\
+   3.992556267271801*^9, 3.992556372058043*^9}, {3.992598653323943*^9, 
+   3.992598654821154*^9}},ExpressionUUID->"c856ef3d-3593-4984-9e0c-\
 814864ee1a3f"]
 }, Open  ]],
 
@@ -143,11 +152,10 @@ Cell["Robotic Applications of Prehensile Tails", "Subsection",
 e4d12f884664"],
 
 Cell[TextData[{
- "This unique adaptation of a prehensile tail is distinctly missing in \
-humans, who evolved to get rid of it due to the bipedal nature we evolved.  \
-To address this problem, prehensile tails have been studied extensively in \
-robotics. To make smaller, jumping robots stable, using the knowledge from \
-studying the ",
+ "This unique adaptation of a prehensile tail is distinctly missing in humans \
+due to their evolved bipedal nature.  To address this problem, prehensile \
+tails have been studied extensively in robotics. To make smaller, jumping \
+robots stable, using the knowledge from studying the ",
  StyleBox["Agama",
   FontSlant->"Italic"],
  " lizards and theropods, researchers have developed a PD controller that \
@@ -170,8 +178,8 @@ equilibrium state (Junichi Nabeshima et al., 2019). "
    3.992552864535665*^9}, {3.992552994154414*^9, 3.992553047371229*^9}, {
    3.992553206978046*^9, 3.99255324614108*^9}, {3.992553299994673*^9, 
    3.9925533188577547`*^9}, {3.992553365082779*^9, 3.992553467981078*^9}, {
-   3.992556419347168*^9, 
-   3.99255646615014*^9}},ExpressionUUID->"8f7b7610-9837-4b34-ac9c-\
+   3.992556419347168*^9, 3.99255646615014*^9}, {3.9925986582957363`*^9, 
+   3.992598680301491*^9}},ExpressionUUID->"8f7b7610-9837-4b34-ac9c-\
 61f0d2d0b1d2"]
 }, Open  ]],
 
@@ -218,14 +226,14 @@ Cell["Model V1 - Self-Balancing Tail with Variable Length", "Subsection",
 290996d3b289"],
 
 Cell[TextData[{
- "To start developing a model, we must start simple. Before changing the \
-angle of the tail or adding more joints, we need to understand how balance \
-works. In physics, balance is achieved by having a net torque of zero in our \
-system. In this case, our system is defined as the following: a center of \
-mass for the tail offset by a distance and a center of mass for the head \
-offset by a distance and height. The tail\[CloseCurlyQuote]s center of mass \
-is the midpoint because it is a normal object while the head is a point mass. \
-For all calculations, we will use SI units.\n",
+ "I started by developing a very simple model. Before changing the angle of \
+the tail or adding more joints, I defined how balance works. In physics, \
+balance is achieved by having a net torque of zero in the system. In this \
+case, the system is defined as the following: a center of mass for the tail \
+offset by a distance and a center of mass for the head offset by a distance \
+and height. The tail\[CloseCurlyQuote]s center of mass is the midpoint \
+because it is a normal object while the head is a point mass. For all \
+calculations, SI units were used.\n",
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -620,8 +628,8 @@ XMcXg0sYSA==
    ImageSizeRaw->{960., 960.},
    PlotRange->{{0, 960.}, {0, 960.}}]], "Input",ExpressionUUID->
   "c6335917-d414-4065-812b-b24f02c492cc"],
- "\nFrom this setup, we must derive an equation that can be used. In this \
-setup, the six main variables are:\n",
+ "\nFrom this setup, I had to derive an equation that can be used. In this \
+setup, the six main variables are:\n\n",
  Cell[BoxData[
   FormBox[
    SubscriptBox["m", "head"], TraditionalForm]],ExpressionUUID->
@@ -699,8 +707,11 @@ this value divided by two as it\[CloseCurlyQuote]s not a point mass.\n",
    3.992092414315728*^9, 3.99209244889609*^9}, {3.992092575272933*^9, 
    3.9920925801935263`*^9}, {3.992096238154119*^9, 3.992096293337804*^9}, 
    3.99218636806956*^9, 3.992186406461432*^9, {3.992440987220724*^9, 
-   3.99244098932889*^9}, {3.9925542622772207`*^9, 
-   3.9925542672844877`*^9}},ExpressionUUID->"9b79198e-7897-462b-8630-\
+   3.99244098932889*^9}, {3.9925542622772207`*^9, 3.9925542672844877`*^9}, {
+   3.992597208307439*^9, 3.992597246451635*^9}, {3.9925978695423613`*^9, 
+   3.992597870375119*^9}, {3.9925986839996367`*^9, 3.9925986920904293`*^9}, {
+   3.992598747967575*^9, 
+   3.992598748179549*^9}},ExpressionUUID->"9b79198e-7897-462b-8630-\
 68f1f3d31553"],
 
 Cell["Defining these variables in Wolfram Language:", "CodeText",
@@ -737,8 +748,8 @@ Cell[TextData[{
    SubscriptBox["d", "tail"], TraditionalForm]],ExpressionUUID->
   "8df1b760-23bc-4c4c-afaf-57a01e802148"],
  " isn\[CloseCurlyQuote]t defined will be elaborated on later.\n\nFor the \
-sake of future calculations and simplicity of graphing, we will define each \
-of the main areas governing these dimensions with points.\n",
+sake of future calculations and simplicity of graphing, I defined each of the \
+main areas governing these dimensions with points.\n",
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -1021,7 +1032,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQSP8HJZ4vGw==
    ImageSizeRaw->{960., 960.},
    PlotRange->{{0, 960.}, {0, 960.}}]], "Input",ExpressionUUID->
   "e5826780-5450-488e-b354-708cd1c05d53"],
- "\nWe can define each as the following using the variables from earlier:\n\n",
+ "\nI then defined each as the following using the variables from earlier:\n\n\
+",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "1"], TraditionalForm]],ExpressionUUID->
@@ -1092,14 +1104,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQSP8HJZ4vGw==
   FormBox[
    SubscriptBox["p", "6"], TraditionalForm]],ExpressionUUID->
   "573196ad-1f40-461d-8649-16f596cc6302"],
- ": (0,0)\n\nThis is when our monkey is standing perfectly upright. However, \
-our monkey will not always be standing perfectly upright. Thus, we need to \
-factor in a 7th variable, ",
+ ": (0,0)\n\nThis is when the monkey is standing perfectly upright. However, \
+the monkey will not always be standing perfectly upright. Thus, I factored in \
+a 7th variable, ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
   "ac5dd3f9-fee9-4a9b-9a26-da169fa411d1"],
- ". In our diagram and in Wolfram Language, ",
+ ". In my diagram and in Wolfram Language, ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
@@ -1109,7 +1121,7 @@ factor in a 7th variable, ",
   FormBox[
    SubscriptBox["p", "6"], TraditionalForm]],ExpressionUUID->
   "b6759a9d-7b4c-4927-9ae8-a51ef5ae2f90"],
- " looks like this:\n\n",
+ " looked like this:\n\n",
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -1867,7 +1879,8 @@ H/j6aX0=
    3.992092414315728*^9, 3.992092414545517*^9}, {3.992092458233294*^9, 
    3.992092473898006*^9}, {3.992096241336*^9, 3.9920962548524857`*^9}, {
    3.992097124147087*^9, 3.992097128880289*^9}, {3.992441562087995*^9, 
-   3.992441562676415*^9}},ExpressionUUID->"9f0fb56b-f288-428a-8025-\
+   3.992441562676415*^9}, {3.9925972523213*^9, 
+   3.992597277710928*^9}},ExpressionUUID->"9f0fb56b-f288-428a-8025-\
 9b446aa8defd"],
 
 Cell["Defining the origin and the leaning angle:", "CodeText",
@@ -1892,14 +1905,13 @@ Cell[BoxData[{
  CellLabel->"In[80]:=",ExpressionUUID->"094db03c-f74d-4619-9385-7d05e57c364e"],
 
 Cell[TextData[{
- "Now, instead of simply defining our coordinates with the variables from \
-earlier, we must use trigonometry to define them. Let\[CloseCurlyQuote]s \
-begin with ",
+ "Now, instead of simply defining the coordinates with the variables from \
+earlier, I had to use trigonometry to define them. Beginning with ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "2"], TraditionalForm]],ExpressionUUID->
   "b0b7a307-55ff-4e08-8b56-bf853dc9fc69"],
- ". We can draw a right triangle from the origin ",
+ ", which can be defined by drawing a right triangle from the origin ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "6"], TraditionalForm]],ExpressionUUID->
@@ -2484,7 +2496,7 @@ yRs+fHheXl7ZNupBAAAAAAAAAAAAAAAAIvA/SGQazQ==
   FormBox[
    SubscriptBox["h", "head"], TraditionalForm]],ExpressionUUID->
   "cc38c112-e17b-4725-8219-194f42a8165a"],
- ". This means that since we know ",
+ ". This means that since ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
@@ -2494,12 +2506,12 @@ yRs+fHheXl7ZNupBAAAAAAAAAAAAAAAAIvA/SGQazQ==
   FormBox[
    SubscriptBox["h", "head"], TraditionalForm]],ExpressionUUID->
   "474b1627-992e-497c-8cf2-abfcd4af6c3b"],
- ", we can define ",
+ " are known, ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "2"], TraditionalForm]],ExpressionUUID->
   "38bcc75c-6449-4869-b07e-e3724cb9be0b"],
- " as the following:\n\n(-",
+ " can be defined as the following:\n\n(-",
  Cell[BoxData[
   FormBox[
    SubscriptBox["h", "head"], TraditionalForm]],ExpressionUUID->
@@ -2563,8 +2575,9 @@ yRs+fHheXl7ZNupBAAAAAAAAAAAAAAAAIvA/SGQazQ==
    3.9920920493526373`*^9, 3.992092049545135*^9}, {3.992092202992491*^9, 
    3.992092235586781*^9}, {3.992092270584436*^9, 3.992092376800507*^9}, {
    3.992092414315728*^9, 3.992092414545517*^9}, {3.992092458233294*^9, 
-   3.9920924885184517`*^9}, {3.99244107478792*^9, 
-   3.9924410761823*^9}},ExpressionUUID->"b226874a-7b99-4953-90f6-\
+   3.9920924885184517`*^9}, {3.99244107478792*^9, 3.9924410761823*^9}, {
+   3.992597282566821*^9, 3.99259733853588*^9}, {3.992598750502376*^9, 
+   3.992598750701037*^9}},ExpressionUUID->"b226874a-7b99-4953-90f6-\
 80ad8ab14738"],
 
 Cell[TextData[{
@@ -2597,12 +2610,12 @@ Cell[BoxData[
  CellLabel->"In[82]:=",ExpressionUUID->"6a684f34-f265-4d07-addf-916173226217"],
 
 Cell[TextData[{
- "We can do the same for ",
+ "I did the same for ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "3"], TraditionalForm]],ExpressionUUID->
   "d6f8c966-13d6-4ad2-92bf-b7b6d3466713"],
- ", but instead of the height of the head, we use the height of the tail:\n\n",
+ ", but instead of the height of the head, I used the height of the tail:\n\n",
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -3256,7 +3269,8 @@ AAAAAAAAAAAAAAAAAACggjjzzDNbtGiR+Bn1IAAAUA54/yDALvn/7URhhw==
    3.9920924863929453`*^9}, {3.992092536715221*^9, 3.992092565027684*^9}, {
    3.992092596375771*^9, 3.992092647174569*^9}, 3.992092788640123*^9, {
    3.9920946220146017`*^9, 3.992094625035767*^9}, {3.99242721339956*^9, 
-   3.992427237137364*^9}},ExpressionUUID->"bcb206d8-6241-4571-8a7b-\
+   3.992427237137364*^9}, {3.992597340472728*^9, 
+   3.992597346608078*^9}},ExpressionUUID->"bcb206d8-6241-4571-8a7b-\
 40e4c96666ac"],
 
 Cell[TextData[{
@@ -3301,7 +3315,7 @@ transformations from ",
   FormBox[
    SubscriptBox["p", "3"], TraditionalForm]],ExpressionUUID->
   "5d403260-13b9-4a30-a28c-15af5ce1ea00"],
- ". Let\[CloseCurlyQuote]s begin with ",
+ ". I began with ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "1"], TraditionalForm]],ExpressionUUID->
@@ -3961,12 +3975,13 @@ ACJh9pAXigR81v8BispMWA==
    ImageSizeRaw->{960., 960.},
    PlotRange->{{0, 960.}, {0, 960.}}]], "Input",ExpressionUUID->
   "8a03aed0-28d4-4445-aa4c-0e7477946d4a"],
- "\nIf we draw a vertical line from ",
+ "\nDrawing a vertical line from ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "2"], TraditionalForm]],ExpressionUUID->
   "8bf25ce1-643b-4814-9e41-b3441492a560"],
- ", we can see that it\[CloseCurlyQuote]s parallel to the line which defines ",
+ ", it becomes evident that it\[CloseCurlyQuote]s parallel to the line which \
+defines ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
@@ -3987,7 +4002,7 @@ congruent to ",
   FormBox[
    SubscriptBox["p", "2"], TraditionalForm]],ExpressionUUID->
   "61060f54-2a82-4a23-9168-3d7cbfcf5ad3"],
- " is 90 degrees, we can define the complementary angle as 90-",
+ " is 90 degrees, I defined define the complementary angle as 90-",
  Cell[BoxData[
   FormBox[
    FormBox[
@@ -4001,8 +4016,8 @@ congruent to ",
     SubscriptBox["\[Theta]", "lean"],
     TraditionalForm], TraditionalForm]],ExpressionUUID->
   "1f40bede-0d3b-4cec-a5d3-2b3c111e5f6c"],
- " is ALSO complementary to the missing angle of our right triangle (marked \
-in red), we can simply define the triangle\[CloseCurlyQuote]s angle as ",
+ " is ALSO complementary to the missing angle of the right triangle (marked \
+in red), I simply defined the triangle\[CloseCurlyQuote]s angle as ",
  Cell[BoxData[
   FormBox[
    FormBox[
@@ -4554,12 +4569,12 @@ AAAAgPLq/wKV0hD0
    ImageSizeRaw->{960., 960.},
    PlotRange->{{0, 960.}, {0, 960.}}]], "Input",ExpressionUUID->
   "9b5f8908-320e-4d99-8d0f-649d41f0b9b4"],
- "\nWe also know that ",
+ "\nKnowing ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["d", "head"], TraditionalForm]],ExpressionUUID->
   "181ac590-0f4d-483c-8bef-9ec05048b676"],
- " is the hypotenuse. From this new triangle, we can define ",
+ " is the hypotenuse, I defined ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "1"], TraditionalForm]],ExpressionUUID->
@@ -4647,7 +4662,9 @@ AAAAgPLq/wKV0hD0
    3.992092596375771*^9, 3.9920926293215847`*^9}, {3.992092793163574*^9, 
    3.9920928833681307`*^9}, {3.99209459205717*^9, 3.9920947642502213`*^9}, {
    3.9920949202508287`*^9, 3.992095088290758*^9}, {3.992096060078718*^9, 
-   3.9920960665407963`*^9}},ExpressionUUID->"70566e4b-e96d-450f-89d3-\
+   3.9920960665407963`*^9}, {3.992597354510779*^9, 3.9925973974846582`*^9}, {
+   3.992598753560885*^9, 
+   3.992598754337144*^9}},ExpressionUUID->"70566e4b-e96d-450f-89d3-\
 db16e439135c"],
 
 Cell[TextData[{
@@ -4684,7 +4701,7 @@ Cell[BoxData[
  CellLabel->"In[84]:=",ExpressionUUID->"df14060c-837f-4fef-a312-535c2d9f1635"],
 
 Cell[TextData[{
- "We can apply the same transformation process to derive ",
+ "I then applied the same transformation process to derive ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "5"], TraditionalForm]],ExpressionUUID->
@@ -4694,7 +4711,7 @@ Cell[TextData[{
   FormBox[
    SubscriptBox["p", "3"], TraditionalForm]],ExpressionUUID->
   "f33438ec-df32-4e66-92d9-3ed317770185"],
- ". If we form a right triangle from ",
+ ". Forming a right triangle from ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "2"], TraditionalForm]],ExpressionUUID->
@@ -6013,13 +6030,13 @@ AAAAOEr8L3mo1vA=
    ImageSizeRaw->{960., 960.},
    PlotRange->{{0, 960.}, {0, 960.}}]], "Input",ExpressionUUID->
   "12b02efa-1cd8-4bd4-a1da-08449b6a265a"],
- "\nNotice how instead of going to the left and down, we go to the right and \
-up. This means instead of the subtraction like in ",
+ "\nNotice how instead of going to the left and down, the point goes to the \
+right and up. This means instead of the subtraction like in ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "1"], TraditionalForm]],ExpressionUUID->
   "9c1eaad7-f7a7-478a-85bc-8dbea1fb8b70"],
- ", we need to add. Thus, ",
+ ", addition is used. Thus, ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "5"], TraditionalForm]],ExpressionUUID->
@@ -6105,8 +6122,9 @@ up. This means instead of the subtraction like in ",
    3.9920960861583652`*^9}, {3.992096183371462*^9, 3.992096212206506*^9}, {
    3.992096389497616*^9, 3.992096494130549*^9}, 3.99209685459039*^9, {
    3.9920969798032637`*^9, 3.992097038711718*^9}, {3.992097072971397*^9, 
-   3.992097074470561*^9}, {3.992441312918653*^9, 
-   3.992441338505028*^9}},ExpressionUUID->"f8a87169-4567-4d69-a805-\
+   3.992097074470561*^9}, {3.992441312918653*^9, 3.992441338505028*^9}, {
+   3.992597400598579*^9, 
+   3.992597421478177*^9}},ExpressionUUID->"f8a87169-4567-4d69-a805-\
 2527724f699b"],
 
 Cell[TextData[{
@@ -6231,13 +6249,12 @@ Cell[BoxData[
  CellLabel->"In[86]:=",ExpressionUUID->"2cdf6675-e26c-41fa-b5d0-c00094b4f3fb"],
 
 Cell[TextData[{
- "With all of our points now defined, we can begin calculating for the \
-torque. The equation for torque is known as:\n\n\[Tau] = F*r*sin(\[Theta])\n\n\
-If we assume the force to be gravitational force, then F = m * g.\n\nTo \
-understand the torque exerted on our coordinate plane, we can go over an \
-example with generic placeholders. Let\[CloseCurlyQuote]s say we have a point \
-mass at (x,y) with mass m, distance r, and angle \[Theta] from the origin \
-(0,0).\n",
+ "With all of the points now defined, I began calculating for the torque. The \
+equation for torque is known as:\n\n\[Tau] = F*r*sin(\[Theta])\n\nAssuming \
+the force to be gravitational force, then F = m * g.\n\nI then defined the \
+torque exerted on the coordinate plane through generic placeholders. In this \
+case, there is a point mass at (x,y) with mass m, distance r, and angle \
+\[Theta] from the origin (0,0).\n",
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -6837,8 +6854,9 @@ simplification:\n\n\[Tau] = m*g*r*sin(\[Theta])\n\n\[Tau] = m*g*r*",
  CellChangeTimes->{{3.992097266395308*^9, 3.9920972777812233`*^9}, {
   3.9920974531310387`*^9, 3.992097472807303*^9}, {3.992097745948107*^9, 
   3.9920981476796417`*^9}, {3.992421033765835*^9, 3.992421033879548*^9}, {
-  3.992441390140338*^9, 
-  3.9924413916989183`*^9}},ExpressionUUID->"bbcf056d-f9ba-4fcf-94c5-\
+  3.992441390140338*^9, 3.9924413916989183`*^9}, {3.9925974258569527`*^9, 
+  3.99259747202188*^9}, {3.992598757839549*^9, 
+  3.99259875926333*^9}},ExpressionUUID->"bbcf056d-f9ba-4fcf-94c5-\
 8028af0e7855"],
 
 Cell["\<\
@@ -6864,14 +6882,14 @@ Cell[BoxData[
  CellLabel->"In[87]:=",ExpressionUUID->"39b454a5-62e8-428c-9744-256e15f1ef76"],
 
 Cell[TextData[{
- "We also know that in order for the monkey to stay balanced when rotated to \
-an angle of ",
+ "It\[CloseCurlyQuote]s also known that in order for the monkey to stay \
+balanced when rotated to an angle of ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
   "2e915e63-af15-4313-bc75-c1336e742a7f"],
  " degrees, the sum of the torques has to equal zero. Recall that in the \
-system, we have two point masses, ",
+system, I had two point masses, ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["m", "h"], TraditionalForm]],ExpressionUUID->
@@ -6901,7 +6919,7 @@ system, we have two point masses, ",
   FormBox[
    SubscriptBox["\[Tau]", "tail"], TraditionalForm]],ExpressionUUID->
   "26da346c-657c-42d2-a07a-3127612359d0"],
- ". With this, we can establish that: ",
+ ". With this, I established that: ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Tau]", "head"], TraditionalForm]],ExpressionUUID->
@@ -6921,20 +6939,21 @@ system, we have two point masses, ",
   FormBox[
    SubscriptBox["\[Tau]", "tail"], TraditionalForm]],ExpressionUUID->
   "76e2b1c0-a189-48ce-bb3a-b29444f42e17"],
- "\n\nWith that established, we can create our model with code. It is \
-important to recall that in our first set of variables, we did NOT define ",
+ "\n\nWith that established, I created this simple model with code. It is \
+important to recall that in the first set of variables, I did NOT define ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["d", "tail"], TraditionalForm]],ExpressionUUID->
   "f6441f6f-ab52-40d8-84d5-f8c332e9c4f1"],
- ". Let\[CloseCurlyQuote]s re-examine why below:"
+ "."
 }], "Text",
  CellChangeTimes->{{3.992097266395308*^9, 3.9920972777812233`*^9}, {
   3.9920974531310387`*^9, 3.992097472807303*^9}, {3.992097745948107*^9, 
   3.992098145521916*^9}, {3.992098198772934*^9, 3.9920982084886703`*^9}, {
   3.9920982514498034`*^9, 3.992098335787692*^9}, {3.99209837208337*^9, 
-  3.992098422464962*^9}, {3.992441427395996*^9, 
-  3.99244142826186*^9}},ExpressionUUID->"90009009-b891-4ed9-82f6-\
+  3.992098422464962*^9}, {3.992441427395996*^9, 3.99244142826186*^9}, {
+  3.9925974785471573`*^9, 3.9925975064576387`*^9}, {3.99259869563301*^9, 
+  3.9925987001896276`*^9}},ExpressionUUID->"90009009-b891-4ed9-82f6-\
 3353a6dddce9"],
 
 Cell[TextData[{
@@ -6981,13 +7000,13 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell[TextData[{
- "We did this because for the torques to stay in equilibrium in our model, \
+ "I did this because for the torques to stay in equilibrium in the model, \
 when ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
   "c191ab82-e9b3-4524-b9ac-fb4df71954d2"],
- ", one or more of the given variables needs to change. If ",
+ " changes, one or more of the given variables also needs to change. If ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["d", "tail"], TraditionalForm]],ExpressionUUID->
@@ -6997,8 +7016,8 @@ when ",
   FormBox[
    SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
   "dadbb4e4-6ed9-44a2-ace6-3e14964be4fa"],
- " changed, the system would not be in equilibrium. With this established, we \
-can now create a model that adjusts ",
+ " changed, the system would not be in equilibrium. With this established, I  \
+created a model that adjusts ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["d", "tail"], TraditionalForm]],ExpressionUUID->
@@ -7011,8 +7030,9 @@ can now create a model that adjusts ",
  " changes."
 }], "Text",
  CellChangeTimes->{{3.99209846209616*^9, 3.992098568364648*^9}, {
-  3.9924414856306267`*^9, 
-  3.992441487478155*^9}},ExpressionUUID->"e34e2c4e-6e61-417f-869a-\
+  3.9924414856306267`*^9, 3.992441487478155*^9}, {3.9925975084583597`*^9, 
+  3.992597518503393*^9}, {3.9925987623918333`*^9, 
+  3.99259877264497*^9}},ExpressionUUID->"e34e2c4e-6e61-417f-869a-\
 922baed75b45"],
 
 Cell[TextData[{
@@ -7021,15 +7041,16 @@ Cell[TextData[{
   FormBox[
    SubscriptBox["d", "tail"], TraditionalForm]],ExpressionUUID->
   "b0169b0c-9e9d-4f2d-b46e-85321ef4ee63"],
- " using our model\[CloseCurlyQuote]s symbolic equations which include ",
+ " using the model\[CloseCurlyQuote]s symbolic equations which include ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["d", "tail"], TraditionalForm]],ExpressionUUID->
   "f1146684-a266-4664-9739-cb42a39d5079"],
  ":"
 }], "CodeText",
- CellChangeTimes->{{3.992441492033078*^9, 
-  3.992441512691023*^9}},ExpressionUUID->"9276b184-a9c7-4fcb-a89e-\
+ CellChangeTimes->{{3.992441492033078*^9, 3.992441512691023*^9}, {
+  3.992598775996005*^9, 
+  3.9925987762105227`*^9}},ExpressionUUID->"9276b184-a9c7-4fcb-a89e-\
 0719db7f6c98"],
 
 Cell[CellGroupData[{
@@ -7072,21 +7093,21 @@ Cell[BoxData[
 
 Cell[TextData[{
  "The final part of this simple model is to form the real-time simulation. To \
-do this, we must have an input to change ",
+do this, I programmed an input to change ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
   "ad726840-310d-43c5-a196-2df1f75f8a0f"],
  ". This as a result should change the rotation of the monkey and the tail \
 length of the monkey. The simulation\[CloseCurlyQuote]s code and output are \
-visualized below, with UI allowing you to change each variable and reset \
-them. Something of note is that the tail is ALWAYS below the head, and \
+visualized below, with UI allowing real-time adjustments to the leaning \
+angle. Something of note is that the tail is ALWAYS below the head, and \
 otherwise it gives a red error indicator."
 }], "Text",
  CellChangeTimes->{{3.9920989413599586`*^9, 3.992098954672945*^9}, {
    3.992101728901793*^9, 3.9921017455229387`*^9}, {3.9921251093393593`*^9, 
-   3.992125162972011*^9}, 
-   3.992441619125505*^9},ExpressionUUID->"b1f2ec65-0c58-4e2f-bcac-\
+   3.992125162972011*^9}, 3.992441619125505*^9, {3.992597522932423*^9, 
+   3.992597549308612*^9}},ExpressionUUID->"b1f2ec65-0c58-4e2f-bcac-\
 62cd6ce94809"],
 
 Cell["\<\
@@ -7286,10 +7307,10 @@ Cell[BoxData[
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`thetaLean$$ = 0.20000000000000284`, 
-    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
-    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
-    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+   DynamicModuleBox[{$CellContext`thetaLean$$ = 15, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
        Hold[$CellContext`thetaLean$$], 0}, -90, 90, ControlType -> 
       Manipulator}}, Typeset`size$$ = {
     360., {177.134033203125, 182.865966796875}}, Typeset`update$$ = 0, 
@@ -7403,17 +7424,17 @@ Cell["Model V2 - Self-Balancing Tail with Variable Rotation", "Subsection",
   3.9925491578203*^9}},ExpressionUUID->"e5adb3ec-d724-4d78-85f9-1f1ec883fbbb"],
 
 Cell[TextData[{
- "Our model now works, however it is inaccurate to any animal\
+ "The model now works, however it is inaccurate to any animal\
 \[CloseCurlyQuote]s behavior in nature. An animal cannot grow or shrink its \
-tail in real-time.\nWe also assume that the monkey\[CloseCurlyQuote]s tail is \
-always perpendicular to its body. In nature, this is also not the case.\n\n\
-Instead, to counterbalance its mass, a monkey will change the angle of its \
-tail. To achieve this, we need to adjust our model, give ",
+tail in real-time. The V1 also assumes that the monkey\[CloseCurlyQuote]s \
+tail is always perpendicular to its body. In nature, this is also not the \
+case.\n\nInstead, to counterbalance its mass, a monkey will change the angle \
+of its tail. To achieve this, I adjusted the math behind the model, gave ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["d", "tail"], TraditionalForm]],ExpressionUUID->
   "4bee9a1e-47e4-4818-9f04-0b147cdb1d90"],
- " a value, and define a new constant for the angle of the tail, ",
+ " a value, and defined a new constant for the angle of the tail, ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "adj"], TraditionalForm]],ExpressionUUID->
@@ -7425,11 +7446,12 @@ tail. To achieve this, we need to adjust our model, give ",
    3.992112771642489*^9}, {3.9921128088760357`*^9, 3.992112976802414*^9}, {
    3.992113080218974*^9, 3.9921131016507053`*^9}, {3.9921131343634853`*^9, 
    3.992113141870468*^9}, 3.992114640303331*^9, {3.9924417871062593`*^9, 
-   3.992441787471518*^9}},ExpressionUUID->"1cd200dc-b1ec-4bb8-8e77-\
+   3.992441787471518*^9}, {3.992597555211034*^9, 
+   3.9925975789356203`*^9}},ExpressionUUID->"1cd200dc-b1ec-4bb8-8e77-\
 eaaa7a802d07"],
 
 Cell[TextData[{
- "Redefining our constants and coordinates ",
+ "Redefining the constants and coordinates ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "6"], TraditionalForm]],ExpressionUUID->
@@ -7451,8 +7473,9 @@ Cell[TextData[{
   "f4886f58-f521-4262-b80d-92e9954f2a30"],
  " as they do not change from the V1."
 }], "CodeText",
- CellChangeTimes->{{3.992441794632827*^9, 
-  3.992441842455058*^9}},ExpressionUUID->"a540f73f-61e9-4f27-8219-\
+ CellChangeTimes->{{3.992441794632827*^9, 3.992441842455058*^9}, {
+  3.9925976004872847`*^9, 
+  3.9925976007656307`*^9}},ExpressionUUID->"a540f73f-61e9-4f27-8219-\
 b4ca379beb3c"],
 
 Cell[CellGroupData[{
@@ -8780,12 +8803,12 @@ AABAiv8HS7WTVw==
    ImageSizeRaw->{960., 960.},
    PlotRange->{{0, 960.}, {0, 960.}}]], "Input",ExpressionUUID->
   "5f75b53a-dc7f-4dd3-8948-013c8cd9dd97"],
- "\nIn V1, recall we defined ",
+ "\nIn V1, recall ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "5"], TraditionalForm]],ExpressionUUID->
   "54deb7c0-5502-456e-859d-f652aacfdc91"],
- " as the following:\n\n ",
+ " was defined as the following:\n\n ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "5"], TraditionalForm]],ExpressionUUID->
@@ -8826,7 +8849,8 @@ AABAiv8HS7WTVw==
   FormBox[
    SubscriptBox["\[Theta]", "adj"], TraditionalForm]],ExpressionUUID->
   "bc52364b-e682-4219-8098-483012bdc346"],
- ". We can see in the image that the angle for the triangle, as well as ",
+ ". It\[CloseCurlyQuote]s shown in the image that the angle for the triangle, \
+as well as ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "adj"], TraditionalForm]],ExpressionUUID->
@@ -8836,7 +8860,7 @@ AABAiv8HS7WTVw==
   FormBox[
    SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
   "054fd693-59f4-4841-afac-b560b9bf9f3e"],
- " and a 90 degree angle. Knowing that, we can subtract  ",
+ " and a 90 degree angle. Knowing that, I subtracted  ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "adj"], TraditionalForm]],ExpressionUUID->
@@ -8895,7 +8919,8 @@ the model:\n\n ",
   3.99244196607198*^9, 3.992441971152405*^9}, {3.992547219500305*^9, 
   3.99254727054673*^9}, {3.99255454013698*^9, 3.992554551305415*^9}, {
   3.992591199570836*^9, 3.992591335034568*^9}, {3.992591417807701*^9, 
-  3.992591507651742*^9}},ExpressionUUID->"8ed6460a-9cc6-4565-af29-\
+  3.992591507651742*^9}, {3.9925976066891727`*^9, 
+  3.9925976296804457`*^9}},ExpressionUUID->"8ed6460a-9cc6-4565-af29-\
 5b497b98bf45"],
 
 Cell[TextData[{
@@ -8953,7 +8978,7 @@ Cell[TextData[{
   FormBox[
    SubscriptBox["p", "5"], TraditionalForm]],ExpressionUUID->
   "ccfdf4b7-e47f-4b40-8326-8deed4b190f6"],
- " we also need to recalculate the midpoint between ",
+ ", the midpoint between ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "5"], TraditionalForm]],ExpressionUUID->
@@ -8968,10 +8993,11 @@ Cell[TextData[{
   FormBox[
    SubscriptBox["p", "4"], TraditionalForm]],ExpressionUUID->
   "f6268502-a05d-42e5-8ce8-b49c2559ef97"],
- ":"
+ " also needed to be recalculated:"
 }], "CodeText",
- CellChangeTimes->{{3.992112980302924*^9, 
-  3.992113008635346*^9}},ExpressionUUID->"dd9ceb0c-18b5-4f8e-ae32-\
+ CellChangeTimes->{{3.992112980302924*^9, 3.992113008635346*^9}, {
+  3.992597634012143*^9, 
+  3.992597645343742*^9}},ExpressionUUID->"dd9ceb0c-18b5-4f8e-ae32-\
 ea9c8003b53e"],
 
 Cell[BoxData[
@@ -8985,15 +9011,27 @@ Cell[BoxData[
   "In[105]:=",ExpressionUUID->"bde448a2-ca51-4632-b6a5-5656d6471b5e"],
 
 Cell[TextData[{
- "We will now once again be solving for ",
+ "I then solved for ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "adj"], TraditionalForm]],ExpressionUUID->
   "65a38def-f500-468f-8931-6953818ba5a1"],
- " , but instead of using NSolve, we will use NMinimize."
+ " , but instead of using NSolve, I used Wolfram\[CloseCurlyQuote]s NMinimize \
+function because there is multiple solutions.  NMinimize works by finding the \
+values which make the objective, the sum of the torques in this case, closest \
+to zero. This will output an error value and each of the magnitudes for the \
+",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "adj"], TraditionalForm]],ExpressionUUID->
+  "3b7669c4-200f-4f6a-9da7-737fb197d2cd"],
+ " values. When the error is anything above a near-zero value, it is \
+unsolvable given the constraints. "
 }], "Text",
- CellChangeTimes->{{3.992547379122067*^9, 
-  3.9925474204969883`*^9}},ExpressionUUID->"5f599f3b-47b8-4eaa-a362-\
+ CellChangeTimes->{{3.992547379122067*^9, 3.9925474204969883`*^9}, {
+  3.992597649024189*^9, 3.9925976631022453`*^9}, {3.992598445274379*^9, 
+  3.992598492774729*^9}, {3.9925987033638906`*^9, 
+  3.992598714361136*^9}},ExpressionUUID->"5f599f3b-47b8-4eaa-a362-\
 4e71d38e8e4a"],
 
 Cell["\<\
@@ -9019,9 +9057,10 @@ Cell[BoxData[
  CellLabel->
   "In[106]:=",ExpressionUUID->"ca273a0c-8f60-439b-81b1-25d81530d97d"],
 
-Cell["We then define constraints to prevent multiple solutions:", "CodeText",
- CellChangeTimes->{{3.992547449379689*^9, 
-  3.992547468932815*^9}},ExpressionUUID->"355edcde-26f4-41cb-ba05-\
+Cell["I then defined constraints to prevent multiple solutions:", "CodeText",
+ CellChangeTimes->{{3.992547449379689*^9, 3.992547468932815*^9}, {
+  3.9925976653861933`*^9, 
+  3.992597666984438*^9}},ExpressionUUID->"355edcde-26f4-41cb-ba05-\
 8849d422403a"],
 
 Cell[CellGroupData[{
@@ -9044,13 +9083,13 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell[TextData[{
- "Now, given these values, we use NMinimize to find the solution that makes \
+ "Now, given these values, I used NMinimize to find the solution that makes \
 the squared error closest to zero, but instead of solving for ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["d", "tail"], TraditionalForm]],ExpressionUUID->
   "77f42a27-68f1-4a24-9ea7-8fe5f68a4394"],
- ", we solve for ",
+ ", I solved for ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "adj"], TraditionalForm]],ExpressionUUID->
@@ -9059,7 +9098,8 @@ the squared error closest to zero, but instead of solving for ",
 }], "CodeText",
  CellChangeTimes->{{3.992113031538157*^9, 3.992113037122189*^9}, {
   3.992113169446151*^9, 3.992113205577938*^9}, {3.9925472824739857`*^9, 
-  3.992547311785128*^9}},ExpressionUUID->"e6f8ef09-65fb-4763-853e-\
+  3.992547311785128*^9}, {3.992597668977108*^9, 
+  3.992597672648374*^9}},ExpressionUUID->"e6f8ef09-65fb-4763-853e-\
 b37b3ba78b56"],
 
 Cell[CellGroupData[{
@@ -9092,11 +9132,10 @@ Cell[BoxData[
   "Out[108]=",ExpressionUUID->"97cde0eb-2db0-4085-b2da-6a67898d491d"]
 }, Open  ]],
 
-Cell["We then need to extract the raw value inside the giant list:", \
-"CodeText",
+Cell["I then extracted the raw value inside the larger list:", "CodeText",
  CellChangeTimes->{{3.9924419994909077`*^9, 3.9924420344481153`*^9}, {
-  3.9925475033495407`*^9, 
-  3.992547526092654*^9}},ExpressionUUID->"599e478d-ef0a-461b-8e1a-\
+  3.9925475033495407`*^9, 3.992547526092654*^9}, {3.9925976766056356`*^9, 
+  3.992597684575968*^9}},ExpressionUUID->"599e478d-ef0a-461b-8e1a-\
 29e7ad710074"],
 
 Cell[CellGroupData[{
@@ -9119,15 +9158,16 @@ Cell[BoxData["135.83770196374246`"], "Output",
 }, Open  ]],
 
 Cell[TextData[{
- "And finally, reassign ",
+ "And finally, reassigned ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "5"], TraditionalForm]],ExpressionUUID->
   "c6c17665-7706-4d7f-9e08-18fc9340a23b"],
  " based on this new value:"
 }], "CodeText",
- CellChangeTimes->{{3.9925475346333733`*^9, 
-  3.9925475452493563`*^9}},ExpressionUUID->"91355f45-240f-44f1-833e-\
+ CellChangeTimes->{{3.9925475346333733`*^9, 3.9925475452493563`*^9}, {
+  3.992597686571937*^9, 
+  3.992597686689324*^9}},ExpressionUUID->"91355f45-240f-44f1-833e-\
 2c5aa84b0bd9"],
 
 Cell[CellGroupData[{
@@ -9171,15 +9211,15 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell["\<\
-With this, we can modify the code from V1 to, once again, visualize our \
-model. We must note, however, that, because the tail is now rotating, and has \
-a limit between 0 and 180 degrees, there are going to be some physically \
-impossible combinations of givens. This will result in a red graph and an \
-error message. We will get around this later, however.\
+With this, I modified the function from V1 to visualize the V2 model. Note, \
+however, that, because the tail is now rotating, and has a limit between 0 \
+and 180 degrees, there are going to be some physically impossible \
+combinations of givens. This will result in a red graph and an error message. \
+I will circumvent this later, however.\
 \>", "Text",
  CellChangeTimes->{{3.992124649235635*^9, 3.992124680091261*^9}, {
-  3.992124878277014*^9, 
-  3.9921249492658587`*^9}},ExpressionUUID->"2d719bea-2d8f-43b2-b211-\
+  3.992124878277014*^9, 3.9921249492658587`*^9}, {3.992597688584281*^9, 
+  3.992597710569669*^9}},ExpressionUUID->"2d719bea-2d8f-43b2-b211-\
 b458784f017d"],
 
 Cell["\<\
@@ -9406,10 +9446,10 @@ Cell[BoxData[
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`thetaLean$$ = 0.4000000000000057, 
-    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
-    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
-    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+   DynamicModuleBox[{$CellContext`thetaLean$$ = 10, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
        Hold[$CellContext`thetaLean$$], 0}, -90, 90, ControlType -> 
       Manipulator}}, Typeset`size$$ = {
     360., {177.134033203125, 182.865966796875}}, Typeset`update$$ = 0, 
@@ -9529,13 +9569,14 @@ $CellContext`thetaAdjValue = 135.83770196374246`, $CellContext`dTailConst =
 }, Open  ]],
 
 Cell["\<\
-Notice how there is several cases where the background becomes red, or there \
-is NO SOLUTION to the problem. This is because you can only do so much with a \
-single-jointed tail. To get around this, we develop a third model for a \
+Notice how there is several cases where the tail becomes flat, or there is NO \
+SOLUTION to the problem. This is because a single-jointed tail can only \
+rotate so much. To get around this, I developed a third model for a \
 multi-jointed tail:\
 \>", "Text",
- CellChangeTimes->{{3.992513170336986*^9, 
-  3.9925132081499968`*^9}},ExpressionUUID->"b8014efa-9cc9-4c9e-972e-\
+ CellChangeTimes->{{3.992513170336986*^9, 3.9925132081499968`*^9}, {
+  3.992597903948073*^9, 
+  3.9925979196538887`*^9}},ExpressionUUID->"b8014efa-9cc9-4c9e-972e-\
 03107421f433"]
 }, Open  ]],
 
@@ -9547,42 +9588,42 @@ Cell["Model V3 - Multi-Jointed Self-Balancing Tail", "Subsection",
 3f1f01e71a68"],
 
 Cell[TextData[{
- "We now have a single-jointed tail which can rotate freely to counterbalance \
-",
+ "With model V2 developed, which has a joint which can rotate freely to \
+counterbalance ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
   "1acaeb06-1717-4e3e-ba3b-8fb87db7fc3f"],
- ". However, once again, in nature, monkeys and mammals in general have \
-multi-jointed tails ranging from 11 to 49 caudal vertebrae (bones). To \
-simulate this, we need to compute an algorithm that can take any number of \
-joints, a given segment length and weight, and a ",
+ ", the tail was nearly fully modeled. However, once again, in nature, \
+monkeys and mammals in general have multi-jointed tails ranging from 11 to 49 \
+caudal vertebrae (bones). To simulate this, I created an algorithm that can \
+take any number of joints, a given segment length and weight, and a ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
   "b5da1eac-6ca5-459e-857f-cb812b0199f5"],
- ", and computes the angles of the vertebrae. \n\nTo do this, we need to \
-redefine our naming system for our variables. Our system above has six \
-points, each titled ",
+ ", and computes the angles of the vertebrae. \n\nTo do this, I redefined the \
+naming system for my variables. V1 and V2 have six points each, each titled \
+",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "n"], TraditionalForm]],ExpressionUUID->
   "f11220db-5528-40e4-b7b1-ab3727f3427b"],
  ", but approaching adding more and more points as well as midpoints/center \
 of masses computationally will get unnecessary and convoluted. Thus, for this \
-final model, we will only name the pivot points with the ",
+final model, I named the pivot points with the ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "n"], TraditionalForm]],ExpressionUUID->
   "4a07840b-62d1-4cbf-8c24-a56b54ea56b7"],
- " system, and we will name midpoints/center of masses with the ",
+ " system, and named the midpoints/center of masses with the ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["m", "n"], TraditionalForm]],ExpressionUUID->
   "c27c6d69-5bc1-4334-bcf5-6f1c447a524b"],
- " system. Because the n applies for the tail and only the tail, but we still \
-have pivots and center of masses elsewhere, we will name the origin and head \
-points with these special exceptions:\n\n",
+ " system. Because the n applies for the tail and only the tail, but I still \
+had pivots and center of masses elsewhere, I named the origin and head points \
+with these special exceptions:\n\n",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "0"], TraditionalForm]],ExpressionUUID->
@@ -9597,9 +9638,8 @@ points with these special exceptions:\n\n",
   FormBox[
    SubscriptBox["m", "h"], TraditionalForm]],ExpressionUUID->
   "a4d2a068-6058-41c3-9397-01a752e3d7ed"],
- " - the point mass associated with the head.\n\nLet\[CloseCurlyQuote]s show \
-an example of all of these rules in a diagram, in this case with 3 segments \
-for the tail:\n",
+ " - the point mass associated with the head.\n\nThe diagram below shows an \
+example of all of these rules, in this case with 3 segments for the tail:\n",
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -10337,7 +10377,7 @@ AAAAAAAAAAAA1D5Wq9VisYit6iAAAABADcD6dQAAAID96M8AAACA/ejPAFBD
    ImageSizeRaw->{960., 960.},
    PlotRange->{{0, 960.}, {0, 960.}}]], "Input",ExpressionUUID->
   "77317a2b-0491-4690-90f8-8a6d17a3485b"],
- "\nInitially, we can define ",
+ "\nInitially, I defined ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "0"], TraditionalForm]],ExpressionUUID->
@@ -10352,7 +10392,7 @@ AAAAAAAAAAAA1D5Wq9VisYit6iAAAABADcD6dQAAAID96M8AAACA/ejPAFBD
   FormBox[
    SubscriptBox["m", "h"], TraditionalForm]],ExpressionUUID->
   "df8ee79c-5abb-486b-9e9e-1dc78e6395c3"],
- ", as we have defined them for the previous two models as well, just under \
+ ", as I have defined them for the previous two models as well, just under \
 different names.\n\n",
  Cell[BoxData[
   FormBox[
@@ -10433,8 +10473,9 @@ different names.\n\n",
    3.992442128896966*^9, 3.992442142513588*^9}, {3.992444015131404*^9, 
    3.992444019555094*^9}, {3.992445700084337*^9, 3.992445706941646*^9}, {
    3.992591350453874*^9, 3.9925913686350813`*^9}, {3.9925928760958633`*^9, 
-   3.9925928766980133`*^9}, {3.9925938505548162`*^9, 
-   3.992593885530525*^9}},ExpressionUUID->"bca5491a-498b-4f3b-80e7-\
+   3.9925928766980133`*^9}, {3.9925938505548162`*^9, 3.992593885530525*^9}, {
+   3.992597923104145*^9, 
+   3.99259803477374*^9}},ExpressionUUID->"bca5491a-498b-4f3b-80e7-\
 f3f06318eb42"],
 
 Cell[TextData[{
@@ -10444,12 +10485,13 @@ Cell[TextData[{
    SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
   "1ac50535-9872-4c58-b87e-c28bccbdfbb8"],
  ". A critical thing to note is that because this model begins to get \
-computationally expensive, we switch to radians instead of degrees for all \
+computationally expensive, I switched to radians instead of degrees for all \
 angles:"
 }], "CodeText",
  CellChangeTimes->{
-  3.9924421531097116`*^9, {3.992591737082636*^9, 
-   3.992591754913043*^9}},ExpressionUUID->"de6fefe8-a96b-44e4-8399-\
+  3.9924421531097116`*^9, {3.992591737082636*^9, 3.992591754913043*^9}, {
+   3.992598040891382*^9, 
+   3.992598041510942*^9}},ExpressionUUID->"de6fefe8-a96b-44e4-8399-\
 ec4f3a7b1a4e"],
 
 Cell[BoxData[{
@@ -10502,15 +10544,15 @@ Cell[BoxData[{
   "In[113]:=",ExpressionUUID->"9e44fd8e-aa41-4933-8443-5909960710c6"],
 
 Cell[TextData[{
- "For simplicity\[CloseCurlyQuote]s sake, we will always use the same \
-constant for the length of each tail segment, even though that is not the \
-case in nature. We can define a ",
+ "For simplicity\[CloseCurlyQuote]s sake, I always used the same constant for \
+the length of each tail segment, even though that is not the case in nature. \
+To do this, I defined a ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["d", "tail"], TraditionalForm]],ExpressionUUID->
   "1b948b50-865c-4e1c-bb65-09b690a8140a"],
- " and then computationally create a list of it as a constant using Wolfram \
-Language\[CloseCurlyQuote]s ConstantArray function. "
+ " and then computationally created a list of it as a constant using Wolfram \
+Language\[CloseCurlyQuote]s Table function. "
 }], "Text",
  CellChangeTimes->{{3.9924182846744537`*^9, 3.992418319051136*^9}, {
    3.992418350578918*^9, 3.992418412636354*^9}, {3.992418475915766*^9, 
@@ -10525,8 +10567,9 @@ Language\[CloseCurlyQuote]s ConstantArray function. "
    3.992423682082191*^9}, {3.9924238705781116`*^9, 3.99242387668334*^9}, {
    3.992425049548092*^9, 3.992425057403997*^9}, {3.9924285994951973`*^9, 
    3.992428662570973*^9}, {3.992428850322914*^9, 3.992428908887649*^9}, {
-   3.9924290185375557`*^9, 3.992429079281085*^9}, 
-   3.992442166242338*^9},ExpressionUUID->"7d0e7f8f-bd76-4117-8558-\
+   3.9924290185375557`*^9, 3.992429079281085*^9}, 3.992442166242338*^9, {
+   3.9925980447506313`*^9, 
+   3.9925980626124487`*^9}},ExpressionUUID->"7d0e7f8f-bd76-4117-8558-\
 3e0b5c9a2d70"],
 
 Cell["\<\
@@ -10573,15 +10616,14 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell[TextData[{
- "With these points defined, we can begin computing. We know that each of \
-these joints must rotate. In the previous Model V2, the single jointed \
-rotating tail, we needed to define a new angle, ",
+ "With these points defined, I began computing. Each of these joints must be \
+able to rotate. In the previous Model V2, I defined a new angle, ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "adj"], TraditionalForm]],ExpressionUUID->
   "162ac574-f09c-4666-a3e8-903c723ab2d2"],
- ", such that it could rotate. Because each n-numbered joint is rotating, we \
-need n number of ",
+ ", such that it could rotate. Because each n-numbered joint is rotating, \
+however, I now need n number of ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "adj"], TraditionalForm]],ExpressionUUID->
@@ -10592,12 +10634,12 @@ need n number of ",
    SubscriptBox["\[Theta]", 
     RowBox[{"adj", " ", "n"}]], TraditionalForm]],ExpressionUUID->
   "d742d8e2-afb4-4ee2-bc89-eb22d141f0ca"],
- ". In our three-joint scenario, we can define the ",
+ ". In the above three-joint, the ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "adj"], TraditionalForm]],ExpressionUUID->
   "74a96968-5828-4a73-972b-275d2b525326"],
- " angles as the following angles:\n",
+ " angles were defined as the following:\n",
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -11393,8 +11435,8 @@ that is their entire purpose for now. As the ",
    SubscriptBox["\[Theta]", "adj"], TraditionalForm]],ExpressionUUID->
   "840e6213-ccb5-470c-8b89-84193cd25a05"],
  " values for now are purely symbolic and used to only be a value to solve \
-for, we can create a list of placeholder variables of them using a specified \
-number of joints, in this case, let\[CloseCurlyQuote]s say 4 to match our \
+for, I created a list of placeholder variables of them using a specified \
+number of joints, in this case, let\[CloseCurlyQuote]s say 4 to match the \
 diagram. "
 }], "Text",
  CellChangeTimes->{{3.9924182846744537`*^9, 3.992418319051136*^9}, {
@@ -11412,8 +11454,10 @@ diagram. "
    3.9924286600765676`*^9}, {3.99244436358318*^9, 3.9924443675981007`*^9}, {
    3.9924444314484053`*^9, 3.992444434501512*^9}, {3.992445709464408*^9, 
    3.99244571989575*^9}, {3.992591821131484*^9, 3.992591830139875*^9}, {
-   3.992594238564859*^9, 
-   3.992594241335417*^9}},ExpressionUUID->"69bd3c7f-195d-4ff8-928a-\
+   3.992594238564859*^9, 3.992594241335417*^9}, {3.992598064948883*^9, 
+   3.992598116953698*^9}, {3.9925985088998203`*^9, 3.992598509814095*^9}, {
+   3.992598783626164*^9, 
+   3.9925987838220387`*^9}},ExpressionUUID->"69bd3c7f-195d-4ff8-928a-\
 e9e8b823ae65"],
 
 Cell[TextData[{
@@ -11443,13 +11487,13 @@ Cell[BoxData[
   "In[122]:=",ExpressionUUID->"42701554-20b5-466c-8e9c-acb71409dade"],
 
 Cell[TextData[{
- "We need to now establish a formula for getting the coordinates of the next \
+ "I now needed establish a formula for getting the coordinates of the next \
 point in the tail using ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "adj"], TraditionalForm]],ExpressionUUID->
   "0fcff175-351d-4b3b-9647-f9f781485ea4"],
- ". To do this for the single jointed tail prior we used trigonometry and ",
+ ". To do this for the single jointed tail prior, I used trigonometry and ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
@@ -11459,8 +11503,8 @@ point in the tail using ",
   FormBox[
    SubscriptBox["\[Theta]", "adj1"], TraditionalForm]],ExpressionUUID->
   "963a749d-52ab-4b2c-9d2c-7275f269fcec"],
- " but no other subsequent angles. Thus, due to this discrepancy, we will \
-establish a new variable type, ",
+ " but no other subsequent angles. Thus, due to this discrepancy, I \
+established a new variable type, ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "n"], TraditionalForm]],ExpressionUUID->
@@ -11471,7 +11515,7 @@ establish a new variable type, ",
    SubscriptBox["\[Theta]", "n"], TraditionalForm]],ExpressionUUID->
   "0f301eea-bf64-4a6e-8dcb-8282013fb9de"],
  " is the angle of the triangle used to compute the next point of the line. \
-In our single jointed tail, what is now called ",
+In the model V2, what is now called ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "1"], TraditionalForm]],ExpressionUUID->
@@ -11493,8 +11537,8 @@ In our single jointed tail, what is now called ",
    RowBox[{
     SubscriptBox["\[Theta]", "adj1"], " "}], TraditionalForm]],ExpressionUUID->
   "b47f6efc-49f2-41f6-9f1d-0734ddca3dd0"],
- "\n\nWe can see this again in the following diagram with the same setup as \
-V2:\n",
+ "\n\nThis is visualized in the following diagram with the same setup as V2:\n\
+",
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -12485,7 +12529,7 @@ AC3nvyMwn0A=
   FormBox[
    SubscriptBox["\[Theta]", "1"], TraditionalForm]],ExpressionUUID->
   "4490117a-9a70-4547-97cb-2b09921b4baa"],
- " solved for, let\[CloseCurlyQuote]s now begin computing for ",
+ " solved for, I began computing for ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "adj2"], TraditionalForm]],ExpressionUUID->
@@ -12495,8 +12539,8 @@ AC3nvyMwn0A=
   FormBox[
    SubscriptBox["\[Theta]", "2"], TraditionalForm]],ExpressionUUID->
   "37f9416d-eb72-447b-9a0b-84e92d420bde"],
- ". To do so, we need to define a new reference frame following a straight \
-extension from ",
+ ". To do so, I defined a new reference frame following a straight extension \
+from ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "2"], TraditionalForm]],ExpressionUUID->
@@ -12513,12 +12557,12 @@ the axis ",
    SubscriptBox["\[Theta]", "adj2"], TraditionalForm]],ExpressionUUID->
   "1d9b8dd4-96b9-4fb4-9191-94937db5d0dd"],
  " is rotationally transformed from the true horizontal. To get the larger \
-angle shown below, which we will call ",
+angle shown below, which is labeled ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "2"], TraditionalForm]],ExpressionUUID->
   "921c279e-8a08-4a56-b0f7-98b020d2004c"],
- ", we take the  total angle between the new ",
+ ", I took the total angle between the new ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "adj2"], TraditionalForm]],ExpressionUUID->
@@ -14279,8 +14323,8 @@ T38GAIDq058BAKD69GcAAKi+cePG9ezZM9qGDgIAAAAAAAAAAAAAAAAAAADJ
     SubscriptBox["\[Theta]", "adj2"], "+", " ", 
     SubscriptBox["\[Theta]", "1"]}], TraditionalForm]],ExpressionUUID->
   "a97bfd0d-da9b-403b-a40b-9aade08e9492"],
- "\n\nWe take a similar \[OpenCurlyDoubleQuote]drawing a new unit circle\
-\[CloseCurlyDoubleQuote] approach when we solve for ",
+ "\n\nI took a similar \[OpenCurlyDoubleQuote]drawing a new unit circle\
+\[CloseCurlyDoubleQuote] approach when solving for ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "adj3"], TraditionalForm]],ExpressionUUID->
@@ -14290,7 +14334,7 @@ T38GAIDq058BAKD69GcAAKi+cePG9ezZM9qGDgIAAAAAAAAAAAAAAAAAAADJ
   FormBox[
    SubscriptBox["\[Theta]", "3"], TraditionalForm]],ExpressionUUID->
   "89a66dba-5b6b-4074-9991-81e6b05e0b8c"],
- ". Let\[CloseCurlyQuote]s visualize it below:\n",
+ ", visualized below:\n",
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -15269,8 +15313,8 @@ fp49e3bo56qqqrxmAABAS+TezytWrCgrKyv2c7t27RoaGvJaAgBZ+g+NypTS
    ImageSizeRaw->{960., 960.},
    PlotRange->{{0, 960.}, {0, 960.}}]], "Input",ExpressionUUID->
   "2589b965-fc4e-4211-90da-183b350bcdc7"],
- "\nThis time, the angle we take from the horizontal to our new horizontal \
-axis for the unit circle is ",
+ "\nThis time, the angle from the horizontal to the new horizontal axis for \
+the unit circle is ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "2"], TraditionalForm]],ExpressionUUID->
@@ -16286,7 +16330,7 @@ eXPo571798aeAwD/7P/USUp/
  Cell[BoxData[
   FormBox["\[Theta]", TraditionalForm]],ExpressionUUID->
   "742a2c16-4ac4-46b8-a01c-4ec566bfeb51"],
- ". This means we can develop and implement the following formula:\n\n",
+ ". This means I could develop and implement the following formula:\n\n",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "n"], TraditionalForm]],ExpressionUUID->
@@ -16335,7 +16379,9 @@ eXPo571798aeAwD/7P/USUp/
    3.992594916652256*^9, 3.992594925185348*^9}, {3.9925949902740192`*^9, 
    3.992594993779462*^9}, {3.992595061004031*^9, 3.992595074356769*^9}, {
    3.9925951383643303`*^9, 3.992595140507194*^9}, {3.992595218308237*^9, 
-   3.992595233452424*^9}},ExpressionUUID->"c9313fa5-24a3-4e0e-828b-\
+   3.992595233452424*^9}, {3.992598123315476*^9, 3.992598210534685*^9}, {
+   3.992598787163213*^9, 
+   3.9925987874136133`*^9}},ExpressionUUID->"c9313fa5-24a3-4e0e-828b-\
 67dd94bfa06b"],
 
 Cell[TextData[{
@@ -16421,30 +16467,28 @@ Cell[BoxData[
   "In[123]:=",ExpressionUUID->"8da86b89-6f96-4ad0-aafb-f5088e541da8"],
 
 Cell[TextData[{
- "With all of our ",
+ "With all of the ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "n"], TraditionalForm]],ExpressionUUID->
   "461bb785-e67e-4ee8-9d9e-62739495a199"],
- " variables defined, we can now get all remaining ",
+ " variables defined, I could calculate the ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "n"], TraditionalForm]],ExpressionUUID->
   "2a8e91d1-e155-4cde-9981-b141df08206c"],
- " point variables via simple trigonometry, and setting up the right \
-triangles as we did earlier. Each coordinate, or ",
+ " point variables via simple trigonometry. Each coordinate, or ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "n"], TraditionalForm]],ExpressionUUID->
   "f2cccd5d-d622-45a0-98bb-b9fb5f51a8e9"],
  ", will be a transformation from the last coordinate in the sequence. To do \
-this, however, we must define ",
+this, I redefined ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "1"], TraditionalForm]],ExpressionUUID->
   "d28336c8-5c6b-493b-938c-4def28b33065"],
- ". We will simply use the same formula we used above in the Model V2 that \
-relates ",
+ " using the same formula in Model V2 that relates ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["p", "1"], TraditionalForm]],ExpressionUUID->
@@ -17340,20 +17384,20 @@ AAAA8B79DAAAAHiPfgYAAAC8Rz8DAAAA3qOfAcBM/w9lzrTy
    SubscriptBox["\[Theta]", 
     RowBox[{"n", "-", "1"}]], TraditionalForm]],ExpressionUUID->
   "4a01b86b-fe85-4add-bd86-f1e495128d6b"],
- ". Let\[CloseCurlyQuote]s examine this with the below diagram and formula:\n\
-\nIn this case, we know the the length, the ",
+ ". This can be seen in the below diagram and formula:\n\nIn this case, I \
+knew the the length, the ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["d", "tail"], TraditionalForm]],ExpressionUUID->
   "c1aa72df-97b5-40b7-92bd-afe821b84e05"],
- " constant, and we know the angle, ",
+ " constant, and the angle, ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", 
     RowBox[{"n", "-", "1"}]], TraditionalForm]],ExpressionUUID->
   "70a1c70d-85a3-4eb7-a114-32548340d739"],
- ". Thus, because triangles on a unit circle are always made, we can define \
-any given coordinate as the following:\n",
+ ". Because triangles on a new unit circle are always made, I defined any \
+given coordinate as the following:\n",
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -18224,10 +18268,10 @@ AAAAAAAAOExaWlp4eLh4VB0EAAAAcAOsXwcAAABYj/4MAAAAWI/+DAAAAFiP
   "0f09f418-3cc8-42ea-901f-aa1f16b0d655"],
  ")); n \[GreaterEqual] 1\n\nThis formula can be implemented in the Wolfram \
 Language using Table and an empty variable \[OpenCurlyDoubleQuote]p\
-\[CloseCurlyDoubleQuote] to keep track of the last known point. Note that we \
-must add numPoints by 1 for the total number of points, as each joint has a \
-start and endpoint, thus meaning that for example for 4 joints, there are 5 \
-points:"
+\[CloseCurlyDoubleQuote] to keep track of the last known point. Note that I \
+added numPoints by 1 for the total number of points, as each joint has a \
+start and endpoint, thus meaning that for example for 3 joints, there are \
+actually 4 points:"
 }], "Text",
  CellChangeTimes->{{3.99242681595566*^9, 3.9924268316542253`*^9}, {
    3.9924269672537317`*^9, 3.992426985349269*^9}, {3.992427058181831*^9, 
@@ -18240,8 +18284,10 @@ points:"
    3.9924473075442677`*^9}, {3.992447848477474*^9, 3.992447906482706*^9}, {
    3.992592324778256*^9, 3.9925924025153418`*^9}, {3.9925954060668383`*^9, 
    3.9925954127888117`*^9}, 3.992595625175288*^9, {3.9925956936906967`*^9, 
-   3.992595712618218*^9}, {3.9925958222535343`*^9, 
-   3.992595863634849*^9}},ExpressionUUID->"8a08613d-d5ee-4e6f-ae79-\
+   3.992595712618218*^9}, {3.9925958222535343`*^9, 3.992595863634849*^9}, {
+   3.992598214439296*^9, 3.992598298918353*^9}, {3.992598529579605*^9, 
+   3.992598552427783*^9}, {3.992598718487774*^9, 
+   3.992598726887692*^9}},ExpressionUUID->"8a08613d-d5ee-4e6f-ae79-\
 27aef7f0d3fa"],
 
 Cell[TextData[{
@@ -18313,10 +18359,10 @@ Cell[BoxData[
   "In[124]:=",ExpressionUUID->"6dd53025-e81a-4c78-8ae3-eff3d1a651c5"],
 
 Cell[TextData[{
- "We now must move on to calculating the center of masses, which are actually \
-very simple. Each center of mass is simply the midpoint between the endpoints \
-of a joint. Thus, we can use the following formula knowing that there is n+1 \
-total number of points:\n\n",
+ "With the points solved for, I algorithmically calculated the center of \
+masses. Each center of mass is simply the midpoint between the endpoints of a \
+joint. Thus, I used the following formula knowing that there is n+1 total \
+number of points:\n\n",
  Cell[BoxData[
   FormBox[
    RowBox[{
@@ -18343,7 +18389,8 @@ total number of points:\n\n",
   3.992428694607253*^9, 3.992428800596725*^9}, {3.992429431698173*^9, 
   3.992429448344366*^9}, {3.992429538396015*^9, 3.992429545007667*^9}, {
   3.9924295889379663`*^9, 3.99242969743328*^9}, {3.9924423262708597`*^9, 
-  3.992442349004857*^9}},ExpressionUUID->"92faa809-f46d-42e8-bff2-\
+  3.992442349004857*^9}, {3.9925983032479362`*^9, 
+  3.992598320809457*^9}},ExpressionUUID->"92faa809-f46d-42e8-bff2-\
 1125d17b6bd6"],
 
 Cell["\<\
@@ -18384,17 +18431,18 @@ Cell[BoxData[{
   "In[125]:=",ExpressionUUID->"ced8c208-6af5-42ef-833b-582d4c994126"],
 
 Cell["\<\
-With all of our center of masses defined, we can now set up the torque \
-equilibrium equation from our past two models. Before doing that, however, we \
-must define our mass. Mass is a similar constant to distance, in that in real \
-tails, it changes between joints, but for simplicity\[CloseCurlyQuote]s sake, \
-we will define it as a single constant:\
+With the center of masses defined, I set up the torque equilibrium equation \
+from the past two models. Before doing that, however, I redefined the masses. \
+Mass is a similar constant to distance, in that in real tails, it changes \
+between joints, but for simplicity\[CloseCurlyQuote]s sake, I defined it as a \
+single constant:\
 \>", "Text",
  CellChangeTimes->{{3.9924297840613823`*^9, 3.992429835642281*^9}, {
   3.992429979252898*^9, 3.992429986050687*^9}, {3.9924300328885393`*^9, 
   3.992430126788211*^9}, {3.992430162063816*^9, 3.9924301819042253`*^9}, {
-  3.992442435188746*^9, 
-  3.99244244334699*^9}},ExpressionUUID->"b10560b0-50db-4891-8d60-\
+  3.992442435188746*^9, 3.99244244334699*^9}, {3.992598326203429*^9, 
+  3.992598346075508*^9}, {3.992598733855364*^9, 
+  3.992598736831396*^9}},ExpressionUUID->"b10560b0-50db-4891-8d60-\
 91eed27ac7c4"],
 
 Cell["\<\
@@ -18434,10 +18482,10 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell[TextData[{
- "We need to slightly tweak it from the previous two models, however, because \
-our tail now has multiple joints. The torque on the tail now is a summation \
-of the torque of every individual joint of the tail. This can be represented \
-by the following:\n\n",
+ "I needed to slightly tweak it from the previous two models, however, \
+because the tail now has multiple joints. The torque on the tail now is a \
+summation of the torque of every individual joint of the tail. This can be \
+represented by the following:\n\n",
  Cell[BoxData[
   FormBox["\[Sum]", TraditionalForm]],ExpressionUUID->
   "3ac03102-42f6-4cf8-b993-eb804d318a33"],
@@ -18481,8 +18529,8 @@ by the following:\n\n",
   3.992430126788211*^9}, {3.992430162063816*^9, 3.992430178918331*^9}, {
   3.992430333248941*^9, 3.9924303736643457`*^9}, {3.992430412941063*^9, 
   3.992430481540447*^9}, {3.992430522211628*^9, 3.992430532630219*^9}, {
-  3.9924424767413387`*^9, 
-  3.9924424862241917`*^9}},ExpressionUUID->"4908bd9d-ded6-468a-a7f5-\
+  3.9924424767413387`*^9, 3.9924424862241917`*^9}, {3.9925983497675037`*^9, 
+  3.9925983531209393`*^9}},ExpressionUUID->"4908bd9d-ded6-468a-a7f5-\
 1e87853dc679"],
 
 Cell["\<\
@@ -18515,8 +18563,8 @@ Cell[BoxData[{
   "In[129]:=",ExpressionUUID->"0675cfe7-9a33-447e-b4e0-9963397580da"],
 
 Cell[TextData[{
- "Now, to create the equilibrium, we can add this total torque to the torque \
-on the head, and set it equal to zero:\n\n",
+ "Now, to create the equilibrium, I added this total torque to the torque on \
+the head, and set it equal to zero:\n\n",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Tau]", "head"], TraditionalForm]],ExpressionUUID->
@@ -18529,24 +18577,22 @@ on the head, and set it equal to zero:\n\n",
   FormBox[
    SubscriptBox["\[Tau]", "tail"], TraditionalForm]],ExpressionUUID->
   "c5b90822-b7ff-4b70-b451-2ef9c790b2a5"],
- " = 0\n\nNow, just like the previous NSolve functions in Wolfram for the \
-previous two models, we need to compute each of the ",
+ " = 0\n\nJust like the previous NSolve functions in Wolfram for the previous \
+two models, I computed each of the ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "adj"], TraditionalForm]],ExpressionUUID->
   "1012da48-030e-4230-8dc9-e76ba367fd63"],
- " values. Before computing the values, we must define constraints such that \
-all of the joints do not fold on each other. In the previous V2, we only \
-defined the constraints as 0\[Degree] to 180\[Degree], however, here, we must \
-be stricter and stick closer to 180\[Degree] so the joints form a gradual and \
-natural curve."
+ " values. Before computing the values, I defined constraints such that all \
+of the joints do not fold on each other."
 }], "Text",
  CellChangeTimes->{{3.992430546160564*^9, 3.992430574793579*^9}, {
   3.992430647446924*^9, 3.992430686038555*^9}, {3.9924307408162403`*^9, 
   3.992430754278891*^9}, {3.9924385025856943`*^9, 3.992438584663288*^9}, {
   3.992438640573579*^9, 3.992438675778263*^9}, {3.9924389067790003`*^9, 
-  3.9924389453976717`*^9}, {3.9924425400360193`*^9, 
-  3.9924425947238703`*^9}},ExpressionUUID->"70070d21-4f0e-4f68-aa3d-\
+  3.9924389453976717`*^9}, {3.9924425400360193`*^9, 3.9924425947238703`*^9}, {
+  3.9925983574591312`*^9, 
+  3.992598382559623*^9}},ExpressionUUID->"70070d21-4f0e-4f68-aa3d-\
 a1e3cad045f7"],
 
 Cell[TextData[{
@@ -18555,11 +18601,12 @@ Cell[TextData[{
   FormBox[
    SubscriptBox["\[Theta]", "adj"], TraditionalForm]],ExpressionUUID->
   "d781335c-65c4-45df-94ec-bb1a38cf1ace"],
- ". 160\[Degree] - 200\[Degree] was found to produce the most \
-\[OpenCurlyDoubleQuote]natural\[CloseCurlyDoubleQuote] results:"
+ ". These were found to produce the most \[OpenCurlyDoubleQuote]natural\
+\[CloseCurlyDoubleQuote] results:"
 }], "CodeText",
  CellChangeTimes->{
-  3.992442588732627*^9},ExpressionUUID->"de479b21-94eb-40c1-9383-\
+  3.992442588732627*^9, {3.992598390880487*^9, 
+   3.992598393113414*^9}},ExpressionUUID->"de479b21-94eb-40c1-9383-\
 90fb850a4758"],
 
 Cell[BoxData[{
@@ -18591,24 +18638,14 @@ Cell[BoxData[{
  CellLabel->
   "In[131]:=",ExpressionUUID->"6220499a-0952-4ec5-a040-0faf47e57c3e"],
 
-Cell[TextData[{
- "Another change is that because there is n given solutions at any time, \
-however, NSolve will not work due to its syntax requiring a system of \
-equations with n amount of equations and n variables being solved for. As a \
-result, we will use NMinimize and try to minimize the sum of the torques. \n\n\
-NMinimize does this by finding the values which make the objective, the sum \
-of the torques in this case, closest to zero. This will output an error value \
-and each of the magnitudes for the ",
- Cell[BoxData[
-  FormBox[
-   SubscriptBox["\[Theta]", "adj"], TraditionalForm]],ExpressionUUID->
-  "b01071b5-f5dc-4111-8abc-f8ac232e2ed6"],
- " values. When the error is anything above a near-zero value, we can assume \
-that it is unsolvable anymore. "
-}], "Text",
+Cell["\<\
+ With the constraints defined, I could use a process similar to V2\
+\[CloseCurlyQuote]s NMinimize function to compute the optimal joint angles:\
+\>", "Text",
  CellChangeTimes->{{3.992438950260206*^9, 3.992439027179831*^9}, {
   3.992439695229824*^9, 3.992439748434547*^9}, {3.992442602857543*^9, 
-  3.9924426071338167`*^9}},ExpressionUUID->"4bdee60c-7996-47b0-b175-\
+  3.9924426071338167`*^9}, {3.9925984091595097`*^9, 
+  3.992598435432671*^9}},ExpressionUUID->"4bdee60c-7996-47b0-b175-\
 3a04a1427c22"],
 
 Cell["\<\
@@ -18651,27 +18688,29 @@ Cell[BoxData[{
   "In[134]:=",ExpressionUUID->"320d8e75-1d53-431a-97a4-cff83cc2e732"],
 
 Cell[TextData[{
- "With each of our ",
+ "With each of the ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["\[Theta]", "adj"], TraditionalForm]],ExpressionUUID->
   "79e71213-1db9-4cf5-a476-80f0279d83de"],
- " values defined, we can plug it back into our symbolic expressions and view \
-the outputs by reassigning the physical values from output into the symbolic \
-values of thetaAdjVars, and recompute our ",
- Cell[BoxData[
-  FormBox["\[Theta]", TraditionalForm]],ExpressionUUID->
-  "52eb6a72-23fb-48e0-b2c5-bd6a071c727d"],
- " and p values which relied on our ",
+ " values defined, I could plug them back into the symbolic expressions and \
+view the outputs by reassigning the physical values from output into the \
+symbolic values of thetaAdjVars, and then recomputing the ",
  Cell[BoxData[
   FormBox[
-   SubscriptBox["\[Theta]", "adj"], TraditionalForm]],ExpressionUUID->
-  "840306b2-9f8b-4073-807a-449a655c62de"],
+   SubscriptBox["\[Theta]", "n"], TraditionalForm]],ExpressionUUID->
+  "52eb6a72-23fb-48e0-b2c5-bd6a071c727d"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["p", "n"], TraditionalForm]],ExpressionUUID->
+  "bf9f5ef8-8f0f-4872-9407-f775674815e4"],
  " values:"
 }], "Text",
  CellChangeTimes->{{3.992439229258428*^9, 3.992439298651322*^9}, {
-  3.9924393352078667`*^9, 
-  3.992439353840773*^9}},ExpressionUUID->"c6cfdd2e-55a4-4c7d-a565-\
+  3.9924393352078667`*^9, 3.992439353840773*^9}, {3.992598566295515*^9, 
+  3.992598601897092*^9}, {3.9925987402180557`*^9, 
+  3.992598740466013*^9}},ExpressionUUID->"c6cfdd2e-55a4-4c7d-a565-\
 e4d4935db797"],
 
 Cell["\<\
@@ -18768,11 +18807,12 @@ Cell[TextData[{
   FormBox[
    SubscriptBox["\[Theta]", "n"], TraditionalForm]],ExpressionUUID->
   "ebc11065-45f6-488c-bd86-061211cc4b2b"],
- " values into our pVarsFunc, we receive our final, graph-compatible points:"
+ " values into the pVarsFunc, I received the final, graph-compatible points:"
 }], "CodeText",
  CellChangeTimes->{{3.992439825989151*^9, 3.992439891308881*^9}, {
-  3.992592583668111*^9, 
-  3.9925926618752537`*^9}},ExpressionUUID->"f7f3e97f-def8-41e4-b696-\
+  3.992592583668111*^9, 3.9925926618752537`*^9}, {3.992598606983552*^9, 
+  3.992598620433199*^9}, {3.9925987436502123`*^9, 
+  3.992598744935679*^9}},ExpressionUUID->"f7f3e97f-def8-41e4-b696-\
 95e83db9566a"],
 
 Cell[BoxData[{
@@ -18796,11 +18836,12 @@ Cell[BoxData[{
 
 Cell["\<\
 Taking into account the prior helper functions, as well as the formulas \
-listed earlier, we can finally visualize the multi-jointed tail simulation \
-with a Manipulate:\
+listed earlier, I visualized the multi-jointed tail simulation with a \
+Manipulate:\
 \>", "CodeText",
- CellChangeTimes->{{3.992592682116405*^9, 
-  3.992592706842729*^9}},ExpressionUUID->"c727f224-0cca-4824-8c6a-\
+ CellChangeTimes->{{3.992592682116405*^9, 3.992592706842729*^9}, {
+  3.9925986283808537`*^9, 
+  3.992598629549307*^9}},ExpressionUUID->"c727f224-0cca-4824-8c6a-\
 a2f1c1ab0204"],
 
 Cell[CellGroupData[{
@@ -19043,8 +19084,7 @@ Cell[BoxData[{
 
 Cell[BoxData[
  DynamicBox[ToBoxes[$CellContext`error, StandardForm],
-  ImageSizeCache->{
-   140.39999999999998`, {1.43, 10.100999999999999`}}]], "Output",
+  ImageSizeCache->{99.79617089843751, {0.156, 11.57494}}]], "Output",
  CellChangeTimes->{{3.992592709901778*^9, 3.992592734245001*^9}, 
    3.992593902805958*^9, 3.992596314612195*^9},
  CellLabel->
@@ -19054,9 +19094,9 @@ Cell[BoxData[
  TagBox[
   StyleBox[
    DynamicModuleBox[{$CellContext`dTailConst$$ = 
-    1.5, $CellContext`mTailConst$$ = 8, $CellContext`numPoints$$ = 
-    6, $CellContext`thetaLean$$ = 0.42359877559829884`, Typeset`show$$ = True,
-     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    0.89, $CellContext`mTailConst$$ = 8, $CellContext`numPoints$$ = 
+    4, $CellContext`thetaLean$$ = 0.6069840131753952, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{{
        Hold[$CellContext`thetaLean$$], 0.42359877559829884`, "Leaning Angle"},
@@ -19825,189 +19865,192 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[576, 22, 333, 7, 157, "Title",ExpressionUUID->"3b4ad047-fa97-464f-8aeb-cd553dce18cc"],
-Cell[912, 31, 930, 15, 143, "Text",ExpressionUUID->"422e58d5-5de6-4839-8b6f-e8c10a8c4ce2"],
 Cell[CellGroupData[{
-Cell[1867, 50, 157, 3, 66, "Section",ExpressionUUID->"913d55a0-652d-4ba7-af7a-f7b31dc48b4b"],
-Cell[CellGroupData[{
-Cell[2049, 57, 271, 4, 53, "Subsection",ExpressionUUID->"e6255813-4355-435f-b32d-d510d3b27df2"],
-Cell[2323, 63, 3751, 71, 361, "Text",ExpressionUUID->"c856ef3d-3593-4984-9e0c-814864ee1a3f"]
+Cell[934, 33, 160, 3, 53, "Subsection",ExpressionUUID->"e0c1e9f8-6ebf-40ac-a389-131d0b67c325"],
+Cell[1097, 38, 978, 16, 143, "Text",ExpressionUUID->"422e58d5-5de6-4839-8b6f-e8c10a8c4ce2"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6111, 139, 187, 3, 53, "Subsection",ExpressionUUID->"03905fdf-a512-4b05-81ac-e4d12f884664"],
-Cell[6301, 144, 1821, 30, 186, "Text",ExpressionUUID->"8f7b7610-9837-4b34-ac9c-61f0d2d0b1d2"]
+Cell[2112, 59, 157, 3, 66, "Section",ExpressionUUID->"913d55a0-652d-4ba7-af7a-f7b31dc48b4b"],
+Cell[CellGroupData[{
+Cell[2294, 66, 271, 4, 53, "Subsection",ExpressionUUID->"e6255813-4355-435f-b32d-d510d3b27df2"],
+Cell[2568, 72, 3804, 71, 427, "Text",ExpressionUUID->"c856ef3d-3593-4984-9e0c-814864ee1a3f"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8159, 179, 160, 3, 53, "Subsection",ExpressionUUID->"bd172e38-dc0d-42e8-8b89-3b0fc2e7324c"],
-Cell[8322, 184, 922, 15, 70, "Text",ExpressionUUID->"dfe74d7c-4991-40a4-9046-4200db798069"]
+Cell[6409, 148, 187, 3, 53, "Subsection",ExpressionUUID->"03905fdf-a512-4b05-81ac-e4d12f884664"],
+Cell[6599, 153, 1836, 29, 230, "Text",ExpressionUUID->"8f7b7610-9837-4b34-ac9c-61f0d2d0b1d2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8472, 187, 160, 3, 53, "Subsection",ExpressionUUID->"bd172e38-dc0d-42e8-8b89-3b0fc2e7324c"],
+Cell[8635, 192, 922, 15, 143, "Text",ExpressionUUID->"dfe74d7c-4991-40a4-9046-4200db798069"]
 }, Open  ]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[9293, 205, 304, 5, 52, "Section",ExpressionUUID->"067356c3-28ca-4144-be02-7957e03610f3"],
+Cell[9606, 213, 304, 5, 52, "Section",ExpressionUUID->"067356c3-28ca-4144-be02-7957e03610f3"],
 Cell[CellGroupData[{
-Cell[9622, 214, 201, 3, 53, "Subsection",ExpressionUUID->"f110d553-ecea-4e32-9c78-290996d3b289"],
-Cell[9826, 219, 29168, 484, 1007, "Text",ExpressionUUID->"9b79198e-7897-462b-8630-68f1f3d31553"],
-Cell[38997, 705, 242, 4, 36, "CodeText",ExpressionUUID->"531d180c-3388-402d-89bd-4b9b518e5c1f"],
-Cell[39242, 711, 681, 19, 131, "Input",ExpressionUUID->"73d5d617-953f-4ccf-be3d-87d1a0c6c94e"],
-Cell[39926, 732, 66527, 1138, 1744, "Text",ExpressionUUID->"9f0fb56b-f288-428a-8025-9b446aa8defd"],
-Cell[106456, 1872, 236, 4, 36, "CodeText",ExpressionUUID->"e6769b4d-f9f9-4b14-905b-ad2be95e234e"],
-Cell[106695, 1878, 568, 13, 49, "Input",ExpressionUUID->"094db03c-f74d-4619-9385-7d05e57c364e"],
-Cell[107266, 1893, 39487, 674, 832, "Text",ExpressionUUID->"b226874a-7b99-4953-90f6-80ad8ab14738"],
-Cell[146756, 2569, 362, 10, 36, "CodeText",ExpressionUUID->"97f198e3-b576-41f0-b760-8512c9c04333"],
-Cell[147121, 2581, 559, 15, 29, "Input",ExpressionUUID->"6a684f34-f265-4d07-addf-916173226217"],
-Cell[147683, 2598, 39535, 661, 810, "Text",ExpressionUUID->"bcb206d8-6241-4571-8a7b-40e4c96666ac"],
-Cell[187221, 3261, 341, 10, 36, "CodeText",ExpressionUUID->"e9afbf7e-4596-49b7-86e7-4d59ec57a357"],
-Cell[187565, 3273, 560, 15, 29, "Input",ExpressionUUID->"3c62ca3d-ffef-49c9-8021-d23dd9719de2"],
-Cell[188128, 3290, 79543, 1360, 1577, "Text",ExpressionUUID->"70566e4b-e96d-450f-89d3-db16e439135c"],
-Cell[267674, 4652, 372, 10, 36, "CodeText",ExpressionUUID->"a0e863f8-f61b-45a1-a0c2-5e7bdfc5f090"],
-Cell[268049, 4664, 664, 19, 29, "Input",ExpressionUUID->"df14060c-837f-4fef-a312-535c2d9f1635"],
-Cell[268716, 4685, 84792, 1424, 1543, "Text",ExpressionUUID->"f8a87169-4567-4d69-a805-2527724f699b"],
-Cell[353511, 6111, 327, 10, 36, "CodeText",ExpressionUUID->"dc175f09-b7e1-4650-bb24-ff758118e4da"],
-Cell[353841, 6123, 716, 20, 29, "Input",ExpressionUUID->"0565c0ed-4a6d-4c17-a202-c58090bee7b2"],
-Cell[354560, 6145, 4192, 68, 33, "Text",ExpressionUUID->"29ad7fee-6ad8-4da4-9843-cb815404f130"],
-Cell[358755, 6215, 238, 6, 36, "CodeText",ExpressionUUID->"3397400a-ebf8-48e2-a9de-fe841d1b7b17"],
-Cell[358996, 6223, 314, 7, 29, "Input",ExpressionUUID->"2cdf6675-e26c-41fa-b5d0-c00094b4f3fb"],
-Cell[359313, 6232, 36628, 609, 1167, "Text",ExpressionUUID->"bbcf056d-f9ba-4fcf-94c5-8028af0e7855"],
-Cell[395944, 6843, 257, 6, 36, "CodeText",ExpressionUUID->"436e15ef-3872-4d69-9804-722b772d28c0"],
-Cell[396204, 6851, 514, 12, 70, "Input",ExpressionUUID->"39b454a5-62e8-428c-9744-256e15f1ef76"],
-Cell[396721, 6865, 2810, 72, 208, "Text",ExpressionUUID->"90009009-b891-4ed9-82f6-3353a6dddce9"],
-Cell[399534, 6939, 355, 10, 36, "CodeText",ExpressionUUID->"8bd3a5bb-03f8-4a85-9029-f5319bee304b"],
+Cell[9935, 222, 201, 3, 53, "Subsection",ExpressionUUID->"f110d553-ecea-4e32-9c78-290996d3b289"],
+Cell[10139, 227, 29353, 487, 1029, "Text",ExpressionUUID->"9b79198e-7897-462b-8630-68f1f3d31553"],
+Cell[39495, 716, 242, 4, 36, "CodeText",ExpressionUUID->"531d180c-3388-402d-89bd-4b9b518e5c1f"],
+Cell[39740, 722, 681, 19, 131, "Input",ExpressionUUID->"73d5d617-953f-4ccf-be3d-87d1a0c6c94e"],
+Cell[40424, 743, 66566, 1140, 1744, "Text",ExpressionUUID->"9f0fb56b-f288-428a-8025-9b446aa8defd"],
+Cell[106993, 1885, 236, 4, 36, "CodeText",ExpressionUUID->"e6769b4d-f9f9-4b14-905b-ad2be95e234e"],
+Cell[107232, 1891, 568, 13, 49, "Input",ExpressionUUID->"094db03c-f74d-4619-9385-7d05e57c364e"],
+Cell[107803, 1906, 39585, 674, 832, "Text",ExpressionUUID->"b226874a-7b99-4953-90f6-80ad8ab14738"],
+Cell[147391, 2582, 362, 10, 36, "CodeText",ExpressionUUID->"97f198e3-b576-41f0-b760-8512c9c04333"],
+Cell[147756, 2594, 559, 15, 29, "Input",ExpressionUUID->"6a684f34-f265-4d07-addf-916173226217"],
+Cell[148318, 2611, 39581, 662, 810, "Text",ExpressionUUID->"bcb206d8-6241-4571-8a7b-40e4c96666ac"],
+Cell[187902, 3275, 341, 10, 36, "CodeText",ExpressionUUID->"e9afbf7e-4596-49b7-86e7-4d59ec57a357"],
+Cell[188246, 3287, 560, 15, 29, "Input",ExpressionUUID->"3c62ca3d-ffef-49c9-8021-d23dd9719de2"],
+Cell[188809, 3304, 79592, 1363, 1577, "Text",ExpressionUUID->"70566e4b-e96d-450f-89d3-db16e439135c"],
+Cell[268404, 4669, 372, 10, 36, "CodeText",ExpressionUUID->"a0e863f8-f61b-45a1-a0c2-5e7bdfc5f090"],
+Cell[268779, 4681, 664, 19, 29, "Input",ExpressionUUID->"df14060c-837f-4fef-a312-535c2d9f1635"],
+Cell[269446, 4702, 84852, 1425, 1543, "Text",ExpressionUUID->"f8a87169-4567-4d69-a805-2527724f699b"],
+Cell[354301, 6129, 327, 10, 36, "CodeText",ExpressionUUID->"dc175f09-b7e1-4650-bb24-ff758118e4da"],
+Cell[354631, 6141, 716, 20, 29, "Input",ExpressionUUID->"0565c0ed-4a6d-4c17-a202-c58090bee7b2"],
+Cell[355350, 6163, 4192, 68, 33, "Text",ExpressionUUID->"29ad7fee-6ad8-4da4-9843-cb815404f130"],
+Cell[359545, 6233, 238, 6, 36, "CodeText",ExpressionUUID->"3397400a-ebf8-48e2-a9de-fe841d1b7b17"],
+Cell[359786, 6241, 314, 7, 29, "Input",ExpressionUUID->"2cdf6675-e26c-41fa-b5d0-c00094b4f3fb"],
+Cell[360103, 6250, 36677, 609, 1167, "Text",ExpressionUUID->"bbcf056d-f9ba-4fcf-94c5-8028af0e7855"],
+Cell[396783, 6861, 257, 6, 36, "CodeText",ExpressionUUID->"436e15ef-3872-4d69-9804-722b772d28c0"],
+Cell[397043, 6869, 514, 12, 70, "Input",ExpressionUUID->"39b454a5-62e8-428c-9744-256e15f1ef76"],
+Cell[397560, 6883, 2883, 73, 208, "Text",ExpressionUUID->"90009009-b891-4ed9-82f6-3353a6dddce9"],
+Cell[400446, 6958, 355, 10, 36, "CodeText",ExpressionUUID->"8bd3a5bb-03f8-4a85-9029-f5319bee304b"],
 Cell[CellGroupData[{
-Cell[399914, 6953, 298, 6, 29, "Input",ExpressionUUID->"0001b463-beff-4ac8-ba1b-af7e043c6d7d"],
-Cell[400215, 6961, 1087, 18, 33, "Output",ExpressionUUID->"a498b0b1-2620-4e36-93a0-45aa0906d0d7"]
+Cell[400826, 6972, 298, 6, 29, "Input",ExpressionUUID->"0001b463-beff-4ac8-ba1b-af7e043c6d7d"],
+Cell[401127, 6980, 1087, 18, 33, "Output",ExpressionUUID->"a498b0b1-2620-4e36-93a0-45aa0906d0d7"]
 }, Open  ]],
-Cell[401317, 6982, 1214, 33, 77, "Text",ExpressionUUID->"e34e2c4e-6e61-417f-869a-922baed75b45"],
-Cell[402534, 7017, 584, 15, 36, "CodeText",ExpressionUUID->"9276b184-a9c7-4fcb-a89e-0719db7f6c98"],
+Cell[402229, 7001, 1317, 34, 77, "Text",ExpressionUUID->"e34e2c4e-6e61-417f-869a-922baed75b45"],
+Cell[403549, 7037, 635, 16, 36, "CodeText",ExpressionUUID->"9276b184-a9c7-4fcb-a89e-0719db7f6c98"],
 Cell[CellGroupData[{
-Cell[403143, 7036, 479, 12, 70, "Input",ExpressionUUID->"e16f910c-b147-4132-927e-ae02a3495c23"],
-Cell[403625, 7050, 1174, 19, 33, "Output",ExpressionUUID->"8dda548d-1ea9-4081-a87d-05897fbff108"]
+Cell[404209, 7057, 479, 12, 70, "Input",ExpressionUUID->"e16f910c-b147-4132-927e-ae02a3495c23"],
+Cell[404691, 7071, 1174, 19, 33, "Output",ExpressionUUID->"8dda548d-1ea9-4081-a87d-05897fbff108"]
 }, Open  ]],
-Cell[404814, 7072, 893, 17, 99, "Text",ExpressionUUID->"b1f2ec65-0c58-4e2f-bcac-62cd6ce94809"],
-Cell[405710, 7091, 220, 5, 36, "CodeText",ExpressionUUID->"ab5c9782-8410-4d52-ae8d-60e001fc077e"],
-Cell[405933, 7098, 5795, 157, 541, "Code",ExpressionUUID->"ef20027b-42e1-4df5-b3f0-4b64bb3464fc"],
-Cell[411731, 7257, 349, 7, 36, "CodeText",ExpressionUUID->"d3986dc4-4c4e-4fdb-98e4-cf6b7e1aaebd"],
+Cell[405880, 7093, 939, 17, 99, "Text",ExpressionUUID->"b1f2ec65-0c58-4e2f-bcac-62cd6ce94809"],
+Cell[406822, 7112, 220, 5, 36, "CodeText",ExpressionUUID->"ab5c9782-8410-4d52-ae8d-60e001fc077e"],
+Cell[407045, 7119, 5795, 157, 541, "Code",ExpressionUUID->"ef20027b-42e1-4df5-b3f0-4b64bb3464fc"],
+Cell[412843, 7278, 349, 7, 36, "CodeText",ExpressionUUID->"d3986dc4-4c4e-4fdb-98e4-cf6b7e1aaebd"],
 Cell[CellGroupData[{
-Cell[412105, 7268, 753, 15, 29, "Input",ExpressionUUID->"9648554a-3451-4341-abeb-955dd17b509c"],
-Cell[412861, 7285, 6002, 109, 472, "Output",ExpressionUUID->"c7e053e1-6b68-4710-bc18-fa9b0906cdbb"]
+Cell[413217, 7289, 753, 15, 29, "Input",ExpressionUUID->"9648554a-3451-4341-abeb-955dd17b509c"],
+Cell[413973, 7306, 5984, 109, 472, "Output",ExpressionUUID->"c7e053e1-6b68-4710-bc18-fa9b0906cdbb"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[418912, 7400, 197, 2, 53, "Subsection",ExpressionUUID->"e5adb3ec-d724-4d78-85f9-1f1ec883fbbb"],
-Cell[419112, 7404, 1260, 24, 143, "Text",ExpressionUUID->"1cd200dc-b1ec-4bb8-8e77-eaaa7a802d07"],
-Cell[420375, 7430, 792, 25, 36, "CodeText",ExpressionUUID->"a540f73f-61e9-4f27-8219-b4ca379beb3c"],
+Cell[420006, 7421, 197, 2, 53, "Subsection",ExpressionUUID->"e5adb3ec-d724-4d78-85f9-1f1ec883fbbb"],
+Cell[420206, 7425, 1326, 25, 143, "Text",ExpressionUUID->"1cd200dc-b1ec-4bb8-8e77-eaaa7a802d07"],
+Cell[421535, 7452, 845, 26, 36, "CodeText",ExpressionUUID->"a540f73f-61e9-4f27-8219-b4ca379beb3c"],
 Cell[CellGroupData[{
-Cell[421192, 7459, 2684, 70, 274, "Input",ExpressionUUID->"ec177866-71d3-4209-9129-81d80c77d5ef"],
-Cell[423879, 7531, 309, 6, 33, "Output",ExpressionUUID->"13e50c54-1d8c-4ce3-a829-343035c9aec7"],
-Cell[424191, 7539, 517, 14, 33, "Output",ExpressionUUID->"ef37b683-3c10-41ff-85db-fb488787308f"],
-Cell[424711, 7555, 464, 12, 33, "Output",ExpressionUUID->"b9e85146-80ce-400b-8a07-aa64531e804f"],
-Cell[425178, 7569, 704, 20, 33, "Output",ExpressionUUID->"cfdf9171-9bfd-4143-b11c-184643254490"]
+Cell[422405, 7482, 2684, 70, 274, "Input",ExpressionUUID->"ec177866-71d3-4209-9129-81d80c77d5ef"],
+Cell[425092, 7554, 309, 6, 33, "Output",ExpressionUUID->"13e50c54-1d8c-4ce3-a829-343035c9aec7"],
+Cell[425404, 7562, 517, 14, 33, "Output",ExpressionUUID->"ef37b683-3c10-41ff-85db-fb488787308f"],
+Cell[425924, 7578, 464, 12, 33, "Output",ExpressionUUID->"b9e85146-80ce-400b-8a07-aa64531e804f"],
+Cell[426391, 7592, 704, 20, 33, "Output",ExpressionUUID->"cfdf9171-9bfd-4143-b11c-184643254490"]
 }, Open  ]],
-Cell[425897, 7592, 348, 10, 56, "Text",ExpressionUUID->"8131f892-dc56-4dcc-9e0c-a51d9a7cc742"],
-Cell[426248, 7604, 75599, 1294, 944, "Text",ExpressionUUID->"8ed6460a-9cc6-4565-af29-5b497b98bf45"],
-Cell[501850, 8900, 510, 15, 37, "CodeText",ExpressionUUID->"4fbf6c63-437c-4dc3-9e9c-0e3e39bb9df7"],
-Cell[502363, 8917, 1197, 30, 70, "Input",ExpressionUUID->"76bd79ec-b681-46bc-9086-5dd958e60358"],
-Cell[503563, 8949, 794, 25, 36, "CodeText",ExpressionUUID->"dd9ceb0c-18b5-4f8e-ae32-ea9c8003b53e"],
-Cell[504360, 8976, 318, 8, 29, "Input",ExpressionUUID->"bde448a2-ca51-4632-b6a5-5656d6471b5e"],
-Cell[504681, 8986, 396, 10, 34, "Text",ExpressionUUID->"5f599f3b-47b8-4eaa-a362-4e71d38e8e4a"],
-Cell[505080, 8998, 223, 5, 36, "CodeText",ExpressionUUID->"f3e86945-e75e-47f5-926d-9348bb7ca7b9"],
-Cell[505306, 9005, 505, 14, 29, "Input",ExpressionUUID->"ca273a0c-8f60-439b-81b1-25d81530d97d"],
-Cell[505814, 9021, 203, 3, 36, "CodeText",ExpressionUUID->"355edcde-26f4-41cb-ba05-8849d422403a"],
+Cell[427110, 7615, 348, 10, 56, "Text",ExpressionUUID->"8131f892-dc56-4dcc-9e0c-a51d9a7cc742"],
+Cell[427461, 7627, 75669, 1296, 944, "Text",ExpressionUUID->"8ed6460a-9cc6-4565-af29-5b497b98bf45"],
+Cell[503133, 8925, 510, 15, 37, "CodeText",ExpressionUUID->"4fbf6c63-437c-4dc3-9e9c-0e3e39bb9df7"],
+Cell[503646, 8942, 1197, 30, 70, "Input",ExpressionUUID->"76bd79ec-b681-46bc-9086-5dd958e60358"],
+Cell[504846, 8974, 847, 26, 36, "CodeText",ExpressionUUID->"dd9ceb0c-18b5-4f8e-ae32-ea9c8003b53e"],
+Cell[505696, 9002, 318, 8, 29, "Input",ExpressionUUID->"bde448a2-ca51-4632-b6a5-5656d6471b5e"],
+Cell[506017, 9012, 1034, 22, 101, "Text",ExpressionUUID->"5f599f3b-47b8-4eaa-a362-4e71d38e8e4a"],
+Cell[507054, 9036, 223, 5, 36, "CodeText",ExpressionUUID->"f3e86945-e75e-47f5-926d-9348bb7ca7b9"],
+Cell[507280, 9043, 505, 14, 29, "Input",ExpressionUUID->"ca273a0c-8f60-439b-81b1-25d81530d97d"],
+Cell[507788, 9059, 254, 4, 36, "CodeText",ExpressionUUID->"355edcde-26f4-41cb-ba05-8849d422403a"],
 Cell[CellGroupData[{
-Cell[506042, 9028, 278, 6, 29, "Input",ExpressionUUID->"9d5de79a-ad5e-47b7-9fea-0cdb1ba083db"],
-Cell[506323, 9036, 331, 6, 33, "Output",ExpressionUUID->"2ce82429-9bce-4c61-8269-a759fcfa1843"]
+Cell[508067, 9067, 278, 6, 29, "Input",ExpressionUUID->"9d5de79a-ad5e-47b7-9fea-0cdb1ba083db"],
+Cell[508348, 9075, 331, 6, 33, "Output",ExpressionUUID->"2ce82429-9bce-4c61-8269-a759fcfa1843"]
 }, Open  ]],
-Cell[506669, 9045, 696, 17, 57, "CodeText",ExpressionUUID->"e6f8ef09-65fb-4763-853e-b37b3ba78b56"],
+Cell[508694, 9084, 745, 18, 57, "CodeText",ExpressionUUID->"e6f8ef09-65fb-4763-853e-b37b3ba78b56"],
 Cell[CellGroupData[{
-Cell[507390, 9066, 752, 17, 70, "Input",ExpressionUUID->"8b6e0a7c-bb5f-42c3-8e6c-97c5d30588eb"],
-Cell[508145, 9085, 326, 6, 33, "Output",ExpressionUUID->"97cde0eb-2db0-4085-b2da-6a67898d491d"]
+Cell[509464, 9106, 752, 17, 70, "Input",ExpressionUUID->"8b6e0a7c-bb5f-42c3-8e6c-97c5d30588eb"],
+Cell[510219, 9125, 326, 6, 33, "Output",ExpressionUUID->"97cde0eb-2db0-4085-b2da-6a67898d491d"]
 }, Open  ]],
-Cell[508486, 9094, 263, 5, 36, "CodeText",ExpressionUUID->"599e478d-ef0a-461b-8e1a-29e7ad710074"],
+Cell[510560, 9134, 303, 4, 36, "CodeText",ExpressionUUID->"599e478d-ef0a-461b-8e1a-29e7ad710074"],
 Cell[CellGroupData[{
-Cell[508774, 9103, 359, 7, 29, "Input",ExpressionUUID->"1766ba52-d865-46cd-847a-bfaf8693b119"],
-Cell[509136, 9112, 285, 5, 33, "Output",ExpressionUUID->"9b5fde89-6d79-4608-933a-9a3fda09126f"]
+Cell[510888, 9142, 359, 7, 29, "Input",ExpressionUUID->"1766ba52-d865-46cd-847a-bfaf8693b119"],
+Cell[511250, 9151, 285, 5, 33, "Output",ExpressionUUID->"9b5fde89-6d79-4608-933a-9a3fda09126f"]
 }, Open  ]],
-Cell[509436, 9120, 348, 10, 36, "CodeText",ExpressionUUID->"91355f45-240f-44f1-833e-2c5aa84b0bd9"],
+Cell[511550, 9159, 399, 11, 36, "CodeText",ExpressionUUID->"91355f45-240f-44f1-833e-2c5aa84b0bd9"],
 Cell[CellGroupData[{
-Cell[509809, 9134, 905, 25, 49, "Input",ExpressionUUID->"e1feb8fa-f9d1-4680-81ce-a7f395fb5998"],
-Cell[510717, 9161, 369, 8, 33, "Output",ExpressionUUID->"59f9de5a-42a7-4a02-8da4-1665f63f1592"]
+Cell[511974, 9174, 905, 25, 49, "Input",ExpressionUUID->"e1feb8fa-f9d1-4680-81ce-a7f395fb5998"],
+Cell[512882, 9201, 369, 8, 33, "Output",ExpressionUUID->"59f9de5a-42a7-4a02-8da4-1665f63f1592"]
 }, Open  ]],
-Cell[511101, 9172, 560, 10, 77, "Text",ExpressionUUID->"2d719bea-2d8f-43b2-b211-b458784f017d"],
-Cell[511664, 9184, 245, 5, 36, "CodeText",ExpressionUUID->"1aa3467f-0f77-49bd-a924-811edf404209"],
-Cell[511912, 9191, 7098, 182, 579, "Code",ExpressionUUID->"e22f2006-c656-4f0d-9eb8-1285a9451b8a"],
-Cell[519013, 9375, 232, 6, 36, "CodeText",ExpressionUUID->"c77822b9-633a-485c-9639-2a5b42f8decc"],
+Cell[513266, 9212, 588, 10, 77, "Text",ExpressionUUID->"2d719bea-2d8f-43b2-b211-b458784f017d"],
+Cell[513857, 9224, 245, 5, 36, "CodeText",ExpressionUUID->"1aa3467f-0f77-49bd-a924-811edf404209"],
+Cell[514105, 9231, 7098, 182, 579, "Code",ExpressionUUID->"e22f2006-c656-4f0d-9eb8-1285a9451b8a"],
+Cell[521206, 9415, 232, 6, 36, "CodeText",ExpressionUUID->"c77822b9-633a-485c-9639-2a5b42f8decc"],
 Cell[CellGroupData[{
-Cell[519270, 9385, 779, 18, 29, "Input",ExpressionUUID->"6b49c801-9868-4090-96dd-9d23f2ef9136"],
-Cell[520052, 9405, 6700, 122, 472, "Output",ExpressionUUID->"e74760d7-4b71-4cec-a9d4-035c1c161688"]
+Cell[521463, 9425, 779, 18, 29, "Input",ExpressionUUID->"6b49c801-9868-4090-96dd-9d23f2ef9136"],
+Cell[522245, 9445, 6684, 122, 472, "Output",ExpressionUUID->"e74760d7-4b71-4cec-a9d4-035c1c161688"]
 }, Open  ]],
-Cell[526767, 9530, 404, 8, 77, "Text",ExpressionUUID->"b8014efa-9cc9-4c9e-972e-03107421f433"]
+Cell[528944, 9570, 446, 9, 55, "Text",ExpressionUUID->"b8014efa-9cc9-4c9e-972e-03107421f433"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[527208, 9543, 168, 3, 53, "Subsection",ExpressionUUID->"445cc6b2-63bd-4c2c-ad7a-3f1f01e71a68"],
-Cell[527379, 9548, 50747, 889, 1204, "Text",ExpressionUUID->"bca5491a-498b-4f3b-80e7-f3f06318eb42"],
-Cell[578129, 10439, 556, 13, 56, "CodeText",ExpressionUUID->"de6fefe8-a96b-44e4-8399-ec4f3a7b1a4e"],
-Cell[578688, 10454, 1641, 47, 254, "Input",ExpressionUUID->"9e44fd8e-aa41-4933-8443-5909960710c6"],
-Cell[580332, 10503, 1566, 26, 77, "Text",ExpressionUUID->"7d0e7f8f-bd76-4117-8558-3e0b5c9a2d70"],
-Cell[581901, 10531, 220, 5, 36, "CodeText",ExpressionUUID->"65061b8b-66d2-4f2e-9e51-53eb40809487"],
+Cell[529427, 9584, 168, 3, 53, "Subsection",ExpressionUUID->"445cc6b2-63bd-4c2c-ad7a-3f1f01e71a68"],
+Cell[529598, 9589, 50777, 889, 1160, "Text",ExpressionUUID->"bca5491a-498b-4f3b-80e7-f3f06318eb42"],
+Cell[580378, 10480, 607, 14, 56, "CodeText",ExpressionUUID->"de6fefe8-a96b-44e4-8399-ec4f3a7b1a4e"],
+Cell[580988, 10496, 1641, 47, 254, "Input",ExpressionUUID->"9e44fd8e-aa41-4933-8443-5909960710c6"],
+Cell[582632, 10545, 1616, 27, 77, "Text",ExpressionUUID->"7d0e7f8f-bd76-4117-8558-3e0b5c9a2d70"],
+Cell[584251, 10574, 220, 5, 36, "CodeText",ExpressionUUID->"65061b8b-66d2-4f2e-9e51-53eb40809487"],
 Cell[CellGroupData[{
-Cell[582146, 10540, 707, 14, 70, "Input",ExpressionUUID->"a71bd04c-8517-410d-9da3-58fb45d6060a"],
-Cell[582856, 10556, 767, 15, 70, "Output",ExpressionUUID->"b5fd5dc0-8a91-4e03-be08-3cba2724f6a3"]
+Cell[584496, 10583, 707, 14, 70, "Input",ExpressionUUID->"a71bd04c-8517-410d-9da3-58fb45d6060a"],
+Cell[585206, 10599, 767, 15, 33, "Output",ExpressionUUID->"b5fd5dc0-8a91-4e03-be08-3cba2724f6a3"]
 }, Open  ]],
-Cell[583638, 10574, 50410, 842, 858, "Text",ExpressionUUID->"69bd3c7f-195d-4ff8-928a-e9e8b823ae65"],
-Cell[634051, 11418, 367, 10, 37, "CodeText",ExpressionUUID->"5c1c7f39-efaa-40c4-b752-6c402482b431"],
-Cell[634421, 11430, 552, 12, 29, "Input",ExpressionUUID->"42701554-20b5-466c-8e9c-acb71409dade"],
-Cell[634976, 11444, 292061, 4894, 4082, "Text",ExpressionUUID->"c9313fa5-24a3-4e0e-828b-67dd94bfa06b"],
-Cell[927040, 16340, 857, 23, 36, "CodeText",ExpressionUUID->"e8302ee3-7328-4915-91b1-708ae96bf171"],
-Cell[927900, 16365, 2206, 55, 296, "Code",ExpressionUUID->"8da86b89-6f96-4ad0-aafb-f5088e541da8"],
-Cell[930109, 16422, 106756, 1822, 1784, "Text",ExpressionUUID->"8a08613d-d5ee-4e6f-ae79-27aef7f0d3fa"],
-Cell[1036868, 18246, 364, 10, 36, "CodeText",ExpressionUUID->"18d1cde7-000f-41ec-8f68-96865db04330"],
-Cell[1037235, 18258, 2117, 54, 296, "Code",ExpressionUUID->"6dd53025-e81a-4c78-8ae3-eff3d1a651c5"],
-Cell[1039355, 18314, 1427, 32, 121, "Text",ExpressionUUID->"92faa809-f46d-42e8-bff2-1125d17b6bd6"],
-Cell[1040785, 18348, 273, 7, 36, "CodeText",ExpressionUUID->"07fcc7f7-7ebd-4814-8290-a022bd5c9a6d"],
-Cell[1041061, 18357, 994, 26, 90, "Input",ExpressionUUID->"ced8c208-6af5-42ef-833b-582d4c994126"],
-Cell[1042058, 18385, 700, 12, 77, "Text",ExpressionUUID->"b10560b0-50db-4891-8d60-91eed27ac7c4"],
-Cell[1042761, 18399, 227, 5, 36, "CodeText",ExpressionUUID->"961bbc6f-c143-4489-b2a3-47570fcf8f50"],
+Cell[585988, 10617, 50504, 843, 857, "Text",ExpressionUUID->"69bd3c7f-195d-4ff8-928a-e9e8b823ae65"],
+Cell[636495, 11462, 367, 10, 37, "CodeText",ExpressionUUID->"5c1c7f39-efaa-40c4-b752-6c402482b431"],
+Cell[636865, 11474, 552, 12, 29, "Input",ExpressionUUID->"42701554-20b5-466c-8e9c-acb71409dade"],
+Cell[637420, 11488, 292072, 4896, 4038, "Text",ExpressionUUID->"c9313fa5-24a3-4e0e-828b-67dd94bfa06b"],
+Cell[929495, 16386, 857, 23, 36, "CodeText",ExpressionUUID->"e8302ee3-7328-4915-91b1-708ae96bf171"],
+Cell[930355, 16411, 2206, 55, 296, "Code",ExpressionUUID->"8da86b89-6f96-4ad0-aafb-f5088e541da8"],
+Cell[932564, 16468, 106762, 1822, 1718, "Text",ExpressionUUID->"8a08613d-d5ee-4e6f-ae79-27aef7f0d3fa"],
+Cell[1039329, 18292, 364, 10, 36, "CodeText",ExpressionUUID->"18d1cde7-000f-41ec-8f68-96865db04330"],
+Cell[1039696, 18304, 2117, 54, 296, "Code",ExpressionUUID->"6dd53025-e81a-4c78-8ae3-eff3d1a651c5"],
+Cell[1041816, 18360, 1464, 33, 99, "Text",ExpressionUUID->"92faa809-f46d-42e8-bff2-1125d17b6bd6"],
+Cell[1043283, 18395, 273, 7, 36, "CodeText",ExpressionUUID->"07fcc7f7-7ebd-4814-8290-a022bd5c9a6d"],
+Cell[1043559, 18404, 994, 26, 90, "Input",ExpressionUUID->"ced8c208-6af5-42ef-833b-582d4c994126"],
+Cell[1044556, 18432, 773, 13, 77, "Text",ExpressionUUID->"b10560b0-50db-4891-8d60-91eed27ac7c4"],
+Cell[1045332, 18447, 227, 5, 36, "CodeText",ExpressionUUID->"961bbc6f-c143-4489-b2a3-47570fcf8f50"],
 Cell[CellGroupData[{
-Cell[1043013, 18408, 460, 9, 49, "Input",ExpressionUUID->"9b32c561-b702-4069-909b-3d19e35bc2d9"],
-Cell[1043476, 18419, 695, 13, 70, "Output",ExpressionUUID->"58d055a3-58b3-4486-b035-52000e0d132b"]
+Cell[1045584, 18456, 460, 9, 49, "Input",ExpressionUUID->"9b32c561-b702-4069-909b-3d19e35bc2d9"],
+Cell[1046047, 18467, 695, 13, 33, "Output",ExpressionUUID->"58d055a3-58b3-4486-b035-52000e0d132b"]
 }, Open  ]],
-Cell[1044186, 18435, 1868, 50, 99, "Text",ExpressionUUID->"4908bd9d-ded6-468a-a7f5-1e87853dc679"],
-Cell[1046057, 18487, 267, 6, 56, "CodeText",ExpressionUUID->"89c9217d-c44f-46bc-96fc-7d93eeebe1f3"],
-Cell[1046327, 18495, 736, 19, 90, "Input",ExpressionUUID->"0675cfe7-9a33-447e-b4e0-9963397580da"],
-Cell[1047066, 18516, 1577, 33, 187, "Text",ExpressionUUID->"70070d21-4f0e-4f68-aa3d-a1e3cad045f7"],
-Cell[1048646, 18551, 465, 11, 57, "CodeText",ExpressionUUID->"de479b21-94eb-40c1-9383-90fb850a4758"],
-Cell[1049114, 18564, 1092, 27, 172, "Input",ExpressionUUID->"6220499a-0952-4ec5-a040-0faf47e57c3e"],
-Cell[1050209, 18593, 1003, 18, 165, "Text",ExpressionUUID->"4bdee60c-7996-47b0-b175-3a04a1427c22"],
-Cell[1051215, 18613, 246, 6, 36, "CodeText",ExpressionUUID->"368a09c6-59bf-4448-817c-6ae1d0ea3bdc"],
-Cell[1051464, 18621, 1124, 29, 131, "Input",ExpressionUUID->"320d8e75-1d53-431a-97a4-cff83cc2e732"],
-Cell[1052591, 18652, 876, 22, 79, "Text",ExpressionUUID->"c6cfdd2e-55a4-4c7d-a565-e4d4935db797"],
-Cell[1053470, 18676, 224, 5, 36, "CodeText",ExpressionUUID->"fb553a56-714b-451a-a5d6-dbaa36d3f3f9"],
-Cell[1053697, 18683, 326, 8, 29, "Input",ExpressionUUID->"67a4abe2-7fc4-4219-834d-0f5f19c2e99d"],
-Cell[1054026, 18693, 508, 15, 37, "CodeText",ExpressionUUID->"9b4bff3b-d769-4996-b337-e0b880ea9f79"],
-Cell[1054537, 18710, 2083, 52, 296, "Code",ExpressionUUID->"6e221671-4d8b-4ae4-b4fb-c8d72ff461a8"],
-Cell[1056623, 18764, 465, 11, 36, "CodeText",ExpressionUUID->"f7f3e97f-def8-41e4-b696-95e83db9566a"],
-Cell[1057091, 18777, 648, 17, 49, "Input",ExpressionUUID->"478a51b5-9e3c-4c26-b3cf-0d241d126bde"],
-Cell[1057742, 18796, 323, 7, 56, "CodeText",ExpressionUUID->"c727f224-0cca-4824-8c6a-a2f1c1ab0204"],
+Cell[1046757, 18483, 1919, 50, 99, "Text",ExpressionUUID->"4908bd9d-ded6-468a-a7f5-1e87853dc679"],
+Cell[1048679, 18535, 267, 6, 56, "CodeText",ExpressionUUID->"89c9217d-c44f-46bc-96fc-7d93eeebe1f3"],
+Cell[1048949, 18543, 736, 19, 90, "Input",ExpressionUUID->"0675cfe7-9a33-447e-b4e0-9963397580da"],
+Cell[1049688, 18564, 1402, 31, 143, "Text",ExpressionUUID->"70070d21-4f0e-4f68-aa3d-a1e3cad045f7"],
+Cell[1051093, 18597, 494, 12, 37, "CodeText",ExpressionUUID->"de479b21-94eb-40c1-9383-90fb850a4758"],
+Cell[1051590, 18611, 1092, 27, 172, "Input",ExpressionUUID->"6220499a-0952-4ec5-a040-0faf47e57c3e"],
+Cell[1052685, 18640, 441, 8, 33, "Text",ExpressionUUID->"4bdee60c-7996-47b0-b175-3a04a1427c22"],
+Cell[1053129, 18650, 246, 6, 36, "CodeText",ExpressionUUID->"368a09c6-59bf-4448-817c-6ae1d0ea3bdc"],
+Cell[1053378, 18658, 1124, 29, 131, "Input",ExpressionUUID->"320d8e75-1d53-431a-97a4-cff83cc2e732"],
+Cell[1054505, 18689, 968, 24, 78, "Text",ExpressionUUID->"c6cfdd2e-55a4-4c7d-a565-e4d4935db797"],
+Cell[1055476, 18715, 224, 5, 36, "CodeText",ExpressionUUID->"fb553a56-714b-451a-a5d6-dbaa36d3f3f9"],
+Cell[1055703, 18722, 326, 8, 29, "Input",ExpressionUUID->"67a4abe2-7fc4-4219-834d-0f5f19c2e99d"],
+Cell[1056032, 18732, 508, 15, 37, "CodeText",ExpressionUUID->"9b4bff3b-d769-4996-b337-e0b880ea9f79"],
+Cell[1056543, 18749, 2083, 52, 296, "Code",ExpressionUUID->"6e221671-4d8b-4ae4-b4fb-c8d72ff461a8"],
+Cell[1058629, 18803, 562, 12, 36, "CodeText",ExpressionUUID->"f7f3e97f-def8-41e4-b696-95e83db9566a"],
+Cell[1059194, 18817, 648, 17, 49, "Input",ExpressionUUID->"478a51b5-9e3c-4c26-b3cf-0d241d126bde"],
+Cell[1059845, 18836, 362, 8, 56, "CodeText",ExpressionUUID->"c727f224-0cca-4824-8c6a-a2f1c1ab0204"],
 Cell[CellGroupData[{
-Cell[1058090, 18807, 9302, 234, 1316, "Input",ExpressionUUID->"0a066428-e17f-46d0-a23a-70cf30c3a9f9"],
-Cell[1067395, 19043, 351, 7, 70, "Output",ExpressionUUID->"c6b1008b-85c5-4e40-9b67-5fa6cda428a6"],
-Cell[1067749, 19052, 31905, 557, 70, "Output",ExpressionUUID->"9fdc335a-4686-492e-bde4-8a061efae50f"]
+Cell[1060232, 18848, 9302, 234, 1316, "Input",ExpressionUUID->"0a066428-e17f-46d0-a23a-70cf30c3a9f9"],
+Cell[1069537, 19084, 335, 6, 33, "Output",ExpressionUUID->"c6b1008b-85c5-4e40-9b67-5fa6cda428a6"],
+Cell[1069875, 19092, 31904, 557, 777, "Output",ExpressionUUID->"9fdc335a-4686-492e-bde4-8a061efae50f"]
 }, Open  ]]
 }, Open  ]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[1099715, 19616, 156, 3, 52, "Section",ExpressionUUID->"8f536c73-6afb-4a49-81eb-3a631858e9be"],
-Cell[1099874, 19621, 2610, 40, 361, "Text",ExpressionUUID->"660c2cae-96b5-4202-993c-c56bcafe1b60"]
+Cell[1101840, 19656, 156, 3, 52, "Section",ExpressionUUID->"8f536c73-6afb-4a49-81eb-3a631858e9be"],
+Cell[1101999, 19661, 2610, 40, 70, "Text",ExpressionUUID->"660c2cae-96b5-4202-993c-c56bcafe1b60"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[1102521, 19666, 161, 3, 52, "Section",ExpressionUUID->"9d48b29d-9954-41be-b982-e4735780b9f8"],
-Cell[1102685, 19671, 2399, 40, 449, "Text",ExpressionUUID->"afd28ab5-d4f4-423c-ada4-ecd835e53dd2"]
+Cell[1104646, 19706, 161, 3, 52, "Section",ExpressionUUID->"9d48b29d-9954-41be-b982-e4735780b9f8"],
+Cell[1104810, 19711, 2399, 40, 492, "Text",ExpressionUUID->"afd28ab5-d4f4-423c-ada4-ecd835e53dd2"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[1105121, 19716, 157, 3, 52, "Section",ExpressionUUID->"50a2ad0e-d0a6-4cf7-a61c-4142bb389ba6"],
-Cell[1105281, 19721, 3056, 50, 580, "Text",ExpressionUUID->"ea192c69-f8a4-41f0-b4a2-68c66ce5f1a6"]
+Cell[1107246, 19756, 157, 3, 52, "Section",ExpressionUUID->"50a2ad0e-d0a6-4cf7-a61c-4142bb389ba6"],
+Cell[1107406, 19761, 3056, 50, 689, "Text",ExpressionUUID->"ea192c69-f8a4-41f0-b4a2-68c66ce5f1a6"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[1108374, 19776, 163, 3, 52, "Section",ExpressionUUID->"b0d68d86-dd21-4a63-aaab-cfb40752c828"],
-Cell[1108540, 19781, 1391, 21, 164, "Text",ExpressionUUID->"bdc97b9f-2a6d-4e57-a4ef-0bc9ba9584a2"]
+Cell[1110499, 19816, 163, 3, 52, "Section",ExpressionUUID->"b0d68d86-dd21-4a63-aaab-cfb40752c828"],
+Cell[1110665, 19821, 1391, 21, 208, "Text",ExpressionUUID->"bdc97b9f-2a6d-4e57-a4ef-0bc9ba9584a2"]
 }, Closed]]
 }, Open  ]]
 }
