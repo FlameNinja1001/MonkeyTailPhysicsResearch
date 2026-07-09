@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[   1119917,      19904]
-NotebookOptionsPosition[   1104861,      19690]
-NotebookOutlinePosition[   1105342,      19708]
-CellTagsIndexPosition[   1105299,      19705]
+NotebookDataLength[   1121115,      19921]
+NotebookOptionsPosition[   1106056,      19707]
+NotebookOutlinePosition[   1106537,      19725]
+CellTagsIndexPosition[   1106494,      19722]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -19681,9 +19681,26 @@ Cell["Acknowledgements", "Section",
   3.992549410970693*^9}},ExpressionUUID->"b0d68d86-dd21-4a63-aaab-\
 cfb40752c828"],
 
-Cell["Yap", "Text",
- CellChangeTimes->{{3.992549412223249*^9, 
-  3.9925494130643272`*^9}},ExpressionUUID->"bdc97b9f-2a6d-4e57-a4ef-\
+Cell["\<\
+I would like to extend my sincerest gratitude towards the staff at Wolfram \
+Research for granting me this incredible opportunity, notably program \
+directors Rory Foulger, Eryn Gillam, and Megan Davis. A special mention as \
+well goes towards founder and CEO of Wolfram Research, Dr. Stephen Wolfram, \
+for his development of my project idea and management of the research. Thank \
+you to my mentor Mr. Angel Rojas, who contributed to my foundations in \
+Wolfram Language, refactoring of my code, revision of my writing, and \
+brainstorming for my math. I also extend my thankfulness towards the Teaching \
+Assistants (TAs) of the 2026 Wolfram High School Summer Research Program, \
+notably Arnay Garyhan who helped with my final model, and Eric Archerman, who \
+helped with a large portion of the math derivations. Finally, I would like to \
+recognize my family, notably parents for their motivation and guidance and \
+reccomending me to apply to this program, my grandfather for his thoughtful \
+advice, and my sister for her endless support.\
+\>", "Text",
+ CellChangeTimes->{{3.992549412223249*^9, 3.9925494130643272`*^9}, {
+  3.992557075171324*^9, 3.9925570863660917`*^9}, {3.99255715276583*^9, 
+  3.992557193944418*^9}, {3.992557248874879*^9, 
+  3.992557735089007*^9}},ExpressionUUID->"bdc97b9f-2a6d-4e57-a4ef-\
 0bc9ba9584a2"]
 }, Open  ]]
 }, Open  ]]
@@ -19903,7 +19920,7 @@ Cell[1101427, 19623, 3056, 50, 580, "Text",ExpressionUUID->"ea192c69-f8a4-41f0-b
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1104520, 19678, 163, 3, 66, "Section",ExpressionUUID->"b0d68d86-dd21-4a63-aaab-cfb40752c828"],
-Cell[1104686, 19683, 147, 3, 33, "Text",ExpressionUUID->"bdc97b9f-2a6d-4e57-a4ef-0bc9ba9584a2"]
+Cell[1104686, 19683, 1342, 20, 164, "Text",ExpressionUUID->"bdc97b9f-2a6d-4e57-a4ef-0bc9ba9584a2"]
 }, Open  ]]
 }, Open  ]]
 }
