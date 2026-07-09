@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[   1125714,      19994]
-NotebookOptionsPosition[   1110651,      19780]
-NotebookOutlinePosition[   1111133,      19798]
-CellTagsIndexPosition[   1111090,      19795]
+NotebookDataLength[   1125879,      19996]
+NotebookOptionsPosition[   1110818,      19782]
+NotebookOutlinePosition[   1111299,      19800]
+CellTagsIndexPosition[   1111256,      19797]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -19595,81 +19595,46 @@ Cell["Conclusions", "Section",
   3.992549336865078*^9}},ExpressionUUID->"8f536c73-6afb-4a49-81eb-\
 3a631858e9be"],
 
-Cell["\<\
-It can be argued that carbon taxation can be an effective tool for reducing \
-CO2 emissions, though the magnitude and consistency of this effect varies \
-significantly across different countries and analytical approaches. The \
-regression models demonstrate that carbon taxes are associated with lower \
-emissions even after controlling for economic factors like GDP and \
-population, environmental variables like deforestation, and agricultural \
-factors like meat production. This relationship remained statistically \
-significant across multiple model specifications, from simple binary tax \
-indicators to comprehensive fixed effects models that control for \
-country-specific and time-specific factors. However, the effectiveness of \
-carbon taxation is not uniform across all contexts. The time series \
-visualizations revealed that while some countries like the United Kingdom and \
-Japan experienced clear emission reductions following carbon tax \
-implementation, others like Chile showed more modest effects where taxes \
-appeared to slow emission growth rather than reverse it entirely. The \
-per-capita analysis further demonstrated that carbon taxes correlate with \
-lower emission intensity, suggesting they promote efficiency improvements \
-rather than just absolute reductions. The fixed effects models, which provide \
-the strongest causal evidence, showed that the carbon tax effect persists \
-even when accounting for all time-invariant country characteristics and \
-global trends. The analysis revealed, across various models, that carbon tax \
-effectiveness depends heavily on the broader policy and economic context. The \
-comprehensive models including energy consumption, economic development, and \
-environmental factors confirmed that while carbon taxes contribute to \
-emission reductions, they work alongside other important drivers of emission \
-patterns. This emphasizes the need for integrated climate policies to reduce \
-CO2 emissions rather than relying on taxation alone.
-
-This work introduces several methods to computationally generate \
-\[OpenCurlyDoubleQuote]average\[CloseCurlyDoubleQuote] words that contain \
-morphological and phonetic features of many different multilingual \
-translations. I tried using the most frequent character, most frequent \
-digram, a genetic algorithm, a string evolution algorithm, and two neural \
-networks. Overall, the genetic and evolutionary algorithms consistently \
-produce words that are easy to pronounce and very close to the optimal \
-average based on my fitness metrics. On the other hand, the morphological and \
-phonetic neural networks produce words that have more variance and use a \
-wider range of sounds.
-
-Balancing efficacy and safety for insulin dosing in patients with Type 1 \
-diabetes is extremely challenging. The delays between food and insulin \
-absorption and action cause barriers to perfecting the desired artificial \
-pancreas. Acquiring any information at all (the time of eating), however, can \
-result in significantly better performance. As the project was developed for \
-a single patient\[CloseCurlyQuote]s parameters, the importance of \
-personalized medicine in the realm of diabetes was substantiated as well. \
-Utilizing the developed model, future users of the interactive tools will be \
-able to understand how their bodies respond to various stimuli and dosing \
-regimens as a patient with Type 1 diabetes.
-
-
-- i went from v1 to v2 to v3
-- Each evolved in complexity, creating a greater foundation for the eventual \
-algorithm and V3 model
-- the ending model holds strong applications  in robotics
-- researchers can now specify design constraints and the model will output \
-results
-
-- the model still falls short mainly due to being in 2D while real robotics \
-is in 3d
-- This is demsontrated when the monkey leans backwords or when theta_lean is \
-negative. the tail, instead of wrapping around, will emerge from the front \
-instead of the back, \[OpenCurlyDoubleQuote]flipping.\[CloseCurlyDoubleQuote]
-- In testing, the model also sometimes folded in on itself.
-
-Overall, this development process of the model demonstrates the process of \
-studying a biological phenomenon, prehensile tails, calculating how it would \
-work, and then implementing it in an interactive simulation.\
-\>", "Text",
+Cell[TextData[{
+ "The development process of this model and algorithm demonstrate the \
+progression from studying a biological phenomenon (prehensile tails), \
+calculating how they would work mathematically, and then implementing them in \
+an interactive simulation. The model\[CloseCurlyQuote]s iterative versions in \
+the form of a V1, V2, and V3 showcase an evolution of complexity, creating a \
+greater foundation for the eventual algorithm. In the end, the model holds \
+strong applications in robotics and understanding how organisms naturally \
+balance themselves with tails.  Researchers can now specify design \
+constraints and the model will output estimated results for the researcher to \
+test and iterate on.\n\nDespite the successes, the model has shortcomings. \
+Firstly, the model is in 2-D. If the algorithm was ever implemented into real \
+robotics, it would have to be modified to work around in a 3-D space as \
+currently it only considers horizontal and vertical morion.  This 2-D limit \
+is especially demonstrated and problematic when the mass leans backwards, \
+when ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "lean"], TraditionalForm]],ExpressionUUID->
+  "475333d6-35a1-4d7f-b95f-f17eaa238a73"],
+ " is negative. Often times, the tail, instead of wrapping around, will \
+sometimes emerge from the front instead of the back, \
+\[OpenCurlyDoubleQuote]flipping,\[CloseCurlyDoubleQuote] or, alternatively, \
+it will clip through the body as well. The visual simulation of the model \
+also shows that the model sometimes creates angles which fold in on \
+themselves, or have angles too sharp for a real prehensile tail.\n\nIn \
+general, the model and algorithm are mostly successful new, innovative first \
+steps to approaching new robotic tail problems in the future, however, in \
+order to be fully implemented, true 3-D spatial awareness, as well as better \
+angle constraints must be added to prevent solutions with impossible \
+real-world implementation.\n"
+}], "Text",
  CellChangeTimes->{{3.9925493383251257`*^9, 3.992549338862523*^9}, {
-  3.992558779635724*^9, 3.992558802484908*^9}, {3.9925588364480267`*^9, 
-  3.9925588377093363`*^9}, {3.992558910463369*^9, 3.992559003867692*^9}, {
-  3.992559051844049*^9, 3.9925591755875387`*^9}, {3.992559334112504*^9, 
-  3.992559388204668*^9}},ExpressionUUID->"660c2cae-96b5-4202-993c-\
+   3.992558779635724*^9, 3.992558802484908*^9}, {3.9925588364480267`*^9, 
+   3.9925588377093363`*^9}, {3.992558910463369*^9, 3.992559003867692*^9}, {
+   3.992559051844049*^9, 3.9925591755875387`*^9}, {3.992559334112504*^9, 
+   3.992559388204668*^9}, {3.992560774085911*^9, 3.9925610964327297`*^9}, 
+   3.9925637309894342`*^9, {3.9925638717250566`*^9, 3.992563873999549*^9}, {
+   3.992563953551787*^9, 3.992564152735304*^9}, {3.992564518787458*^9, 
+   3.9925645239862747`*^9}},ExpressionUUID->"660c2cae-96b5-4202-993c-\
 c56bcafe1b60"]
 }, Open  ]],
 
@@ -19680,9 +19645,46 @@ Cell["Future Directions", "Section",
   3.99254938612042*^9}},ExpressionUUID->"9d48b29d-9954-41be-b982-\
 e4735780b9f8"],
 
-Cell["Yap", "Text",
- CellChangeTimes->{{3.9925493975436287`*^9, 
-  3.9925493977732153`*^9}},ExpressionUUID->"afd28ab5-d4f4-423c-ada4-\
+Cell["\<\
+Due to the model\[CloseCurlyQuote]s minor flaws listed above, additional work \
+on the parameters and math can be done. Any future investigations could \
+answer the research questions of how the algorithm can be optimized, how it \
+can be implemented in 3-Dimensional spaces, and how more realistic and \
+\[OpenCurlyDoubleQuote]natural\[CloseCurlyDoubleQuote] curves can be \
+implemented. 
+
+Adopting closer procedures to past studies may also help resolve uncertainty \
+in the model. For instance, the math could more closely follow the equations \
+set up by Fu et al. (2024), which involve differential equations and calculus \
+compared to mine which only uses trigonometry.  Fu et al. (2024) also modeled \
+the single-jointed tail in a 3-Dimensional space with roll, pitch, and yaw, \
+which future research should aim to do.
+
+Likewise in terms of alternate models, feedback controllers and something \
+similar to an inverse pendulum mechanism could be explored to model the tail. \
+PD control was utilized by Libby et al. (2012), and alternatives such as PD \
+LQR are often used by inverse pendulum mechanisms in Wolfram. Libby et al. \
+(2012) also built a physical model of the robot they were modeling, and of \
+course the Arque tail by Junichi Nabeshima et al. (2019) is a physical model. \
+Building a physical model of a tail using my algorithm would explore its \
+potential successes, shortcomings, and interactions in 3-Dimensional spaces.
+
+Finally, adapting my tail\[CloseCurlyQuote]s physics from balance, which uses \
+center of masses and torque, to something more complex, such as hanging, \
+swinging, or grasping, would provide a more comprehensive idea of a monkey\
+\[CloseCurlyQuote]s biomechanics. By expanding to different aspects of \
+prehensile tail, the model will become less niche and more general purpose.
+
+Overall, through addressing performance issues directly through new ideas and \
+approaches from other researchers, more realistic and applicable models may \
+be created.
+\
+\>", "Text",
+ CellChangeTimes->{{3.9925493975436287`*^9, 3.9925493977732153`*^9}, {
+  3.9925643642661467`*^9, 3.99256436926619*^9}, {3.992564399702474*^9, 
+  3.9925644338493156`*^9}, {3.992564510144314*^9, 3.9925645295723877`*^9}, {
+  3.992564576269917*^9, 3.99256500545851*^9}, {3.9925651012682962`*^9, 
+  3.992565376946836*^9}},ExpressionUUID->"afd28ab5-d4f4-423c-ada4-\
 ecd835e53dd2"]
 }, Open  ]],
 
@@ -19779,7 +19781,7 @@ advice, and my sister for her endless support.\
 }, Open  ]]
 },
 WindowSize->{1136, 937},
-WindowMargins->{{Automatic, -11}, {Automatic, 0}},
+WindowMargins->{{Automatic, 85}, {Automatic, 0}},
 PrivateNotebookOptions->{"CloudPublishPath"->"/Published/\
 ComputationalEssayFixed.nb"},
 FrontEndVersion->"15.0 for Mac OS X x86 (64-bit) (May 19, 2026)",
@@ -19798,21 +19800,21 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[576, 22, 333, 7, 190, "Title",ExpressionUUID->"3b4ad047-fa97-464f-8aeb-cd553dce18cc"],
+Cell[576, 22, 333, 7, 157, "Title",ExpressionUUID->"3b4ad047-fa97-464f-8aeb-cd553dce18cc"],
 Cell[912, 31, 930, 15, 121, "Text",ExpressionUUID->"422e58d5-5de6-4839-8b6f-e8c10a8c4ce2"],
 Cell[CellGroupData[{
 Cell[1867, 50, 157, 3, 66, "Section",ExpressionUUID->"913d55a0-652d-4ba7-af7a-f7b31dc48b4b"],
 Cell[CellGroupData[{
-Cell[2049, 57, 271, 4, 53, "Subsection",ExpressionUUID->"e6255813-4355-435f-b32d-d510d3b27df2"],
-Cell[2323, 63, 3751, 71, 361, "Text",ExpressionUUID->"c856ef3d-3593-4984-9e0c-814864ee1a3f"]
+Cell[2049, 57, 271, 4, 70, "Subsection",ExpressionUUID->"e6255813-4355-435f-b32d-d510d3b27df2"],
+Cell[2323, 63, 3751, 71, 70, "Text",ExpressionUUID->"c856ef3d-3593-4984-9e0c-814864ee1a3f"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6111, 139, 187, 3, 53, "Subsection",ExpressionUUID->"03905fdf-a512-4b05-81ac-e4d12f884664"],
-Cell[6301, 144, 1821, 30, 186, "Text",ExpressionUUID->"8f7b7610-9837-4b34-ac9c-61f0d2d0b1d2"]
+Cell[6111, 139, 187, 3, 70, "Subsection",ExpressionUUID->"03905fdf-a512-4b05-81ac-e4d12f884664"],
+Cell[6301, 144, 1821, 30, 70, "Text",ExpressionUUID->"8f7b7610-9837-4b34-ac9c-61f0d2d0b1d2"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8159, 179, 160, 3, 53, "Subsection",ExpressionUUID->"bd172e38-dc0d-42e8-8b89-3b0fc2e7324c"],
-Cell[8322, 184, 922, 15, 99, "Text",ExpressionUUID->"dfe74d7c-4991-40a4-9046-4200db798069"]
+Cell[8159, 179, 160, 3, 70, "Subsection",ExpressionUUID->"bd172e38-dc0d-42e8-8b89-3b0fc2e7324c"],
+Cell[8322, 184, 922, 15, 70, "Text",ExpressionUUID->"dfe74d7c-4991-40a4-9046-4200db798069"]
 }, Open  ]]
 }, Closed]],
 Cell[CellGroupData[{
@@ -19981,19 +19983,19 @@ Cell[1100116, 19578, 409, 8, 55, "Text",ExpressionUUID->"f7f3e97f-def8-41e4-b696
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1100574, 19592, 156, 3, 66, "Section",ExpressionUUID->"8f536c73-6afb-4a49-81eb-3a631858e9be"],
-Cell[1100733, 19597, 4693, 75, 842, "Text",ExpressionUUID->"660c2cae-96b5-4202-993c-c56bcafe1b60"]
+Cell[1100733, 19597, 2610, 40, 361, "Text",ExpressionUUID->"660c2cae-96b5-4202-993c-c56bcafe1b60"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1105463, 19677, 161, 3, 66, "Section",ExpressionUUID->"9d48b29d-9954-41be-b982-e4735780b9f8"],
-Cell[1105627, 19682, 149, 3, 33, "Text",ExpressionUUID->"afd28ab5-d4f4-423c-ada4-ecd835e53dd2"]
+Cell[1103380, 19642, 161, 3, 66, "Section",ExpressionUUID->"9d48b29d-9954-41be-b982-e4735780b9f8"],
+Cell[1103544, 19647, 2399, 40, 449, "Text",ExpressionUUID->"afd28ab5-d4f4-423c-ada4-ecd835e53dd2"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1105813, 19690, 157, 3, 66, "Section",ExpressionUUID->"50a2ad0e-d0a6-4cf7-a61c-4142bb389ba6"],
-Cell[1105973, 19695, 3056, 50, 580, "Text",ExpressionUUID->"ea192c69-f8a4-41f0-b4a2-68c66ce5f1a6"]
+Cell[1105980, 19692, 157, 3, 66, "Section",ExpressionUUID->"50a2ad0e-d0a6-4cf7-a61c-4142bb389ba6"],
+Cell[1106140, 19697, 3056, 50, 70, "Text",ExpressionUUID->"ea192c69-f8a4-41f0-b4a2-68c66ce5f1a6"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[1109066, 19750, 163, 3, 52, "Section",ExpressionUUID->"b0d68d86-dd21-4a63-aaab-cfb40752c828"],
-Cell[1109232, 19755, 1391, 21, 164, "Text",ExpressionUUID->"bdc97b9f-2a6d-4e57-a4ef-0bc9ba9584a2"]
+Cell[1109233, 19752, 163, 3, 52, "Section",ExpressionUUID->"b0d68d86-dd21-4a63-aaab-cfb40752c828"],
+Cell[1109399, 19757, 1391, 21, 70, "Text",ExpressionUUID->"bdc97b9f-2a6d-4e57-a4ef-0bc9ba9584a2"]
 }, Closed]]
 }, Open  ]]
 }
